@@ -6,7 +6,6 @@
     margin: 0 auto 50px auto;
     background-color: #d3d3d3;
     font-size: 16px;
-    z-index: 2;
 
 }
 
@@ -16,10 +15,7 @@
   font-size: 19px;
 }
 
-.ike-footer-image {
-  background-image: image_url("footer_cityscape.png");
-  z-index: 1;
-}
+
 
 .ike-footer-list > li {
   color: #0073bb;
