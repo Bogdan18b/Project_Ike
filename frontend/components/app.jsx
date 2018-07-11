@@ -3,14 +3,12 @@ import { NavLink } from 'react-router-dom';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute } from '../util/route_util';
-
+import GreetingContainer from './greeting/greeting_container';
 
 const App = () => (
   <div>
     <h1>IKE! by Bogdan</h1>
-    <NavLink to="/login">Log In</NavLink>
-    <NavLink to="/login">Sign Up</NavLink>
-
+    <GreetingContainer />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
