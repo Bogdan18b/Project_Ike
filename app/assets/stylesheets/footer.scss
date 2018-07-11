@@ -2,11 +2,19 @@
 
     display: flex;
     justify-content: space-around;
-    min-width: 1000px;
-    margin: 0 auto 50px auto;
     background-color: #d3d3d3;
+    align-items: baseline;
     font-size: 16px;
-
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    height: 160px;
+    background-image: image_url('footer_cityscape.png');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
 }
 
 .ike-footer-list > li:first-child {

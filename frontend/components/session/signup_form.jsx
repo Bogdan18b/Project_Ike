@@ -39,50 +39,46 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="ike-div-login-main">
         Please Sign Up
         {this.renderErrors()}
-        <form onSubmit={this.handleSubmit}>
+        <div className="ike-div-login-form">
+          <form className="ike-login-form" onSubmit={this.handleSubmit}>
 
-          <label>Username:
-            <input type="text" value={this.state.username}
-              onChange={this.update("username")}
-            />
-          </label>
+              <input type="text" value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="Username"
+              />
 
-          <label>Password:
-            <input type="password" value={this.state.password}
-              onChange={this.update("password")}
-            />
-          </label>
+              <input type="password" value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password"
+              />
 
-          <label>First name
-            <input type="text" value={this.state.first_name}
-              onChange={this.update("first_name")}
-            />
+              <input type="text" value={this.state.first_name}
+                onChange={this.update("first_name")}
+                placeholder="First Name"
+              />
 
-          </label>
-          <label>Last name
-            <input type="text" value={this.state.last_name}
-              onChange={this.update("last_name")}
-            />
+              <input type="text" value={this.state.last_name}
+                onChange={this.update("last_name")}
+                placeholder="Last Name"
+              />
 
-          </label>
-          <label>Email
-            <input type="text" value={this.state.email}
-              onChange={this.update("email")}
-            />
+              <input type="text" value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
+              />
 
-          </label>
-          <label>Zipcode
-            <input type="number" value={this.state.zip_code}
-              onChange={this.update("zip_code")}
-            />
-          </label>
-          <input type="submit" value="Sign Up" />
-        </form>
+              <input type="number" value={this.state.zip_code}
+                onChange={this.update("zip_code")}
+                placeholder="ZIP Code"
+              />
+            <input type="submit" value="Sign Up" />
+          </form>
+          <Link to="/login">Already on Ike!? Log in</Link>
+      </div>
 
-        <Link to="/login">Already on Ike!? Log in</Link>
       </div>
     );
   }

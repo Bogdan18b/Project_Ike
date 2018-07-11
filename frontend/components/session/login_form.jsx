@@ -39,24 +39,26 @@ class LoginForm extends React.Component {
       <div>
         Please Login
         {this.renderErrors()}
-        <form onSubmit={this.handleSubmit}>
+        <div className="ike-div-login-form">
+          <form className="ike-login-form" onSubmit={this.handleSubmit}>
 
-          <label>Username:
-            <input type="text" value={this.state.username}
-              onChange={this.update("username")}
-            />
-          </label>
+              <input type="text" value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="Username"
+              />
 
-          <label>Password:
-            <input type="password" value={this.state.password}
-              onChange={this.update("password")}
-            />
-          </label>
+              <input type="password" value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password"
+              />
 
-          <input type="submit" value="Log In" />
-        </form>
+            <input type="submit" value="Log In" />
+          </form>
 
-        <Link to="/signup">New to Ike!? Sign up</Link>
+          <Link to="/signup">New to Ike!? Sign up</Link>
+
+        </div>
+
       </div>
     );
   }
