@@ -38,6 +38,7 @@ class LoginForm extends React.Component {
     return (
       <div>
         Please Login
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
 
           <label>Username:
