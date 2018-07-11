@@ -41,6 +41,7 @@ class SignupForm extends React.Component {
     return (
       <div>
         Please Sign Up
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
 
           <label>Username:

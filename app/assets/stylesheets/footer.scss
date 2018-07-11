@@ -1,0 +1,30 @@
+.ike-footer-main  {
+
+    display: flex;
+    justify-content: space-around;
+    min-width: 1000px;
+    margin: 0 auto 50px auto;
+    background-color: #d3d3d3;
+    font-size: 16px;
+    z-index: 2;
+
+}
+
+.ike-footer-list > li:first-child {
+  color: #d32323;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.ike-footer-image {
+  background-image: image_url("footer_cityscape.png");
+  z-index: 1;
+}
+
+.ike-footer-list > li {
+  color: #0073bb;
+}
+
+.ike-footer-list > li > a:hover {
+  text-decoration: underline;
+}

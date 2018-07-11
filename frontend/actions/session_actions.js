@@ -49,7 +49,6 @@ export const login = (user) => {
   };
 };
 
-
 export const logout = () => {
   return dispatch => {
     SessionApiUtil.logout().then((user) => {
