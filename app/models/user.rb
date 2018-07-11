@@ -3,29 +3,32 @@
 # Table name: users
 #
 #  id              :bigint(8)        not null, primary key
-#  username        :string           not null
+#  email           :string           not null
 #  first_name      :string           not null
 #  last_name       :string           not null
-#  email           :string           not null
-#  zip_code        :integer
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  zip_code        :string
+#  month           :string
+#  day             :string
+#  year            :string
 #
 
 class User < ApplicationRecord
 
-  validates :username, :first_name, :last_name, :email, :password_digest, :session_token, presence: true
-  validates :username, :email, :session_token, uniqueness: true
+  validates :email, :first_name, :last_name, :password_digest, :session_token, presence: true
+  validates :email, :session_token, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
+  validates :zip_code, numericality: true
 
   attr_reader :password
 
   after_initialize :ensure_session_token
 
-  def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
     user && user.is_password?(password) ? user : nil
   end
 

@@ -6,7 +6,7 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      email: "",
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,15 +36,15 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="ike-div-login-main">
         Please Login
         {this.renderErrors()}
         <div className="ike-div-login-form">
           <form className="ike-login-form" onSubmit={this.handleSubmit}>
 
-              <input type="text" value={this.state.username}
-                onChange={this.update("username")}
-                placeholder="Username"
+              <input type="text" value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
               />
 
               <input type="password" value={this.state.password}

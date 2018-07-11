@@ -1,16 +1,16 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Birthday from './birthday';
 
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      email: "",
       password: "",
       first_name: "",
       last_name: "",
-      email: "",
       zip_code: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,9 +45,9 @@ class SignupForm extends React.Component {
         <div className="ike-div-login-form">
           <form className="ike-login-form" onSubmit={this.handleSubmit}>
 
-              <input type="text" value={this.state.username}
-                onChange={this.update("username")}
-                placeholder="Username"
+              <input type="text" value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
               />
 
               <input type="password" value={this.state.password}
@@ -65,15 +65,11 @@ class SignupForm extends React.Component {
                 placeholder="Last Name"
               />
 
-              <input type="text" value={this.state.email}
-                onChange={this.update("email")}
-                placeholder="Email"
-              />
-
-              <input type="number" value={this.state.zip_code}
+            <input type="text" value={this.state.zip_code}
                 onChange={this.update("zip_code")}
                 placeholder="ZIP Code"
               />
+            <Birthday />
             <input type="submit" value="Sign Up" />
           </form>
           <Link to="/login">Already on Ike!? Log in</Link>
