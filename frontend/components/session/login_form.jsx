@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="ike-login-errors">
         {this.props.errors.map((error, idx) => (
           <li key={`error-${idx}`}>{error}</li>
         ))}
@@ -36,26 +36,31 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="ike-div-login-main">
-        Please Login
-        {this.renderErrors()}
-        <div className="ike-div-login-form">
-          <form className="ike-login-form" onSubmit={this.handleSubmit}>
+      <div>
+        <header className="ike-div-login-header"></header>
+        <div className="ike-div-login-main">
+          {this.renderErrors()}
+          <div className="ike-div-login-form">
 
-              <input type="text" value={this.state.email}
-                onChange={this.update("email")}
-                placeholder="Email"
-              />
+            <h1>Log In with IKE!</h1>
+            <form className="ike-login-form" onSubmit={this.handleSubmit}>
 
-              <input type="password" value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password"
-              />
+                <input type="text" value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
 
-            <input type="submit" value="Log In" />
-          </form>
+                <input type="password" value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
 
-          <Link to="/signup">New to Ike!? Sign up</Link>
+              <input type="submit" value="Log In" />
+            </form>
+
+            <Link to="/signup">New to Ike!? Sign up</Link>
+
+          </div>
 
         </div>
 

@@ -1,30 +1,49 @@
+.ike-div-login-header {
+  background-color: #d32323;
+  right: 0;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  height: 40px;
+  background-image: image_url('ikelogo.png');
+  background-repeat: no-repeat;
+  background-position-y: -7px;
+  background-position-x: center;
+  margin-bottom: 30px;
+}
+
 .ike-login-form {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  width: 350px;
+  margin-top: 85px;
 }
 
 .ike-div-login-main {
   background-image: image_url('login.jpeg');
   background-repeat: no-repeat;
-  background-position-x: 800px;
+  background-position-x: 770px;
   background-position-y: center;
-  background-size: 33%;
-}
-
-.ike-login-form > input {
-  margin-top: 10px;
-  border: 1px solid grey;
+  background-size: 36%;
 }
 
 .ike-div-login-form {
-  width: 700px;
-  height: 700px;
+  width: 800px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.ike-login-form > select {
+  width: 95px;
+  height: 30px;
+  margin-top: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: grey;
 }
 
 .ike-login-form > input:last-child {
@@ -36,12 +55,32 @@
 }
 
 .ike-login-form > input {
-  width: 300px;
+  width: 310px;
   height: 30px;
+  margin-top: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+#last_name {
+  width: 145px;
+}
+
+#first_name {
+  width: 155px;
 }
 
 .ike-div-login-form > a {
   font-size: 10px;
+  margin-left: 200px;
+  color: #0073bb;
+}
+
+.ike-div-login-form > h1 {
+  font-size: 27px;
+  font-weight: 900;
+  color: #d32323;
 }
 
 .ike-div-login-image {
@@ -49,4 +88,11 @@
   width: 700px;
   background-color: blue;
   border: 5px black;
+}
+
+.ike-login-errors {
+  background: #fcd6d3;
+  margin: 0 auto;
+  text-align: center;
+  width: 700px;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Birthday from './birthday';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -11,12 +10,16 @@ class SignupForm extends React.Component {
       password: "",
       first_name: "",
       last_name: "",
-      zip_code: ""
+      zip_code: "",
+      day: "",
+      month: "",
+      year: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     this.props.signup(this.state);
   }
@@ -29,7 +32,7 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="ike-login-errors">
         {this.props.errors.map((error, idx) => (
           <li key={`error-${idx}`}>{error}</li>
         ))}
@@ -39,41 +42,64 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="ike-div-login-main">
-        Please Sign Up
-        {this.renderErrors()}
-        <div className="ike-div-login-form">
-          <form className="ike-login-form" onSubmit={this.handleSubmit}>
+      <div>
+        <header className="ike-div-login-header"></header>
+        <div className="ike-div-login-main">
+          {this.renderErrors()}
+          <div className="ike-div-login-form">
 
-              <input type="text" value={this.state.email}
-                onChange={this.update("email")}
-                placeholder="Email"
-              />
-
-              <input type="password" value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password"
-              />
-
-              <input type="text" value={this.state.first_name}
+            <h1>Sign Up with IKE!</h1>
+            <form className="ike-login-form" onSubmit={this.handleSubmit}>
+              <input type="text" id="first_name"
+                value={this.state.first_name}
                 onChange={this.update("first_name")}
                 placeholder="First Name"
-              />
+                />
 
-              <input type="text" value={this.state.last_name}
+              <input type="text" id="last_name"
+                value={this.state.last_name}
                 onChange={this.update("last_name")}
                 placeholder="Last Name"
-              />
+                />
 
-            <input type="text" value={this.state.zip_code}
-                onChange={this.update("zip_code")}
-                placeholder="ZIP Code"
-              />
-            <Birthday />
-            <input type="submit" value="Sign Up" />
-          </form>
-          <Link to="/login">Already on Ike!? Log in</Link>
-      </div>
+              <input type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+
+              <input type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+
+              <input type="text" value={this.state.zip_code}
+                  onChange={this.update("zip_code")}
+                  placeholder="ZIP Code"
+                />
+
+              <select onChange={this.update("month")}>
+                  <option default>Month</option>
+                  {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(el => <option key={el}>{el}</option>)}
+              </select>
+
+              <select onChange={this.update("day")}>
+                  <option default>Day</option>
+                  {Array.from(new Array(31),(val,index)=>index + 1).map(el => <option key={el}>{el}</option>)}
+              </select>
+
+              <select onChange={this.update("year")}>
+                  <option default>Year</option>
+                  {Array.from(new Array(100),(val,index)=> 2018 - index).map(el => <option key={el}>{el}</option>)}
+              </select>
+
+              <input type="submit" value="Sign Up" />
+            </form>
+            <Link to="/login">Already on Ike!? Log in</Link>
+          </div>
+
+        </div>
 
       </div>
     );
