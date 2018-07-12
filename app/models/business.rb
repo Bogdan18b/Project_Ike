@@ -5,7 +5,6 @@
 #  id               :bigint(8)        not null, primary key
 #  name             :string           not null
 #  address          :string           not null
-#  hours            :string           not null
 #  phone            :string           not null
 #  website          :string           not null
 #  latitude         :float            not null
@@ -13,6 +12,7 @@
 #  business_type_id :integer          not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  hours            :string           default([]), is an Array
 #
 
 class Business < ApplicationRecord
