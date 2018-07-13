@@ -19,7 +19,23 @@
   background-position-y: 15px;
   background-position-x: 470px;
   background-size: 7%;
+  display: flex;
+  justify-content: center;
 }
+
+.ike-login-button > a {
+  width: 100px;
+  height: 30px;
+  padding-top: 50px;
+}
+
+.ike-login-signup {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
 .ike-active {
   transform: scale(2);
 }
@@ -112,6 +128,6 @@
   background-color: white;
   width: 623px;
   height: 35px;
-  margin: 5px 599px;
+  margin: 5px 150px;
   border-radius: 5px;
 }

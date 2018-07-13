@@ -1,12 +1,16 @@
 import React from 'react';
 import BusinessTypeContainer from './business_type_container';
+import { Link } from 'react-router-dom';
+import GreetingContainer from '../greeting/greeting_container';
+
 class BusinessShow extends React.Component {
+
   componentDidMount() {
     this.props.requestBusiness(this.props.match.params.businessId);
   }
 
   render() {
-    const business = this.props.business
+    const business = this.props.business;
     if (business === undefined) {
       return <p>...coming soon</p>
     }
@@ -15,6 +19,7 @@ class BusinessShow extends React.Component {
 
         <div className="ike-business-show-header">
           <input className="ike--business-div-search"type="text" placeholder="search coming soon..." />
+          <GreetingContainer />
         </div>
         <div className="ike-business-show-header-nav">
           <BusinessTypeContainer />

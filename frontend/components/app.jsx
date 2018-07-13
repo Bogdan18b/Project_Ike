@@ -11,12 +11,12 @@ import BusinessTypeContainer from './business/business_type_container';
 
 const App = () => (
   <div>
-    <GreetingContainer />
     <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
     <Route  exact path="/businesses" component={BusinessIndexContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <Footer />
+    <GreetingContainer />
   </div>
 );
 
