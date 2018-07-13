@@ -7,6 +7,8 @@ import GreetingContainer from './greeting/greeting_container';
 import { Footer } from './footer/footer';
 import BusinessIndexContainer from './business/business_index_container';
 import BusinessShowContainer from './business/business_show_container';
+import BusinessTypeContainer from './business/business_type_container';
+
 const App = () => (
   <div>
     <GreetingContainer />

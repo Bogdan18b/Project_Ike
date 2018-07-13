@@ -1,8 +1,6 @@
 import React from 'react';
-
+import BusinessTypeContainer from './business_type_container';
 class BusinessShow extends React.Component {
-
-
   componentDidMount() {
     this.props.requestBusiness(this.props.match.params.businessId);
   }
@@ -15,9 +13,11 @@ class BusinessShow extends React.Component {
     return (
       <div className="ike-business-show-main">
 
-        <div className="ike-business-show-header"></div>
+        <div className="ike-business-show-header">
+          <input className="ike--business-div-search"type="text" placeholder="search coming soon..." />
+        </div>
         <div className="ike-business-show-header-nav">
-          <ul></ul>
+          <BusinessTypeContainer />
         </div>
 
           <div className="ike-business-show-title">
@@ -42,15 +42,15 @@ class BusinessShow extends React.Component {
             <img src={business.photos[1].photoURL} alt="coming soon"/>
             <img src={business.photos[2].photoURL} alt="coming soon"/>
           </div>
-          <div class="ike-business-show-rev">
+          <div className="ike-business-show-rev">
 
             <div className="ike-business-show-reviews"></div>
             <div className="ike-business-show-details">
 
 
               <ul className="ike-business-show-hours">
-                <li>Mon: </li>
-                <li>{business.hours[0]}</li>
+                <h1>Hours</h1>
+                <li>Mon: {business.hours[0]}</li>
                 <li>Tue: </li>
                 <li>{business.hours[1]}</li>
                 <li>Wed: </li>
