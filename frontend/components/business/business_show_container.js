@@ -4,7 +4,7 @@ import { requestBusiness } from '../../actions/business_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    business: state.entities.businesses[ownProps.match.params.businessId]
+    business: state.entities.businesses[ownProps.match.params.businessId],
   };
 };
 

@@ -1,0 +1,89 @@
+// Place all the styles related to the BusinessTypes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.ike-business-show-main {
+
+}
+
+.ike-business-show-header {
+  background-color: #d32323;
+  right: 0;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  height: 40px;
+  background-image: image_url('ikelogo.png');
+  background-repeat: no-repeat;
+  background-position-y: 4px;
+  background-position-x: 159px;
+  background-size: 10%;
+}
+
+.ike-business-show-title {
+  height: 200px;
+  width: 300px;
+  margin-left: 250px;
+}
+
+.ike-business-show-title > h1 {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.ike-business-show-map {
+  width: 280px;
+  height: 350px;
+  background-color: green;
+}
+
+.ike-business-show-hours {
+  width: 150px;
+  height: 300px;
+  border: 1px solid lightgrey;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+.ike-business-show-reviews {
+  width: 600px;
+  height: 1000px;
+  margin: 0 auto;
+  background-color: black;
+}
+
+.ike-business-show-pics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.ike-business-show-pics > img {
+  width: 240px;
+  height: 240px;
+}
+
+.ike-business-show-pics > img:hover {
+  transform: scale(1.1);
+}
+
+.ike-business-show-pics > img:nth-child(3) {
+  transform: scale(1.1);
+}
+
+.fa-star {
+  color: #d32323;
+  border: 1px solid #d32323;
+  margin-left: 5px;
+}
+
+.ike-business-show-rev {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  margin: 0 auto;
+}
