@@ -19,6 +19,8 @@ class Business < ApplicationRecord
   validates :name, :address, :hours, :phone, :website, :latitude, :longitude, presence: true
   validates :name, uniqueness: true
 
+  has_many_attached :photos
+
   belongs_to :business_type,
   foreign_key: :business_type_id,
   class_name: :BusinessType

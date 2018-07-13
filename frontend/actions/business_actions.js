@@ -25,11 +25,8 @@ export const fetchAllBusinessTypes = (types) => {
 };
 
 export const requestAllBusinesses = () => {
-  debugger
   return dispatch => {
-    debugger
     BusinessApiUtil.fetchAllBusinesses().then(businesses => {
-      debugger
       return dispatch(fetchAllBusinesses(businesses));
     });
   };
