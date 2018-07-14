@@ -27,6 +27,7 @@
   width: 100px;
   height: 30px;
   padding-top: 50px;
+
 }
 
 .ike-login-signup {
@@ -75,7 +76,6 @@
   width: 600px;
   height: 1000px;
   margin: 0 auto;
-  background-color: black;
 }
 
 .ike-business-show-pics {
@@ -97,12 +97,6 @@
 
 .ike-business-show-pics > img:nth-child(3) {
   transform: scale(1.1);
-}
-
-.fa-star {
-  color: #d32323;
-  border: 1px solid #d32323;
-  margin-left: 5px;
 }
 
 .ike-business-show-rev {

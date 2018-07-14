@@ -2,6 +2,7 @@ import React from 'react';
 import BusinessTypeContainer from './business_type_container';
 import { Link } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
+import { Reviews } from './business_show_reviews';
 
 class BusinessShow extends React.Component {
 
@@ -49,7 +50,9 @@ class BusinessShow extends React.Component {
           </div>
           <div className="ike-business-show-rev">
 
-            <div className="ike-business-show-reviews"></div>
+            <div className="ike-business-show-reviews">
+              <Reviews reviews={Object.values(business.reviews)} />
+            </div>
             <div className="ike-business-show-details">
 
 

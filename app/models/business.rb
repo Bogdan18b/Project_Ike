@@ -13,6 +13,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  hours            :string           default([]), is an Array
+#  rating           :integer
 #
 
 class Business < ApplicationRecord
@@ -24,5 +25,9 @@ class Business < ApplicationRecord
   belongs_to :business_type,
   foreign_key: :business_type_id,
   class_name: :BusinessType
+
+  has_many :reviews,
+  foreign_key: :business_id,
+  class_name: :Review
 
 end

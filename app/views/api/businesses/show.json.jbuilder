@@ -6,3 +6,12 @@ json.photos do
     json.photoURL url_for(photo)
   end
 end
+json.reviews do
+
+@business.reviews.each do |review|
+    json.set! review.id do
+      json.extract! review, :body, :rating, :id
+      json.userName review.user.first_name
+    end
+  end
+end
