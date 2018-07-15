@@ -30,8 +30,8 @@ photo1 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/avra1.jpg')
 photo2 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/avra2.jpg')
 photo3 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/avra3.jpg')
 b1.photos.attach(io: photo1, filename: 'avra1.jpg')
-b1.photos.attach(io: photo2, filename: 'avra1.jpg')
-b1.photos.attach(io: photo3, filename: 'avra1.jpg')
+b1.photos.attach(io: photo2, filename: 'avra2.jpg')
+b1.photos.attach(io: photo3, filename: 'avra3.jpg')
 b1.save!
 
 b2 = Business.create!(name: "Num Pang Kitchen", rating: 4, address: "1129 Broadway, New York, NY 10010", phone: "(212) 647-8889", website: "https://www.numpangkitchen.com/", hours: ["11:00am-9:00pm", "11:00am-9:00pm", "11:00am-9:00pm", "11:00am-9:00pm", "11:00am-9:00pm", "11:00am-9:00pm", "11:00am-9:00pm"], latitude: 40.743437, longitude: -73.989264, business_type_id: bt2.id)
@@ -40,8 +40,8 @@ photo4 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/numpang1.jp
 photo5 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/numpang2.jpg')
 photo6 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/numpang3.jpg')
 b2.photos.attach(io: photo4, filename: 'numpang1.jpg')
-b2.photos.attach(io: photo5, filename: 'numpang1.jpg')
-b2.photos.attach(io: photo6, filename: 'numpang1.jpg')
+b2.photos.attach(io: photo5, filename: 'numpang2.jpg')
+b2.photos.attach(io: photo6, filename: 'numpang3.jpg')
 b2.save!
 
 r1 = Review.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", rating: 3, user_id: u1.id, business_id: b1.id)

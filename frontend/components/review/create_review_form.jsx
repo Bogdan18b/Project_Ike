@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import Rating from 'react-rating';
 
 class CreateReviewForm extends React.Component {
   constructor(props) {
@@ -36,11 +35,7 @@ class CreateReviewForm extends React.Component {
 
           <div className="ike-review-form-wrapper">
 
-            <Rating className="ike-review-rating"
-              emptySymbol="fa fa-star-o grey-star"
-              fullSymbol="fa fa-star red-star"
-              />
-            <input type="number" value={this.state.rating}
+            <input id="rating-in-stars" type="number" value={this.state.rating}
               onChange={this.update('rating')} placeholder="rating"
             />
 
