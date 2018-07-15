@@ -26,10 +26,8 @@ export const requestAllReviews = () => {
 };
 
 export const createReview = (review) => {
-  debugger
   return dispatch => {
     ReviewApiUtil.createReview(review).then(review => {
-      debugger
       return dispatch(receiveReview(review));
     });
   };

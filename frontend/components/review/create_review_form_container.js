@@ -3,14 +3,12 @@ import CreateReviewForm from './create_review_form';
 import { createReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   const businessId = ownProps.match.params.businessId;
   const review = { rating: '', body: '', businessId};
   return { review };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  debugger
   return {
     createReview: review => dispatch(createReview(review)),
   };

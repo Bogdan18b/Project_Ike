@@ -7,13 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-#dont forget destroy all when seeding
 User.destroy_all
 Business.destroy_all
 BusinessType.destroy_all
 Review.destroy_all
 
-u1 = User.create!(email: "bogdan@yahoo.com", first_name: "bogdan", last_name: "b", password: "123456", zip_code: "12345")
+u1 = User.create!(email: "guest@yahoo.com", first_name: "guest", last_name: "b", password: "123456", zip_code: "12345")
 u2 = User.create!(email: "user@yahoo.com", first_name: "user", last_name: "b", password: "123456", zip_code: "12345")
 u3 = User.create!(email: "jimmy@yahoo.com", first_name: "jimmy", last_name: "b", password: "123456", zip_code: "12345")
 
@@ -24,31 +23,35 @@ bt4 = BusinessType.create!(name: "pet stores")
 bt5 = BusinessType.create!(name: "electronics")
 bt6 = BusinessType.create!(name: "hardware stores")
 
-b1 = Business.create!(name: "NOIR", rating: 4, address: "22 W 38", phone: "212-344-5555", website: "www.drink.com", hours: ["9:00am-2:00am", "9:00am-2:00am", "9:00am-2:00am", "9:00am-2:00am", "9:00am-2:00am", "9:00am-1:00am", "9:00am-1:00am"], latitude: 35, longitude: 44, business_type_id: bt2.id)
+b1 = Business.create!(name: "Avra", rating: 4, address: "141 E 48th St
+New York, NY 10017", phone: "(212) 759-8550", website: "http://avrany.com/", hours: ["11:30am-11:30pm", "11:30am-11:30pm", "11:30am-11:30pm", "11:30am-11:30pm", "11:30am-12:00am", "11:00am-1:00am", "11:00am-11:00pm"], latitude: 40.755117, longitude: -73.972519, business_type_id: bt2.id)
 
-photo1 = File.open('app/assets/images/food.jpg')
-photo2 = File.open('app/assets/images/food2.jpg')
-photo3 = File.open('app/assets/images/morefood.jpg')
-photo4 = File.open('app/assets/images/ikelogo.png')
-b1.photos.attach(io: photo1, filename: 'food.jpg')
-b1.photos.attach(io: photo2, filename: 'food2.jpg')
-b1.photos.attach(io: photo3, filename: 'morefood.jpg')
+photo1 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/avra1.jpg')
+photo2 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/avra2.jpg')
+photo3 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/avra3.jpg')
+b1.photos.attach(io: photo1, filename: 'avra1.jpg')
+b1.photos.attach(io: photo2, filename: 'avra1.jpg')
+b1.photos.attach(io: photo3, filename: 'avra1.jpg')
 b1.save!
 
+b2 = Business.create!(name: "Num Pang Kitchen", rating: 4, address: "1129 Broadway, New York, NY 10010", phone: "(212) 647-8889", website: "https://www.numpangkitchen.com/", hours: ["11:00am-9:00pm", "11:00am-9:00pm", "11:00am-9:00pm", "11:00am-9:00pm", "11:00am-9:00pm", "11:00am-9:00pm", "11:00am-9:00pm"], latitude: 40.743437, longitude: -73.989264, business_type_id: bt2.id)
 
-b2 = Business.create!(name: "Irish Bar", rating: 4, address: "22 W 38", phone: "212-344-5555", website: "www.drink.com", hours: ["9:00am-2:00am", "9:00am-2:00am", "9:00am-2:00am", "9:00am-2:00am", "9:00am-2:00am", "9:00am-1:00am", "9:00am-1:00am"], latitude: 35, longitude: 44, business_type_id: bt3.id)
-
-file = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/6z9ACyG25qaFsLawxoYDL6YZ')
-b2.photos.attach(io: file, filename: '6z9ACyG25qaFsLawxoYDL6YZ.jpg')
-file2 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/VDgopPD6q31Gv587ufW3ijtw')
-b2.photos.attach(io: file2, filename: 'VDgopPD6q31Gv587ufW3ijtw.jpg')
-b2.photos.attach(io: photo4, filename: 'ikelogo.png')
+photo4 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/numpang1.jpg')
+photo5 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/numpang2.jpg')
+photo6 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/numpang3.jpg')
+b2.photos.attach(io: photo4, filename: 'numpang1.jpg')
+b2.photos.attach(io: photo5, filename: 'numpang1.jpg')
+b2.photos.attach(io: photo6, filename: 'numpang1.jpg')
 b2.save!
 
 r1 = Review.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", rating: 3, user_id: u1.id, business_id: b1.id)
 
 r2 = Review.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", rating: 3, user_id: u2.id, business_id: b1.id)
 
-r3 = Review.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", rating: 3, user_id: u1.id, business_id: b2.id)
+r3 = Review.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", rating: 3, user_id: u3.id, business_id: b1.id)
 
 r4 = Review.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", rating: 3, user_id: u3.id, business_id: b2.id)
+
+r4 = Review.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", rating: 3, user_id: u2.id, business_id: b2.id)
+
+r4 = Review.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", rating: 3, user_id: u1.id, business_id: b2.id)

@@ -22,7 +22,6 @@ class CreateReviewForm extends React.Component {
   }
 
   render () {
-    debugger
     return (
       <div>
         <div className="ike-review-form-header">
