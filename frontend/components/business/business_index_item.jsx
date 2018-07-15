@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from '../star_rating';
+
 const BusinessIndexItem = ({ business }) => {
   return (
     <ul className="ike-business-index-item">

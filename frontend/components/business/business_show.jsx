@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
 import { Reviews } from './business_show_reviews';
 import StarRating from '../star_rating';
-import CreateReviewFormContainer from '../review/create_review_form_container';
 
 class BusinessShow extends React.Component {
 
@@ -27,7 +26,7 @@ class BusinessShow extends React.Component {
         </div>
         <div className="ike-business-show-header-nav">
           <BusinessTypeContainer />
-          <CreateReviewFormContainer />
+          <button id="div-write-review"><Link to={`/businesses/${business.id}/reviews/new`}>Write a review</Link></button>
         </div>
 
           <div className="ike-business-show-title">

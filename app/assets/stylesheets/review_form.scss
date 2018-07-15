@@ -1,0 +1,63 @@
+.ike-review-form-header {
+  height: 80px;
+  background-color: #d32323;
+  display: flex;
+}
+
+.ike-review-form-header > h3 {
+  color: white;
+  font-size: 25px;
+  margin: 18px -214px;
+}
+
+#ike-review-logo {
+  width: 138px;
+  margin: -2px 229px;
+  height: 79px;
+}
+
+.ike-review-form {
+  height: 600px;
+}
+
+.ike-review-form-wrapper {
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+  height: 400px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 100px 200px;
+}
+
+.ike-review-form-body {
+  font-size: 18px;
+  padding: 30px;
+}
+
+.ike-review-rating {
+  padding: 30px;
+}
+
+.ike-review-form-button {
+  color: white;
+  font-weight: bold;
+  background-color: #d32323;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin: -66px 204px;
+  width: 200px;
+  font-size: 20px;
+  text-align: center;
+  padding: 8px;
+}
+
+#div-write-review {
+  background-color: #d32323;
+  width: 100px;
+  height: 30px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}

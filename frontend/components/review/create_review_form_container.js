@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import CreateReviewForm from './create_review_form';
 import { createReview } from '../../actions/review_actions';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   const review = { rating: '', body: '' };
 
   return { review };

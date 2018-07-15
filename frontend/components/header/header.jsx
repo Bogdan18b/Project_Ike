@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div>
       <div className="ike-homepage-header">
-        <Link to="/"><img id="logo-pic" src="https://s3.amazonaws.com/project-zebra-dev/ikelogo.png"/></Link>
+        <Link to="/"><img id="logo-pic" src="https://s3.amazonaws.com/project-zebra-dev/ikelogobig.png"/></Link>
         <input type="text" placeholder="search under construction..." />
       </div>
       <div className="ike-homepage-login-button">
