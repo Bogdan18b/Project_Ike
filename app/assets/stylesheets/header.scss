@@ -1,0 +1,39 @@
+.ike-homepage-header {
+  height: 600px;
+  background-image: url("https://s3.amazonaws.com/project-zebra-dev/6z9ACyG25qaFsLawxoYDL6YZ");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.ike-homepage-header > input {
+  background-color: white;
+  width: 800px;
+  height: 60px;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+#logo-pic {
+  width: 200px;
+  height: 60px;
+  margin: auto;
+}
+
+.ike-login-button > a {
+  width: 100px;
+  height: 30px;
+  padding-top: 50px;
+
+}
+
+.ike-login-signup {
+  color: black;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}

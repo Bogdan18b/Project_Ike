@@ -1,10 +1,11 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all
+    @reviews = Review.all.includes(:user).includes(:business)
   end
 
   def create
+    debugger
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     @review.business_id = params[:business_id]

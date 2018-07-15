@@ -16,9 +16,7 @@ const Greeting = ({ currentUser, logout }) => {
     </nav>
   );
   const personalGreeting = () => (
-    <hgroup className="ike-login-signup">
       <button className="ike-login-button" onClick={logout}>Log Out</button>
-    </hgroup>
   );
 
   return currentUser ? personalGreeting() : sessionLinks();

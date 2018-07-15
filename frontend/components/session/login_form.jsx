@@ -37,7 +37,9 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <header className="ike-div-login-header"></header>
+        <header className="ike-div-login-header">
+          <Link to="/"><img className="ike-header-pic" src="https://s3.amazonaws.com/project-zebra-dev/ikelogo.png"/></Link>
+        </header>
         <div className="ike-div-login-main">
           {this.renderErrors()}
           <div className="ike-div-login-form">

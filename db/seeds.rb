@@ -38,6 +38,10 @@ b1.save!
 
 b2 = Business.create!(name: "Irish Bar", rating: 4, address: "22 W 38", phone: "212-344-5555", website: "www.drink.com", hours: ["9:00am-2:00am", "9:00am-2:00am", "9:00am-2:00am", "9:00am-2:00am", "9:00am-2:00am", "9:00am-1:00am", "9:00am-1:00am"], latitude: 35, longitude: 44, business_type_id: bt3.id)
 
+file = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/6z9ACyG25qaFsLawxoYDL6YZ')
+b2.photos.attach(io: file, filename: '6z9ACyG25qaFsLawxoYDL6YZ.jpg')
+file2 = EzDownload.open('https://s3.amazonaws.com/project-zebra-dev/VDgopPD6q31Gv587ufW3ijtw')
+b2.photos.attach(io: file2, filename: 'VDgopPD6q31Gv587ufW3ijtw.jpg')
 b2.photos.attach(io: photo4, filename: 'ikelogo.png')
 b2.save!
 

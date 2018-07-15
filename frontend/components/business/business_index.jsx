@@ -9,6 +9,7 @@ class BusinessIndex extends React.Component {
   }
 
   render() {
+    debugger
     if (this.props.businesses === undefined) {
       return <p>coming soon</p>;
     }
