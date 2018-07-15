@@ -7,7 +7,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .ike-homepage-header > input {
@@ -24,7 +23,34 @@
   margin: -63px auto;
 }
 
-.ike-login-button > a {
+#signup-button {
+  width: 136px;
+  height: 40px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+#signup-button:hover {
+  background-color: white;
+  color: grey;
+}
+
+#login-button, #logout-button {
+  width: 136px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -50px;
+}
+#login-button:hover, #logout-button:hover {
+  text-decoration: underline;
+}
+
+.ike-login-button {
   width: 100px;
   height: 30px;
   padding-top: 50px;
@@ -32,8 +58,12 @@
 }
 
 .ike-login-signup {
-  color: black;
   font-weight: bold;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  position: absolute;
+  margin: -40px 990px;
+  color: white;
+  padding: 20px;
+  font-size: 19px;
 }

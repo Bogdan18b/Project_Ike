@@ -6,17 +6,20 @@ import { Link } from 'react-router-dom';
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="ike-login-signup">
-      <button className="ike-signup-button">
-        <Link to="/signup">Sign Up</Link>
+      <button className="ike-login-button">
+        <Link id="login-button" to="/login">Log In</Link>
       </button>
 
-      <button className="ike-login-button">
-        <Link to="/login">Log In</Link>
+      <button  className="ike-login-button">
+        <Link id="signup-button" to="/signup">Sign Up</Link>
       </button>
     </nav>
   );
   const personalGreeting = () => (
-      <button className="ike-login-button" onClick={logout}>Log Out</button>
+    <nav className="ike-login-signup">
+      <button className="ike-login-button"
+        id="logout-button" onClick={logout}>Log Out</button>
+    </nav>
   );
 
   return currentUser ? personalGreeting() : sessionLinks();

@@ -100,7 +100,14 @@
 }
 
 .ike-header-pic {
-  width: 284px;
-  margin: -89px auto;
-  height: 203px;
+  width: 172px;
+  margin: -26px auto;
+  height: 98px;
+}
+
+.ike-header-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 172px;
+  margin: 0 auto;
 }

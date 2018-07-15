@@ -1,7 +1,7 @@
 import React from 'react';
 import BusinessTypeContainer from './business_type_container';
 import { Link } from 'react-router-dom';
-import GreetingContainer from '../greeting/greeting_container';
+import GreetingContainer from '../greeting/greeting_business_container';
 import { Reviews } from './business_show_reviews';
 import StarRating from '../star_rating';
 
@@ -19,9 +19,9 @@ class BusinessShow extends React.Component {
     }
     return (
       <div className="ike-business-show-main">
-
         <div className="ike-business-show-header">
-          <input className="ike--business-div-search"type="text" placeholder="search coming soon..." />
+          <Link to="/"><img id="logo-pic-business" src="https://s3.amazonaws.com/project-zebra-dev/logo.png"/></Link>
+          <input className="ike-business-div-search"type="text" placeholder="search coming soon..." />
           <GreetingContainer />
         </div>
         <div className="ike-business-show-header-nav">

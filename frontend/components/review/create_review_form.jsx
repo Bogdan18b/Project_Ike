@@ -27,7 +27,7 @@ class CreateReviewForm extends React.Component {
       <div>
         <div className="ike-review-form-header">
           <Link to="/"><img id="ike-review-logo"
-            src="https://s3.amazonaws.com/project-zebra-dev/ikelogo.png"/>
+            src="https://s3.amazonaws.com/project-zebra-dev/logo.png"/>
           </Link>
           <h3>Write a Review</h3>
         </div>
@@ -41,6 +41,9 @@ class CreateReviewForm extends React.Component {
               emptySymbol="fa fa-star-o grey-star"
               fullSymbol="fa fa-star red-star"
               />
+            <input type="number" value={this.state.rating}
+              onChange={this.update('rating')} placeholder="rating"
+            />
 
             <textarea className="ike-review-form-body"
                 rows="60" cols="60"
