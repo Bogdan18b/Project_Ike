@@ -4,9 +4,9 @@ import { createReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
   debugger
-  const review = { rating: '', body: '' };
   const businessId = ownProps.match.params.businessId;
-  return { review, businessId };
+  const review = { rating: '', body: '', businessId};
+  return { review };
 };
 
 const mapDispatchToProps = (dispatch) => {

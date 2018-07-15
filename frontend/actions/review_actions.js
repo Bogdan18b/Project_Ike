@@ -25,10 +25,10 @@ export const requestAllReviews = () => {
   };
 };
 
-export const createReview = (review, businessId) => {
+export const createReview = (review) => {
   debugger
   return dispatch => {
-    ReviewApiUtil.createReview(review, businessId).then(review => {
+    ReviewApiUtil.createReview(review).then(review => {
       debugger
       return dispatch(receiveReview(review));
     });

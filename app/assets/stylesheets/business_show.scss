@@ -118,3 +118,30 @@
   height: 73px;
   margin: -7px;
 }
+
+.ike-login-business-signup {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  height: 100px;
+  width: 200px;
+  justify-content: space-around;
+  margin: -11px -162px;
+  margin-left: 15px;
+}
+
+#login-business-button {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+#signup-business-button {
+  padding: 10px;
+  background-color: #bd1f1f;
+}
+
+#signup-business-button:hover, #login-business-button:hover, #logout-business-button:hover {
+  background-color: #983b3b;
+}
