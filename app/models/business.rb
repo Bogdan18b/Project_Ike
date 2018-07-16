@@ -30,4 +30,13 @@ class Business < ApplicationRecord
   foreign_key: :business_id,
   class_name: :Review
 
+  def rating
+    ratings = []
+    self.reviews.each do |review|
+      ratings << review.rating
+    end
+    rating = (ratings.reduce(:+)) / ratings.length unless ratings.empty?
+    return rating || 1
+  end
+
 end
