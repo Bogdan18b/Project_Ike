@@ -11,7 +11,6 @@ export const fetchAllBusinesses = (businesses) => {
   };
 };
 export const fetchBusiness = (payload) => {
-  debugger
   return {
     type: FETCH_BUSINESS,
     payload
@@ -34,10 +33,8 @@ export const requestAllBusinesses = () => {
 };
 
 export const requestBusiness = (id) => {
-  debugger
   return dispatch => {
     BusinessApiUtil.fetchBusiness(id).then((payload) => {
-      debugger
       return dispatch(fetchBusiness(payload));
     });
   };

@@ -3,7 +3,6 @@ import BusinessShow from './business_show';
 import { requestBusiness } from '../../actions/business_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   const reviews = Object.values(state.entities.reviews);
   return {
     business: state.entities.businesses[ownProps.match.params.businessId],

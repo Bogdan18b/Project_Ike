@@ -26,13 +26,14 @@ class BusinessIndex extends React.Component {
         <div className="ike-business-show-header-nav">
           <BusinessTypeContainer />
         </div>
+        <div className="ike-business-main-div">
+          <ul>
+            {businesses}
+          </ul>
 
-        <ul>
-          {businesses}
-        </ul>
-
-        <div className="ike-business-index-map">
-          <BusinessMap />
+          <div className="ike-business-index-map">
+            <BusinessMap businesses={Object.values(this.props.businesses)}/>
+          </div>
         </div>
 
       </div>

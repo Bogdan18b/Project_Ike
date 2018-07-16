@@ -12,7 +12,6 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-    debugger
     const business = this.props.business;
     if (business === undefined || !business.photos) {
       return <p>...coming soon</p>

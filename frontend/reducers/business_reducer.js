@@ -2,7 +2,6 @@ import { FETCH_BUSINESS, FETCH_ALL_BUSINESSES } from '../actions/business_action
 import { merge } from 'lodash';
 
 const businessReducer = (state = {}, action) => {
-  debugger
   let business;
   switch (action.type) {
     case FETCH_BUSINESS:

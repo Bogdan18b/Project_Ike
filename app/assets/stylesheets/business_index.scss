@@ -2,14 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.ike-business-index-map {
-  width: 330px;
-  height: 330px;
-  position: absolute;
-  background-color: black;
-  top: 204px;
-  right: 293px;
-}
 
 .ike-business-index-item {
   display: flex;
@@ -36,4 +28,24 @@
 
 .ike-business-index-item li {
   padding: 5px;
+}
+
+.ike-business-main-div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  margin: 0px 235px;
+}
+
+.ike-business-index-map {
+  border: 1px solid gray;
+ display: inline-block;
+ height: fit-content;
+ margin: 73px 63px;
+}
+
+#map-container {
+  padding: 20px;
+  width: 300px;
+  height: 300px;
 }
