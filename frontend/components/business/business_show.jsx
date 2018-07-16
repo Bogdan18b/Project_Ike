@@ -12,14 +12,15 @@ class BusinessShow extends React.Component {
   }
 
   render() {
+    debugger
     const business = this.props.business;
-    if (business === undefined) {
+    if (business === undefined || !business.photos) {
       return <p>...coming soon</p>
     }
     return (
       <div className="ike-business-show-main">
         <div className="ike-business-show-header">
-          <Link to="/"><img id="logo-pic-business" src="https://s3.amazonaws.com/project-zebra-dev/logo.png"/></Link>
+          <Link to="/"><img id="logo-pic-business" src="https://s3.amazonaws.com/project-zebra-seeding-dev/logo.png"/></Link>
           <input className="ike-business-div-search"type="text" placeholder="search coming soon..." />
           <GreetingContainer />
         </div>
@@ -36,20 +37,20 @@ class BusinessShow extends React.Component {
 
               <p>{business.address}</p>
               <p>{business.phone}</p>
-              <p>{business.website}</p>
+              <p><a href={business.website}>{business.website}</a></p>
           </div>
 
 
           <div className="ike-business-show-pics">
             <div className="ike-business-show-map"></div>
-            <img src={business.photos[0].photoURL} alt="coming soon"/>
-            <img src={business.photos[1].photoURL} alt="coming soon"/>
-            <img src={business.photos[2].photoURL} alt="coming soon"/>
+            <img src={business.photos[0]} alt="coming soon"/>
+            <img src={business.photos[1]} alt="coming soon"/>
+            <img src={business.photos[2]} alt="coming soon"/>
           </div>
           <div className="ike-business-show-rev">
 
             <div className="ike-business-show-reviews">
-              <Reviews reviews={Object.values(business.reviews)} />
+              <Reviews reviews={this.props.reviews} />
             </div>
             <div className="ike-business-show-details">
 

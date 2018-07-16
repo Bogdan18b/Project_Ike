@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import BusinessIndexItem from './business_index_item';
 import BusinessTypeContainer from './business_type_container';
 import GreetingContainer from '../greeting/greeting_business_container';
+import BusinessMap from '../map/map'
 
 class BusinessIndex extends React.Component {
   componentDidMount() {
@@ -18,7 +19,7 @@ class BusinessIndex extends React.Component {
     return (
       <div>
         <div className="ike-business-show-header">
-          <Link to="/"><img id="logo-pic-business-index" src="https://s3.amazonaws.com/project-zebra-dev/logo.png"/></Link>
+          <Link to="/"><img id="logo-pic-business-index" src="https://s3.amazonaws.com/project-zebra-seeding-dev/logo.png"/></Link>
           <input className="ike-business-div-search"type="text" placeholder="search coming soon..." />
           <GreetingContainer />
         </div>
@@ -31,6 +32,7 @@ class BusinessIndex extends React.Component {
         </ul>
 
         <div className="ike-business-index-map">
+          <BusinessMap />
         </div>
 
       </div>
