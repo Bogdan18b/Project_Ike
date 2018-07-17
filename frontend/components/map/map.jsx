@@ -21,7 +21,6 @@ class BusinessMap extends React.Component {
 
 
   render() {
-    debugger
     return <div id='map-container' ref={ map => this.mapNode = map }/>;
   }
 

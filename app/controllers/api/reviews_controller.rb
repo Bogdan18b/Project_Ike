@@ -9,7 +9,7 @@ class Api::ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.business_id = params[:business_id]
     if @review.save
-      render api_business_url(@review.business_id)
+      render json: ["it's working"]
     else
       render json: @review.errors.full_messages, status: 422
     end

@@ -186,7 +186,7 @@ b15.photos.attach(io: photo38, filename: 'ludlow2.jpg')
 b15.photos.attach(io: photo39, filename: 'ludlow3.jpg')
 b15.save!
 
-b16 = Business.create!(name: "Inform Fitness", address: "201 E 56th St Fl 2 New York, NY 10022", phone: "(212) 755-9895", website: "http://www.informfitness.com/", hours: ["6:00am-9:00pm", "6:00am-9:00pm", "6:00am-9:00pm", "6:00am-9:00pm", "6:00am-9:00pm", "6:00am-3:00pm", "Closed"], latitude: 40.719092, longitude: -73.988673, business_type_id: bt1.id)
+b16 = Business.create!(name: "Inform Fitness", address: "201 E 56th St, Fl 2 New York, NY 10022", phone: "(212) 755-9895", website: "http://www.informfitness.com/", hours: ["6:00am-9:00pm", "6:00am-9:00pm", "6:00am-9:00pm", "6:00am-9:00pm", "6:00am-9:00pm", "6:00am-3:00pm", "Closed"], latitude: 40.719092, longitude: -73.988673, business_type_id: bt1.id)
 
 photo40 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/inform1.jpg')
 photo41 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/inform2.jpg')
@@ -196,15 +196,45 @@ b16.photos.attach(io: photo41, filename: 'inform2.jpg')
 b16.photos.attach(io: photo42, filename: 'inform3.jpg')
 b16.save!
 
-b17 = Business.create!(name: "Phyt NYC", address: "139 E 57th St Fl 5 New York, NY 10022", phone: "(212) 688-7498", website: "http://www.phytnyc.com/", hours: ["6:00am-9:00pm", "6:00am-9:00pm", "6:00am-9:00pm", "6:00am-9:00pm", "6:00am-8:00pm", "9:00am-6:00pm", "10:00am-6:00pm"], latitude: 40.761003, longitude: -73.968793, business_type_id: bt1.id)
+b17 = Business.create!(name: "Nerai", address: "55 E 54th St  New York, NY 10022", phone: "(212) 759-5555", website: "http://www.nearinyc.com/", hours: ["7:30am-10:00pm", "7:30am-10:00pm", "7:30am-10:00pm", "7:30am-10:00pm", "7:30am-10:30pm", "5:00pm-10:30pm", "5:00pm-9:30pm"], latitude: 40.760244, longitude: -73.973086, business_type_id: bt2.id)
 
-photo43 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/phyt1.jpg')
-photo44 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/phyt2.jpg')
-photo45 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/phyt3.jpg')
-b17.photos.attach(io: photo43, filename: 'phyt1.jpg')
-b17.photos.attach(io: photo44, filename: 'phyt2.jpg')
-b17.photos.attach(io: photo45, filename: 'phyt3.jpg')
+photo43 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/nerai1.jpg')
+photo44 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/nerai2.jpg')
+photo45 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/nerai3.jpg')
+b17.photos.attach(io: photo43, filename: 'nerai1.jpg')
+b17.photos.attach(io: photo44, filename: 'nerai2.jpg')
+b17.photos.attach(io: photo45, filename: 'nerai3.jpg')
 b17.save!
+
+b18 = Business.create!(name: "Phyt NYC", address: "139 E 57th St , Fl 5, New York, NY 10022", phone: "(212) 688-7498", website: "http://www.phytnyc.com/", hours: ["6:00am-9:00pm", "6:00am-9:00pm", "6:00am-9:00pm", "6:00am-9:00pm", "6:00am-8:00pm", "9:00am-6:00pm", "10:00am-6:00pm"], latitude: 40.761003, longitude: -73.968793, business_type_id: bt1.id)
+
+photo46 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/phyt1.jpg')
+photo47 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/phyt2.jpg')
+photo48 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/phyt3.jpg')
+b18.photos.attach(io: photo46, filename: 'phyt1.jpg')
+b18.photos.attach(io: photo47, filename: 'phyt2.jpg')
+b18.photos.attach(io: photo48, filename: 'phyt3.jpg')
+b18.save!
+
+b19 = Business.create!(name: "Allora Ristorante", address: "145 E 47th St , New York, NY 10017", phone: "(212) 754-9800", website: "http://www.alloranyc.com/", hours: ["7:00am-11:00pm", "7:00am-11:00pm", "7:00am-11:00pm", "7:00am-11:00pm", "7:00am-11:00pm", "7:00am-11:00pm", "7:00am-11:00pm"], latitude: 40.754432, longitude: -73.972685, business_type_id: bt2.id)
+
+photo49 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/allora1.jpg')
+photo50 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/allora2.jpg')
+photo51 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/allora3.jpg')
+b19.photos.attach(io: photo49, filename: 'allora1.jpg')
+b19.photos.attach(io: photo50, filename: 'allora2.jpg')
+b19.photos.attach(io: photo51, filename: 'allora3.jpg')
+b19.save!
+
+b20 = Business.create!(name: "The Sea Fire Grill", address: "158 E 48th St , New York, NY 10017", phone: "(212) 935-3785", website: "http://www.theseafiregrill.com/", hours: ["11:30am:10:30pm", "11:30am:10:30pm", "11:30am:10:30pm", "11:30am:10:30pm", "11:30am:10:30pm", "5:00pm-10:30pm", "5:00pm-10:30pm"], latitude: 40.754692, longitude: -73.972222, business_type_id: bt2.id)
+
+photo52 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/seafire1.jpg')
+photo53 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/seafire2.jpg')
+photo54 = EzDownload.open('https://s3.amazonaws.com/project-zebra-seeding-dev/seafire3.jpg')
+b20.photos.attach(io: photo52, filename: 'seafire1.jpg')
+b20.photos.attach(io: photo53, filename: 'seafire2.jpg')
+b20.photos.attach(io: photo54, filename: 'seafire3.jpg')
+b20.save!
 
 r1 = Review.create!(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", rating: 3, user_id: u1.id, business_id: b1.id)
 

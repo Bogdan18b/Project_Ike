@@ -8,7 +8,7 @@ export const ReviewIndexItem = ({ review }) => {
       <li>{review.userName}</li>
       <li><Link to={`/businesses/${review.businessId}`}>{review.businessName}</Link></li>
       <li><StarRating rating={review.rating} /></li>
-      <li>{review.body}</li> //wrap in a div make overflow flow none button to expand change height property
+      <li>{review.body}</li>
     </ul>
   );
 };

@@ -19,7 +19,7 @@ export const receiveReview = (review) => {
 
 export const requestAllReviews = () => {
   return dispatch => {
-    ReviewApiUtil.fetchAllReviews().then(reviews => {
+    return ReviewApiUtil.fetchAllReviews().then(reviews => {
       return dispatch(fetchAllReviews(reviews));
     });
   };
@@ -27,7 +27,7 @@ export const requestAllReviews = () => {
 
 export const createReview = (review) => {
   return dispatch => {
-    ReviewApiUtil.createReview(review).then(review => {
+    return ReviewApiUtil.createReview(review).then(review => {
       return dispatch(receiveReview(review));
     });
   };

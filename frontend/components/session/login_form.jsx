@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   handleSubmit(e) {
@@ -31,6 +32,13 @@ class LoginForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  guestLogin() {
+    return (e) => {
+      e.preventDefault();
+      this.props.login({email:'guest@yahoo.com', password:'123456'});
+    };
   }
 
 
@@ -61,6 +69,10 @@ class LoginForm extends React.Component {
             </form>
 
             <Link to="/signup">New to Ike!? Sign up</Link>
+
+            <button className="ike-guest-login"
+              onClick={this.guestLogin()}>Guest Login
+            </button>
 
           </div>
 

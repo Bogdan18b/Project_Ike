@@ -4,7 +4,8 @@ import { createReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const businessId = ownProps.match.params.businessId;
-  const review = { rating: '', body: '', businessId};
+  const className = "fa fa-star grey-star";
+  const review = { rating: '', body: '', businessId, className};
   return { review };
 };
 

@@ -4,11 +4,13 @@ import { withRouter, Link } from 'react-router-dom';
 class CreateReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.review;
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.changeClass = this.changeClass.bind(this);
+    this.updateBody = this.updateBody.bind(this);
   }
 
-  update(field) {
+  updateBody() {
     return (e) => {
       this.setState({[field]: e.target.value
       });
@@ -17,7 +19,13 @@ class CreateReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state).then(() => this.props.history.push('/'));
+    this.props.createReview(this.state).then(() => {
+      return this.props.history.push(`/businesses/${this.props.match.params.businessId}`)
+    });
+  }
+
+  changeClass() {
+    this.setState({className: (this.state.className === "fa fa-star red-star") ? "fa fa-star grey-star" : "fa fa-star red-star"});
   }
 
   render () {
@@ -35,14 +43,38 @@ class CreateReviewForm extends React.Component {
 
           <div className="ike-review-form-wrapper">
 
-            <input id="rating-in-stars" type="number" value={this.state.rating}
-              onChange={this.update('rating')} placeholder="rating"
-            />
+            <div>
+
+              <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
+                className={this.state.className}
+                onClick={() => this.state.rating = 1}
+              ></span>
+
+              <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
+                className={this.state.className}
+                onClick={() => this.state.rating = 2}
+              ></span>
+
+              <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
+                className={this.state.className}
+                onClick={() => this.state.rating = 3}
+              ></span>
+
+              <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
+                className={this.state.className}
+                onClick={() => this.state.rating = 4}
+              ></span>
+
+              <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
+                className={this.state.className}
+                onClick={() => this.state.rating = 5}
+              ></span>
+            </div>
 
             <textarea className="ike-review-form-body"
                 rows="60" cols="60"
                 value={this.state.body}
-                onChange={this.update('body')}
+                onChange={this.updateBody}
                 placeholder="Your review helps others learn about great local businesses.
                 Please do not review this business if you received a freebie for writing this review, or if you are connected in any way to the owner or employees."
             />

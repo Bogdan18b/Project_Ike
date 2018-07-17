@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_business_container';
 import { Reviews } from './business_show_reviews';
 import StarRating from '../star_rating';
+import BusinessMap from '../map/map';
 
 class BusinessShow extends React.Component {
 
@@ -18,26 +19,36 @@ class BusinessShow extends React.Component {
     }
     return (
       <div className="ike-business-show-main">
+
         <div className="ike-business-show-header">
-          <Link to="/"><img id="logo-pic-business" src="https://s3.amazonaws.com/project-zebra-seeding-dev/logo.png"/></Link>
-          <input className="ike-business-div-search"type="text" placeholder="search coming soon..." />
+          <Link to="/">
+            <img id="logo-pic-business"
+              src="https://s3.amazonaws.com/project-zebra-seeding-dev/logo.png"/>
+          </Link>
+
+          <input className="ike-business-div-search" type="text" placeholder="search coming soon..." />
           <GreetingContainer />
         </div>
+
         <div className="ike-business-show-header-nav">
           <BusinessTypeContainer />
-          <button id="div-write-review"><Link to={`/businesses/${business.id}/reviews/new`}>Write a review</Link></button>
+          <button id="div-write-review">
+            <Link to={`/businesses/${business.id}/reviews/new`}>Write a review
+            </Link>
+        </button>
+
         </div>
 
-          <div className="ike-business-show-title">
-              <h1>{business.name}</h1>
-              <h3>{business.businessType}</h3>
+        <div className="ike-business-show-title">
+            <h1>{business.name}</h1>
+            <h3>{business.businessType}</h3>
 
-              <StarRating rating={business.rating} />
+            <StarRating rating={business.rating} />
 
-              <p>{business.address}</p>
-              <p>{business.phone}</p>
-              <p><a href={business.website}>{business.website}</a></p>
-          </div>
+            <p>{business.address}</p>
+            <p>{business.phone}</p>
+            <p><a href={business.website}>{business.website}</a></p>
+        </div>
 
 
           <div className="ike-business-show-pics">
@@ -57,18 +68,12 @@ class BusinessShow extends React.Component {
               <ul className="ike-business-show-hours">
                 <h1>Hours</h1>
                 <li>Mon: {business.hours[0]}</li>
-                <li>Tue: </li>
-                <li>{business.hours[1]}</li>
-                <li>Wed: </li>
-                <li>{business.hours[2]}</li>
-                <li>Thu: </li>
-                <li>{business.hours[3]}</li>
-                <li>Fri: </li>
-                <li>{business.hours[4]}</li>
-                <li>Sat: </li>
-                <li>{business.hours[5]}</li>
-                <li>Sun: </li>
-                <li>{business.hours[6]}</li>
+                <li>Tue: {business.hours[1]}</li>
+                <li>Wed: {business.hours[2]}</li>
+                <li>Thu: {business.hours[3]}</li>
+                <li>Fri: {business.hours[4]}</li>
+                <li>Sat: {business.hours[5]}</li>
+                <li>Sun: {business.hours[6]}</li>
               </ul>
 
             </div>
