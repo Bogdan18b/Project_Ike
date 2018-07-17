@@ -12,13 +12,18 @@
   border-top: 1px solid lightgrey;
   margin-top: 20px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
+}
+
+#last {
+  margin: auto;
 }
 
 .ike-business-index-item img {
   width: 100px;
   height: 100px;
+  margin-right: 15px;
 }
 
 .ike-business-index-item a {
@@ -29,8 +34,7 @@
 
 .ike-business-main-div {
   display: flex;
-  justify-content: space-between;
-  margin: 0px 235px;
+  justify-content: center;
 }
 
 .ike-business-index-map {

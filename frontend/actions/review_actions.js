@@ -3,10 +3,12 @@ import * as ReviewApiUtil from '../util/review_api_util';
 export const FETCH_ALL_REVIEWS = "FETCH_ALL_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 
-export const fetchAllReviews = (reviews) => {
+export const fetchAllReviews = ({ reviews, users, businesses}) => {
   return {
     type: FETCH_ALL_REVIEWS,
-    reviews
+    reviews,
+    users,
+    businesses
   };
 };
 
@@ -19,8 +21,8 @@ export const receiveReview = (review) => {
 
 export const requestAllReviews = () => {
   return dispatch => {
-    return ReviewApiUtil.fetchAllReviews().then(reviews => {
-      return dispatch(fetchAllReviews(reviews));
+    return ReviewApiUtil.fetchAllReviews().then(payload => {
+      return dispatch(fetchAllReviews(payload));
     });
   };
 };

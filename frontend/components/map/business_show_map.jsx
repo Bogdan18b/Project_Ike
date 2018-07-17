@@ -10,21 +10,26 @@ class BusinessMap extends React.Component {
     let lng = this.props.business.longitude;
     const mapOptions = {
         center: { lat, lng},
-        zoom: 19
+        zoom: 15
       };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     let myLatLong = new google.maps.LatLng(this.props.business.latitude, this.props.business.longitude);
     let marker = new google.maps.Marker({
       position: myLatLong,
-      title: this.props.business.name
+      title: this.props.business.name,
+      label: {
+      text: "!",
+      color: "white",
+      fontSize: "26px",
+      fontWeight: "bold"
+      }
     });
-    marker.setLabel('*');
     marker.setMap(this.map);
 
   }
 
   render() {
-    return <div id='map-container' ref={ map => this.mapNode = map }/>;
+    return <div id='business-map-container' ref={ map => this.mapNode = map }/>;
   }
 
 }

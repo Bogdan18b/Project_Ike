@@ -44,19 +44,21 @@ class BusinessShow extends React.Component {
 
         <div className="ike-business-show-title">
             <h1>{business.name}</h1>
+            <div>
+              <StarRating rating={business.rating} />
+              <p>{business.reviewIds.length} reviews</p>
+            </div>
             <h3>{business.businessType}</h3>
 
-            <StarRating rating={business.rating} />
-
-            <p>{business.address}</p>
-            <p>{business.phone}</p>
-            <p><a href={business.website}>{business.website}</a></p>
         </div>
 
-
           <div className="ike-business-show-pics">
+
             <div className="ike-business-show-map">
               <BusinessMap business={business} />
+              <p>{business.address}</p>
+              <p>{business.phone}</p>
+              <p><a href={business.website}>{business.website}</a></p>
             </div>
 
             <img onMouseOver={() => this.setState({1: 'hovered', 2: '', 3: ''})}

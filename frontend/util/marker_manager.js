@@ -11,7 +11,7 @@ class MarkerManager {
       let myLatLong = new google.maps.LatLng(business.latitude, business.longitude);
       let marker = new google.maps.Marker({
         position: myLatLong,
-        title: business.name
+        title: business.name,
       });
       this.markers[business.id] = marker;
       marker.setLabel(`${business.id}`);
