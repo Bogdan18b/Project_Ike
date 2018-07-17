@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import StarRating from '../star_rating';
 
 const BusinessIndexItem = ({ business }) => {
-  debugger
   return (
     <div className="ike-business-index-item">
       <img src={business.photoURL} alt="photo"/>

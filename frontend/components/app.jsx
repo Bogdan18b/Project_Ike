@@ -11,9 +11,11 @@ import BusinessTypeContainer from './business/business_type_container';
 import ReviewIndexContainer from './review/review_index_container';
 import CreateReviewFormContainer from './review/create_review_form_container';
 import Header from './header/header';
+import SearchBox from './search/search';
 
 const App = () => (
   <div>
+    <SearchBox />
     <Route exact path="/" component={Header} />
     <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
     <Route exact path="/businesses" component={BusinessIndexContainer} />

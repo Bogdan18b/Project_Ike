@@ -4,10 +4,12 @@ import BusinessIndexItem from './business_index_item';
 import BusinessTypeContainer from './business_type_container';
 import GreetingContainer from '../greeting/greeting_business_container';
 import BusinessMap from '../map/map'
+import SearchBox from '../search/search';
 
 class BusinessIndex extends React.Component {
   componentDidMount() {
     this.props.requestAllBusinesses();
+    this.props.requestAllBusinessTypes();
   }
 
   render() {

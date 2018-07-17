@@ -26,14 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.getState = store.getState;
-  window.fetchAllBusinesses = BusinessApiUtil.fetchAllBusinesses;
-  window.fetchAllBusinessTypes = BusinessApiUtil.fetchAllBusinessTypes;
-  window.fetchBusiness = BusinessApiUtil.fetchBusiness;
-  window.requestBusiness = requestBusiness;
-  window.requestAllReviews = requestAllReviews;
-  window.createReview = createReview;
   window.dispatch = store.dispatch;
-  window.requestAllBusinesses = requestAllBusinesses;
-  window.requestAllBusinessTypes = requestAllBusinessTypes;
   ReactDOM.render(<Root store={store} />, root);
 });

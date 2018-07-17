@@ -41,7 +41,7 @@ class CreateReviewForm extends React.Component {
 
           <div className="ike-review-form-wrapper">
 
-            <div>
+            <div className="ike-review-stars">
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
                 className={ (this.state.rating > 0) ? "fa fa-star red-star" : "fa fa-star grey-star"}

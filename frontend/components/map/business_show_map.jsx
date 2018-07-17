@@ -21,7 +21,7 @@ class BusinessMap extends React.Component {
       text: "!",
       color: "white",
       fontSize: "26px",
-      fontWeight: "bold"
+      fontWeight: "bold",
       }
     });
     marker.setMap(this.map);

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import BusinessIndex from './business_index';
-import { requestAllBusinesses } from '../../actions/business_actions';
+import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/business_actions';
 
 const mapStateToProps = ({ entities }) => {
-  debugger
   return {
-    businesses: Object.values(entities.businesses)
+    businesses: Object.values(entities.businesses),
+    types: Object.values(entities.businessTypes)
   };
 };
 
@@ -13,6 +13,9 @@ const mapDispatchToProps = dispatch => {
   return {
     requestAllBusinesses: () => {
       return dispatch(requestAllBusinesses());
+    },
+    requestAllBusinessTypes: () => {
+      return dispatch(requestAllBusinessTypes());
     }
   };
 };
