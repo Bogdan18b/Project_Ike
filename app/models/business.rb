@@ -39,4 +39,13 @@ class Business < ApplicationRecord
     return rating || 1
   end
 
+  def self.find_business(input)
+    matches = []
+    debugger
+    Business.all.each do |business|
+      matches.push(business.name) if  business.name.downcase.include?(input.downcase)
+    end
+    matches
+  end
+
 end
