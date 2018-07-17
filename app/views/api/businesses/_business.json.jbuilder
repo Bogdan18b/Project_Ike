@@ -9,7 +9,7 @@ json.reviews do
   business.reviews.each do |review|
     json.set! review.id do
       json.extract! review, :body, :rating, :id
-      json.userId review.user_id
+      json.userName review.user.first_name
     end
   end
 end

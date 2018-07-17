@@ -7,13 +7,11 @@ class CreateReviewForm extends React.Component {
     this.state = this.props.review;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.changeClass = this.changeClass.bind(this);
-    this.updateBody = this.updateBody.bind(this);
   }
 
   updateBody() {
     return (e) => {
-      this.setState({[field]: e.target.value
-      });
+      this.setState({ body: e.target.value});
     };
   }
 
@@ -46,27 +44,27 @@ class CreateReviewForm extends React.Component {
             <div>
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={this.state.className}
+                className={ (this.state.rating > 0) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.state.rating = 1}
               ></span>
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={this.state.className}
+                className={ (this.state.rating > 1) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.state.rating = 2}
               ></span>
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={this.state.className}
+                className={ (this.state.rating > 2) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.state.rating = 3}
               ></span>
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={this.state.className}
+                className={ (this.state.rating > 3) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.state.rating = 4}
               ></span>
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={this.state.className}
+                className={ (this.state.rating > 4) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.state.rating = 5}
               ></span>
             </div>
@@ -74,7 +72,7 @@ class CreateReviewForm extends React.Component {
             <textarea className="ike-review-form-body"
                 rows="60" cols="60"
                 value={this.state.body}
-                onChange={this.updateBody}
+                onChange={this.updateBody()}
                 placeholder="Your review helps others learn about great local businesses.
                 Please do not review this business if you received a freebie for writing this review, or if you are connected in any way to the owner or employees."
             />

@@ -73,11 +73,7 @@
   height: 240px;
 }
 
-.ike-business-show-pics > img:hover {
-  transform: scale(1.1);
-}
-
-.ike-business-show-pics > img:nth-child(3) {
+.hovered {
   transform: scale(1.1);
 }
 

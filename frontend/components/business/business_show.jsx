@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_business_container';
 import { Reviews } from './business_show_reviews';
 import StarRating from '../star_rating';
-import BusinessMap from '../map/map';
+import BusinessMap from '../map/business_show_map';
 
 class BusinessShow extends React.Component {
-
+  constructor(props) {
+    super(props)
+    this.state = {1: '', 2: 'hovered', 3: ''};
+  }
   componentDidMount() {
     this.props.requestBusiness(this.props.match.params.businessId);
   }
@@ -52,11 +55,26 @@ class BusinessShow extends React.Component {
 
 
           <div className="ike-business-show-pics">
-            <div className="ike-business-show-map"></div>
-            <img src={business.photos[0]} alt="coming soon"/>
-            <img src={business.photos[1]} alt="coming soon"/>
-            <img src={business.photos[2]} alt="coming soon"/>
+            <div className="ike-business-show-map">
+              <BusinessMap business={business} />
+            </div>
+
+            <img onMouseOver={() => this.setState({1: 'hovered', 2: '', 3: ''})}
+              onMouseOut={() => this.setState({1: '', 2: 'hovered', 3: ''})}
+              className={this.state[1]}
+              src={business.photos[0]}
+              alt="coming soon"/>
+
+            <img src={business.photos[1]}
+              className={this.state[2]}
+              alt="coming soon"/>
+
+            <img onMouseOver={() => this.setState({1: '', 2: '', 3: 'hovered'})}
+              onMouseOut={() => this.setState({1: '', 2: 'hovered', 3: ''})}
+              className={this.state[3]}
+              src={business.photos[2]} alt="coming soon"/>
           </div>
+
           <div className="ike-business-show-rev">
 
             <div className="ike-business-show-reviews">
