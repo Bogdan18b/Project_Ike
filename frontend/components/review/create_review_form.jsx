@@ -31,7 +31,7 @@ class CreateReviewForm extends React.Component {
       <div>
         <div className="ike-review-form-header">
           <Link to="/"><img id="ike-review-logo"
-            src="https://s3.amazonaws.com/project-zebra-seeding-dev/logo.png"/>
+            src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/>
           </Link>
           <h3>Write a Review</h3>
         </div>

@@ -1,5 +1,6 @@
 import { FETCH_BUSINESS, FETCH_ALL_BUSINESSES } from '../actions/business_actions';
 import { FETCH_ALL_REVIEWS } from '../actions/review_actions';
+import { FETCH_SEARCH_RESULTS } from '../actions/search_actions';
 import { merge } from 'lodash';
 
 const businessReducer = (state = {}, action) => {

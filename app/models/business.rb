@@ -36,16 +36,12 @@ class Business < ApplicationRecord
       ratings << review.rating
     end
     rating = (ratings.reduce(:+)) / ratings.length unless ratings.empty?
-    return rating || 1
+    return rating || 0
   end
 
-  def self.find_business(input)
-    matches = []
-    debugger
-    Business.all.each do |business|
-      matches.push(business.name) if  business.name.downcase.include?(input.downcase)
+    def matches?(input)
+    self.name.downcase.include?(input.downcase)
     end
-    matches
-  end
+
 
 end

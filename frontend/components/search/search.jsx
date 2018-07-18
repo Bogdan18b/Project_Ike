@@ -1,56 +1,46 @@
 import React from 'react';
-import Downshift from 'downshift';
-import render from 'react-dom';
-import { Redirect } from 'react-router';
 
-const SearchBox = ({ businesses, types }, placeholder) => {
-  if (!businesses || !types) {
-    return <p></p>
-  }
-  const items = businesses.concat(types);
-  debugger
-  return (
-    <Downshift
-  onChange={selection => alert(`You selected ${selection.name}`)}
-  itemToString={item => (item ? item.name : '')}
->
-  {({
-    getInputProps,
-    getItemProps,
-    getMenuProps,
-    isOpen,
-    inputValue,
-    highlightedIndex,
-    selectedItem,
-  }) => (
-    <div>
-      <input {...getInputProps()} />
-      <ul {...getMenuProps()}>
-        {isOpen
-          ? items
-              .filter(item => !inputValue || item.name.includes(inputValue))
-              .map((item, index) => (
-                <li
-                  {...getItemProps({
-                    key: item.name,
-                    index,
-                    item,
-                    style: {
-                      backgroundColor:
-                        highlightedIndex === index ? 'lightgray' : 'white',
-                      fontWeight: selectedItem === item ? 'bold' : 'normal',
-                    },
-                  })}
-                >
-                  {item.name}
-                </li>
-              ))
-          : null}
-      </ul>
-    </div>
-  )}
-</Downshift>
-    )
+class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: ""
+    };
+    this.displayResults = this.displayResults.bind(this);
   }
 
-export default SearchBox;
+  displayResults() {
+    return (e) => {
+      this.setState({ name: e.target.value});
+    };
+  }
+
+  componentDidUpdate() {
+    debugger
+    if (this.state.name.length > 0) {
+      return this.props.receiveSearchResults(this.state.name);
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <input onChange={this.displayResults()}
+          type="text" value={this.state.name}
+        />
+
+        <button>SEARCH</button>
+
+        {this.props.businesses.length === 0 ? <h1>nothing</h1> : <h1>{this.props.businesses.map(bus => {
+          return (
+            <p key={bus.id} onClick={() => this.props.history.push(`/businesses/${bus.id}`)}>{bus.name}</p>
+          )
+        })}</h1>
+        }
+
+      </div>
+    );
+  }
+}
+
+export default Search;

@@ -26,7 +26,7 @@ class BusinessShow extends React.Component {
         <div className="ike-business-show-header">
           <Link to="/">
             <img id="logo-pic-business"
-              src="https://s3.amazonaws.com/project-zebra-seeding-dev/logo.png"/>
+              src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/>
           </Link>
 
           <input className="ike-business-div-search" type="text" placeholder="search coming soon..." />

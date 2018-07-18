@@ -43,7 +43,7 @@ class SignupForm extends React.Component {
     return (
       <div>
         <header className="ike-div-login-header">
-          <Link className="ike-header-logo-wrapper" to="/"><img className="ike-header-pic" src="https://s3.amazonaws.com/project-zebra-seeding-dev/logo.png"/></Link>
+          <Link className="ike-header-logo-wrapper" to="/"><img className="ike-header-pic" src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/></Link>
         </header>
         <div className="ike-div-login-main">
           {this.renderErrors()}

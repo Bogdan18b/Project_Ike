@@ -21,7 +21,7 @@ class BusinessIndex extends React.Component {
     return (
       <div>
         <div className="ike-business-show-header">
-          <Link to="/"><img id="logo-pic-business-index" src="https://s3.amazonaws.com/project-zebra-seeding-dev/logo.png"/></Link>
+          <Link to="/"><img id="logo-pic-business-index" src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/></Link>
           <input className="ike-business-div-search"type="text" placeholder="search coming soon..." />
           <GreetingContainer />
         </div>

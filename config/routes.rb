@@ -8,8 +8,10 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :reviews, only: [:destroy, :index]
     resources :business_types, only: [:index]
+    resources :searches, only: [:index]
     resources :businesses, only: [:show, :index] do
       resources :reviews, only: [:new, :create]
     end
+
   end
 end

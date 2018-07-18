@@ -7,7 +7,7 @@ const Header = () => {
     <div>
       <GreetingContainer />
       <div className="ike-homepage-header">
-        <Link to="/"><img id="logo-pic" src="https://s3.amazonaws.com/project-zebra-seeding-dev/logo.png"/></Link>
+        <Link to="/"><img id="logo-pic" src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/></Link>
         <input type="text" placeholder="search under construction..." />
       </div>
       <div className="ike-homepage-login-button">

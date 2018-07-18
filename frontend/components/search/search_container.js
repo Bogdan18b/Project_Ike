@@ -1,17 +1,19 @@
 import { connect } from 'react-redux';
-import SearchBox from './search';
+import Search from './search';
+import { receiveSearchResults } from '../../actions/search_actions';
 
-const mapStateToProps = ({ entities }) => {
-  let businesses = Object.values(entities.businesses);
-  let types = Object.values(entities.business_types);
+const mapStateToProps = ({ searchResults }) => {
+  let businesses = Object.values(searchResults);
   debugger
   return {
-
+    businesses
   };
 };
 
 const mapDispatchToProps = dispatch => {
-
+  return {
+    receiveSearchResults: inputValue => dispatch(receiveSearchResults(inputValue))
+  };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
