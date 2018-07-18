@@ -5,7 +5,10 @@ import Greeting from './greeting';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
-    currentUser: users[session.id]
+    currentUser: users[session.id],
+    loginClass: "ike-login-home-button",
+    signupClass: "ike-signup-home-button",
+    formClass: "ike-login-form-home"
   };
 };
 

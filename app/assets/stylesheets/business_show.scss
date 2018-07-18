@@ -34,11 +34,6 @@
   font-weight: 900;
 }
 
-#65 {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .ike-business-show-hours {
   width: 180px;
   height: 300px;
@@ -117,32 +112,6 @@
   margin: -7px;
 }
 
-.ike-login-business-signup {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-  height: 100px;
-  width: 200px;
-  justify-content: space-around;
-  margin: -11px -162px;
-  margin-left: 15px;
-}
-
-#login-business-button {
-  width: 200px;
-  height: 30px;
-  border-radius: 5px;
-}
-
-#signup-business-button {
-  padding: 10px;
-  background-color: #bd1f1f;
-}
-
-#signup-business-button:hover, #login-business-button:hover, #logout-business-button:hover {
-  background-color: #983b3b;
-}
 
 .ike-business-show-map {
   width: 290px;
@@ -179,4 +148,49 @@
 
 .ike-business-show-map > p > a {
   color: #0073dd;
+}
+
+
+.ike-login-form-business {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  height: 100px;
+  width: 200px;
+  justify-content: space-around;
+  margin: -11px -162px;
+  margin-left: 15px;
+  position: relative;
+}
+
+.ike-signup-business-button {
+  padding: 6px;
+  background-color: #bd1f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 86px;
+  border-radius: 5px;
+  top: 17px;
+  position: absolute;
+}
+
+.ike-signup-business-button:hover {
+  background-color: #983b3b;
+}
+
+.ike-login-business-button {
+  width: 86px;
+  height: 20px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 67px;
+  position: absolute;
+}
+
+.ike-login-business-button:hover {
+  background-color: #983b3b;
 }

@@ -4,7 +4,7 @@ import BusinessIndexItem from './business_index_item';
 import BusinessTypeContainer from './business_type_container';
 import GreetingContainer from '../greeting/greeting_business_container';
 import BusinessMap from '../map/map'
-import SearchBox from '../search/search';
+import SearchContainer from '../search/search_business_page_container';
 
 class BusinessIndex extends React.Component {
   componentDidMount() {
@@ -22,7 +22,7 @@ class BusinessIndex extends React.Component {
       <div>
         <div className="ike-business-show-header">
           <Link to="/"><img id="logo-pic-business-index" src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/></Link>
-          <input className="ike-business-div-search"type="text" placeholder="search coming soon..." />
+          <SearchContainer />
           <GreetingContainer />
         </div>
         <div className="ike-business-show-header-nav">

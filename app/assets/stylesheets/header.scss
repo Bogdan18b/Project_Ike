@@ -9,12 +9,28 @@
   align-items: center;
 }
 
-.ike-homepage-header > input {
+.ike-search-div-home {
   background-color: white;
   width: 800px;
-  height: 60px;
-  border-radius: 5px;
+  height: 45px;
+  border-radius: 5px 5px 5px 0;
   margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  position: relative;
+}
+
+.ike-search-div-business {
+  background-color: white;
+  width: 760px;
+  height: 33px;
+  border-radius: 5px 5px 5px 0;
+  margin: 0 15px;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  position: relative;
 }
 
 #logo-pic {
@@ -23,7 +39,84 @@
   margin: -63px auto;
 }
 
-#signup-button {
+#find {
+  font-weight: bolder;
+  align-self: center;
+  font-size: 21px;
+  position: absolute;
+  left: 5px;
+}
+
+#near {
+  font-weight: bolder;
+  align-self: center;
+  font-size: 21px;
+  position: absolute;
+  left: 405px;
+  border-left: 1px solid lightgray;
+  padding: 7px;
+}
+
+#search-map {
+  align-self: center;
+  position: absolute;
+  left: 475px;
+}
+
+.ike-search-input {
+  align-self: center;
+  width: 250px;
+  position: absolute;
+  left: 60px;
+}
+
+#search-button {
+  align-self: center;
+  position: absolute;
+  right: 0;
+}
+
+.ike-search-list-home {
+  width: 386px;
+  background-color: white;
+  position: absolute;
+  top: 55px;
+  padding: 10px;
+  font-weight: bold;
+  left: 0;
+  border-top: 1px solid lightgray;
+  border-radius: 0 0 5px 5px;
+}
+
+.ike-search-list-business {
+  width: 386px;
+  background-color: white;
+  position: absolute;
+  top: 43px;
+  padding: 10px;
+  font-weight: bold;
+  left: 0;
+  border-top: 1px solid lightgray;
+  border-radius: 0 0 5px 5px;
+}
+
+.ike-search-list > li{
+  padding: 5px;
+  cursor: pointer;
+}
+
+.ike-login-form-home {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin: -40px 1140px;
+  color: white;
+  padding: 20px;
+  font-size: 19px;
+}
+
+.ike-signup-home-button {
   width: 136px;
   height: 40px;
   border: 2px solid white;
@@ -31,39 +124,25 @@
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  position: absolute;
+  top: 60px;
+  right: -145px;
 }
 
-#signup-button:hover {
+.ike-signup-home-button:hover {
   background-color: white;
   color: grey;
 }
 
-#login-button, #logout-button {
-  width: 136px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: -50px;
-}
-#login-button:hover, #logout-button:hover {
-  text-decoration: underline;
-}
-
-.ike-login-button {
+.ike-login-home-button {
   width: 100px;
   height: 30px;
   padding-top: 50px;
-
+  position: absolute;
+  top: 20px;
+  right: -20px;
 }
 
-.ike-login-signup {
-  font-weight: bold;
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  margin: -40px 1140px;
-  color: white;
-  padding: 20px;
-  font-size: 19px;
+.ike-login-home-button:hover {
+  text-decoration: underline;
 }

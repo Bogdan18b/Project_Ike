@@ -45,27 +45,27 @@ class CreateReviewForm extends React.Component {
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
                 className={ (this.state.rating > 0) ? "fa fa-star red-star" : "fa fa-star grey-star"}
-                onClick={() => this.state.rating = 1}
+                onClick={() => this.setState({ rating: 1 })}
               ></span>
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
                 className={ (this.state.rating > 1) ? "fa fa-star red-star" : "fa fa-star grey-star"}
-                onClick={() => this.state.rating = 2}
+                onClick={() => this.setState({ rating: 2 })}
               ></span>
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
                 className={ (this.state.rating > 2) ? "fa fa-star red-star" : "fa fa-star grey-star"}
-                onClick={() => this.state.rating = 3}
+                onClick={() => this.setState({ rating: 3 })}
               ></span>
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
                 className={ (this.state.rating > 3) ? "fa fa-star red-star" : "fa fa-star grey-star"}
-                onClick={() => this.state.rating = 4}
+                onClick={() => this.setState({ rating: 4 })}
               ></span>
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
                 className={ (this.state.rating > 4) ? "fa fa-star red-star" : "fa fa-star grey-star"}
-                onClick={() => this.state.rating = 5}
+                onClick={() => this.setState({ rating: 5 })}
               ></span>
             </div>
 

@@ -5,6 +5,7 @@ import GreetingContainer from '../greeting/greeting_business_container';
 import { Reviews } from './business_show_reviews';
 import StarRating from '../star_rating';
 import BusinessMap from '../map/business_show_map';
+import SearchContainer from '../search/search_business_page_container'
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class BusinessShow extends React.Component {
               src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/>
           </Link>
 
-          <input className="ike-business-div-search" type="text" placeholder="search coming soon..." />
+          <SearchContainer />
           <GreetingContainer />
         </div>
 
