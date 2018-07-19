@@ -23,7 +23,6 @@ class Search extends React.Component {
   }
 
   handleClick(item) {
-    debugger
       return () => {
       if (item.address === undefined) {
         this.props.receiveTypeFromSearch(item);
