@@ -4,7 +4,7 @@ import { merge } from 'lodash';
 const searchReducer = (state = {}, action) => {
   switch (action.type) {
     case FETCH_SEARCH_RESULTS:
-      return action.businesses;
+      return merge({}, action.businesses, action.types);
     case CLEAR_SEARCH_RESULTS:
       return {};
     default:

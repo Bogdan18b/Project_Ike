@@ -4,9 +4,11 @@ import { requestBusiness } from '../../actions/business_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const reviews = Object.values(state.entities.reviews);
+  const currentUserId = state.session.id;
   return {
     business: state.entities.businesses[ownProps.match.params.businessId],
-    reviews
+    reviews,
+    currentUserId
   };
 };
 

@@ -54,12 +54,19 @@
 
 #div-write-review {
   background-color: #d32323;
-  width: 122px;
-  height: 30px;
+  width: 120px;
+  height: 24px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   color: white;
   font-weight: bold;
   margin: 20px 888px;
   text-align: center;
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+}
+
+#div-write-review:hover {
+  background-color: #d90007;
 }

@@ -22,17 +22,25 @@ class Search extends React.Component {
     };
   }
 
-  handleClick(id) {
-      return () =>
-      this.props.history.push(`/businesses/${id}`);
+  handleClick(item) {
+    debugger
+      return () => {
+      if (item.address === undefined) {
+        this.props.history.push("/businesses/search");
+      } else {
+        this.props.history.push(`/businesses/${item.id}`);
+      }
+      this.props.clearSearchResults()
+    }
     }
 
   render() {
+    debugger
     return (
       <div className={this.props.classNameMain}>
         <span id="find">Find</span>
         <input onChange={this.displayResults()}
-          placeholder="tacos, burgers"
+          placeholder="tacos, burgers, grooming..."
           className="ike-search-input"
           type="text" value={this.state.name}
         />
@@ -42,7 +50,7 @@ class Search extends React.Component {
 
         {this.props.businesses.length === 0 ? <h1></h1> : <ul className={this.props.classNameList}>{this.props.businesses.map(bus => {
           return (
-            <li key={bus.id} onClick={this.handleClick(bus.id)}>{bus.name}</li>
+            <li key={bus.id} onClick={this.handleClick(bus)}>{bus.name}</li>
           )
         })}</ul>
         }

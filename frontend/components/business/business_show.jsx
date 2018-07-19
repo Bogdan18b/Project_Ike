@@ -36,12 +36,12 @@ class BusinessShow extends React.Component {
 
         <div className="ike-business-show-header-nav">
           <BusinessTypeContainer />
-          <button id="div-write-review">
-            <Link to={`/businesses/${business.id}/reviews/new`}>Write a review
-            </Link>
-        </button>
 
         </div>
+
+        { !!this.props.currentUserId ? (<Link id="div-write-review"
+          to={`/businesses/${business.id}/reviews/new`}>Write a review
+        </Link>) : ""}
 
         <div className="ike-business-show-title">
             <h1>{business.name}</h1>

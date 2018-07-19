@@ -100,7 +100,12 @@
   border-radius: 0 0 5px 5px;
 }
 
-.ike-search-list > li{
+.ike-search-list-home > li{
+  padding: 5px;
+  cursor: pointer;
+}
+
+.ike-search-list-business > li{
   padding: 5px;
   cursor: pointer;
 }
