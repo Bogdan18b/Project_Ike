@@ -8,7 +8,8 @@ const mapStateToProps = ({ searchResults }) => {
   return {
     businesses,
     classNameMain: "ike-search-div-home",
-    classNameList: "ike-search-list-home"
+    classNameList: "ike-search-list-home",
+    classNameButton: "ike-search-button-home"
   };
 };
 

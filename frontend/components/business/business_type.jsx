@@ -8,7 +8,7 @@ class BusinessType extends React.Component {
 
   render() {
     if (this.props.types === undefined) {
-      return <p>coming soon...</p>
+      return <p></p>
     }
     const types = this.props.types.map(type => <BusinessTypeIndexItem key={type.id} type={type}/>);
     return (

@@ -12,10 +12,15 @@ class BusinessIndex extends React.Component {
     this.props.requestAllBusinessTypes();
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.match.params.businesses !== newProps.match.params.businesses) {
+      this.props.requestAllBusinesses();
+    }
+  }
+
   render() {
-    debugger
     if (this.props.businesses === undefined) {
-      return <p>coming soon</p>;
+      return <p></p>;
     }
     let businesses;
     if (this.props.businessType === undefined) {
@@ -23,7 +28,6 @@ class BusinessIndex extends React.Component {
         <BusinessIndexItem key={business.id} business={business} />)
     } else {
       let businessesOfType = this.props.businessType.businessIds.map(id => this.props.businesses[id]);
-      debugger
       businesses = businessesOfType.map(business => {
         if (business) {
           return <BusinessIndexItem key={business.id} business={business} />;

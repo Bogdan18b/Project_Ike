@@ -23,6 +23,7 @@ class Search extends React.Component {
   }
 
   handleClick(item) {
+    debugger
       return () => {
       if (item.address === undefined) {
         this.props.receiveTypeFromSearch(item);
@@ -49,12 +50,14 @@ class Search extends React.Component {
 
         {this.props.businesses.length === 0 ? <h1></h1> : <ul className={this.props.classNameList}>{this.props.businesses.map(bus => {
           return (
-            <li key={bus.id} onClick={this.handleClick(bus)}>{bus.name}</li>
+            <li key={`list-${bus.id}`} onClick={this.handleClick(bus)}>{bus.name}</li>
           )
         })}</ul>
         }
 
-        <button id="search-button">SEARCH</button>
+        <button className={this.props.classNameButton}
+            onClick={() => this.props.history.push('/businesses')}><i className="fas fa-search"></i>
+        </button>
 
       </div>
     );

@@ -8,7 +8,7 @@ class ReviewIndex extends React.Component {
 
   render() {
     if(this.props.reviews === undefined) {
-      return <p>coming soon...</p>
+      return <p></p>
     }
     const reviews = this.props.reviews.map(review => <ReviewIndexItem key={review.id} review={review} />)
     return (

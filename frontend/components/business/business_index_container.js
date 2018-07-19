@@ -3,7 +3,6 @@ import BusinessIndex from './business_index';
 import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/business_actions';
 
 const mapStateToProps = ({ entities }) => {
-  debugger
   return {
     businesses: Object.values(entities.businesses),
     types: Object.values(entities.businessTypes)

@@ -151,3 +151,29 @@
 .ike-login-home-button:hover {
   text-decoration: underline;
 }
+
+.ike-search-button-home {
+  align-self: center;
+  position: absolute;
+  right: 0;
+  width: 55px;
+  height: 55px;
+  background-color: #d32323;
+  display: flex;
+  justify-content: center;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+.ike-search-button-business {
+  align-self: center;
+  position: absolute;
+  right: 0;
+  width: 43px;
+  height: 43px;
+  background-color: #bd1f1f;
+  display: flex;
+  justify-content: center;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}

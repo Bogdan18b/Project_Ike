@@ -26,7 +26,7 @@ class BusinessShow extends React.Component {
   render() {
     const business = this.props.business;
     if (business === undefined || !business.photos) {
-      return <p>...coming soon</p>
+      return <p></p>
     }
     return (
       <div className="ike-business-show-main">

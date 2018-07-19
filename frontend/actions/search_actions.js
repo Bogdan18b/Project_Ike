@@ -19,7 +19,6 @@ export const clearSearchResults = () => {
 };
 
 export const receiveTypeFromSearch = (businessType) => {
-  debugger
   return {
     type: RECEIVE_BUSINESS_TYPE,
     businessType
