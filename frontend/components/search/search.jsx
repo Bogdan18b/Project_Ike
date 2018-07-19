@@ -23,19 +23,18 @@ class Search extends React.Component {
   }
 
   handleClick(item) {
-    debugger
       return () => {
       if (item.address === undefined) {
-        this.props.history.push("/businesses/search");
+        this.props.receiveTypeFromSearch(item);
+        this.props.history.push('/businesses/search');
       } else {
         this.props.history.push(`/businesses/${item.id}`);
+        this.props.clearSearchResults()
       }
-      this.props.clearSearchResults()
     }
     }
 
   render() {
-    debugger
     return (
       <div className={this.props.classNameMain}>
         <span id="find">Find</span>

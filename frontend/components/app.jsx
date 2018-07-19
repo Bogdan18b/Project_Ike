@@ -18,6 +18,7 @@ const App = () => (
     <Route exact path="/" component={Header} />
     <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
     <Route exact path="/businesses" component={BusinessIndexContainer} />
+    <Route exact path="/businesses/search" component={BusinessIndexFilterContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <ProtectedRoute exact path="/businesses/:businessId/reviews/new" component={CreateReviewFormContainer} />

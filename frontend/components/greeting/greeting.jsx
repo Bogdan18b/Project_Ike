@@ -17,7 +17,6 @@ const Greeting = ({ currentUser, logout, formClass, loginClass, signupClass }) =
     </nav>
   );
   const personalGreeting = () => {
-    debugger
     return (
       <nav className={formClass}>
         <button className={loginClass}

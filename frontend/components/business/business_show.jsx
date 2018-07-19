@@ -16,6 +16,13 @@ class BusinessShow extends React.Component {
     this.props.requestBusiness(this.props.match.params.businessId);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.match.params.businessId !== newProps.match.params.businessId) {
+      this.props.requestBusiness(newProps.match.params.businessId);
+
+    }
+  }
+
   render() {
     const business = this.props.business;
     if (business === undefined || !business.photos) {

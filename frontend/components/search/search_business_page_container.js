@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Search from './search';
-import { receiveSearchResults, clearSearchResults } from '../../actions/search_actions';
+import { receiveSearchResults, clearSearchResults, receiveTypeFromSearch } from '../../actions/search_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = ({ searchResults }) => {
@@ -15,7 +15,8 @@ const mapStateToProps = ({ searchResults }) => {
 const mapDispatchToProps = dispatch => {
   return {
     receiveSearchResults: inputValue => dispatch(receiveSearchResults(inputValue)),
-    clearSearchResults: () => dispatch(clearSearchResults())
+    clearSearchResults: () => dispatch(clearSearchResults()),
+    receiveTypeFromSearch: (type) => dispatch(receiveTypeFromSearch(type))
   };
 };
 

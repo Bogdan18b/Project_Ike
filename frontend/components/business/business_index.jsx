@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import BusinessIndexItem from './business_index_item';
 import BusinessTypeContainer from './business_type_container';
 import GreetingContainer from '../greeting/greeting_business_container';
@@ -17,8 +17,19 @@ class BusinessIndex extends React.Component {
     if (this.props.businesses === undefined) {
       return <p>coming soon</p>;
     }
-    const businesses = this.props.businesses.map(business =>
-    <BusinessIndexItem key={business.id} business={business} />)
+    let businesses;
+    if (this.props.businessType === undefined) {
+      businesses = this.props.businesses.map(business =>
+        <BusinessIndexItem key={business.id} business={business} />)
+    } else {
+      let businessesOfType = this.props.businessType.businessIds.map(id => this.props.businesses[id]);
+      debugger
+      businesses = businessesOfType.map(business => {
+        if (business) {
+          return <BusinessIndexItem key={business.id} business={business} />;
+        }
+      });
+    }
     return (
       <div>
         <div className="ike-business-show-header">
