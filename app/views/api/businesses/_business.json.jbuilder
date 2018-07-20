@@ -10,6 +10,7 @@ json.reviews do
     json.set! review.id do
       json.extract! review, :body, :rating, :id
       json.userName review.user.first_name
+      json.businessId review.business_id
     end
   end
 end

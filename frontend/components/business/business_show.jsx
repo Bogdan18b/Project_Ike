@@ -28,7 +28,7 @@ class BusinessShow extends React.Component {
     if (business === undefined || !business.photos) {
       return <p></p>
     }
-    const reviews = this.props.reviews.filter(review => {
+    let reviews = this.props.reviews.filter(review => {
       if (review.businessId === parseInt(this.props.match.params.businessId)) {
         return review;
       }

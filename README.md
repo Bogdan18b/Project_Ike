@@ -1,7 +1,6 @@
-# README
+# IKE!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# IKE!, a Yelp clone, is a social media application which allows users to submit reviews about local businesses
 
 Things you may want to cover:
 
@@ -22,3 +21,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+[live demo](https://project-ike.herokuapp.com/#/)
