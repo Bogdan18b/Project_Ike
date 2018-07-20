@@ -23,7 +23,11 @@ class CreateReviewForm extends React.Component {
   }
 
   changeClass() {
-    this.setState({className: (this.state.className === "fa fa-star red-star") ? "fa fa-star grey-star" : "fa fa-star red-star"});
+    debugger
+    if (this.state.rating === "") {
+      this.setState({className: (this.state.className === "fa fa-star red-star") ? "fa fa-star grey-star" : "fa fa-star red-star"});
+      debugger
+    }
   }
 
   render () {
@@ -44,7 +48,7 @@ class CreateReviewForm extends React.Component {
             <div className="ike-review-stars">
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={ (this.state.rating > 0) ? "fa fa-star red-star" : "fa fa-star grey-star"}
+                className={ (this.state.rating > 0 && this.state.rating !== "") ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.setState({ rating: 1 })}
               ></span>
 
