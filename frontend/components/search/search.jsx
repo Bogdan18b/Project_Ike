@@ -27,7 +27,7 @@ class Search extends React.Component {
     return () => {
       if (item.address === undefined) {
         this.props.receiveTypeFromSearch(item);
-        this.props.history.push('/businesses/search');
+        this.props.history.push(`/businesses/search?query=${item.name}`);
       } else {
         this.props.history.push(`/businesses/${item.id}`);
       }

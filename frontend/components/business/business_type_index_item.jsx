@@ -1,7 +1,21 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
-export const BusinessTypeIndexItem = ({ type }) => {
-  return (
-    <li key={`type-${type.id}`}>{type.name}</li>
-  );
-};
+class BusinessTypeIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  render() {
+    return (
+      <li onClick={() => {
+          debugger
+          this.props.receiveTypeFromSearch(this.props.type);
+          this.props.history.push(`/businesses/search?query=${this.props.type.name}`);
+        }}
+        key={`type-${this.props.type.id}`}>{this.props.type.name}</li>
+    );
+  }
+}
+
+export default withRouter(BusinessTypeIndexItem);

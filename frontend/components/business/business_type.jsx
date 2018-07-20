@@ -1,5 +1,5 @@
 import React from 'react';
-import  { BusinessTypeIndexItem } from './business_type_index_item';
+import  BusinessTypeIndexItem from './business_type_index_item';
 
 class BusinessType extends React.Component {
   componentDidMount() {
@@ -10,7 +10,10 @@ class BusinessType extends React.Component {
     if (this.props.types === undefined) {
       return <p></p>
     }
-    const types = this.props.types.map(type => <BusinessTypeIndexItem key={type.id} type={type}/>);
+    const types = this.props.types.map(type =>
+      <BusinessTypeIndexItem key={type.id}
+        receiveTypeFromSearch={this.props.receiveTypeFromSearch}
+        type={type}/>);
     return (
       <ul className="ike-business-header-nav">
         {types}

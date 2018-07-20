@@ -13,15 +13,15 @@ BusinessType.destroy_all
 Review.destroy_all
 
 u1 = User.create!(email: "guest@yahoo.com", first_name: "kilian", last_name: "mbappe", password: "123456", zip_code: "12345")
-u2 = User.create!(email: "cyril@yahoo.com", first_name: "cyril", last_name: "thereau", password: "123456", zip_code: "12345")
+u2 = User.create!(email: "emily@yahoo.com", first_name: "emily", last_name: "thereau", password: "123456", zip_code: "12345")
 u3 = User.create!(email: "jimmy@yahoo.com", first_name: "jimmy", last_name: "b", password: "123456", zip_code: "12345")
 
-bt1 = BusinessType.create!(name: "gyms")
-bt2 = BusinessType.create!(name: "restaurants")
-bt3 = BusinessType.create!(name: "salons and spas")
-bt4 = BusinessType.create!(name: "pet stores")
-bt5 = BusinessType.create!(name: "electronics stores")
-bt6 = BusinessType.create!(name: "hardware stores")
+bt1 = BusinessType.create!(name: "Gyms")
+bt2 = BusinessType.create!(name: "Restaurants")
+bt3 = BusinessType.create!(name: "Salons and Spas")
+bt4 = BusinessType.create!(name: "Pet Stores")
+bt5 = BusinessType.create!(name: "Electronic Stores")
+bt6 = BusinessType.create!(name: "Hardware Stores")
 
 b1 = Business.create!(name: "Avra", address: "141 E 48th St, New York, NY 10017", phone: "(212) 759-8550", website: "http://avrany.com/", hours: ["11:30am-11:30pm", "11:30am-11:30pm", "11:30am-11:30pm", "11:30am-11:30pm", "11:30am-12:00am", "11:00am-1:00am", "11:00am-11:00pm"], latitude: 40.755117, longitude: -73.972519, business_type_id: bt2.id)
 
