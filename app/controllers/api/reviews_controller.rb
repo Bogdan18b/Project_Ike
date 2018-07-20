@@ -1,7 +1,11 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all.includes(:user).includes(:business).limit(9)
+    @reviews = Review.all.includes(:user).includes(:business).limit(12).order(created_at: :desc)
+  end
+
+  def show
+    @review = Review.find(params[:id])
   end
 
   def create
@@ -9,7 +13,7 @@ class Api::ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.business_id = params[:business_id]
     if @review.save
-      render json: ["it's working"]
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end

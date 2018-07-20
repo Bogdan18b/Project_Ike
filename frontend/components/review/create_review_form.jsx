@@ -23,10 +23,8 @@ class CreateReviewForm extends React.Component {
   }
 
   changeClass() {
-    debugger
     if (this.state.rating === "") {
       this.setState({className: (this.state.className === "fa fa-star red-star") ? "fa fa-star grey-star" : "fa fa-star red-star"});
-      debugger
     }
   }
 

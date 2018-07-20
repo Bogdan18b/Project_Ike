@@ -1,6 +1,6 @@
 import React from 'react';
 import BusinessTypeContainer from './business_type_container';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_business_container';
 import { Reviews } from './business_show_reviews';
 import StarRating from '../star_rating';
@@ -117,4 +117,4 @@ class BusinessShow extends React.Component {
 
 }
 
-export default BusinessShow;
+export default withRouter(BusinessShow);

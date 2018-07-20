@@ -5,11 +5,10 @@ class BusinessTypeIndexItem extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
     return (
       <li onClick={() => {
-          debugger
           this.props.receiveTypeFromSearch(this.props.type);
           this.props.history.push(`/businesses/search?query=${this.props.type.name}`);
         }}
