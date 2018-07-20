@@ -6,7 +6,7 @@
 .ike-business-index-item {
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
+  width: 630px;
   height: 220px;
   margin: 0 auto;
   border-top: 1px solid lightgrey;
@@ -35,14 +35,16 @@
 .ike-business-main-div {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .ike-business-index-map {
   border: 1px solid gray;
- display: inline-block;
+ display: inline-flex;
  height: fit-content;
- margin: 73px 663px;
- position: fixed;
+ position: sticky;
+ margin: 20px 20px;
+ top: 0;
 }
 
 #map-container {
