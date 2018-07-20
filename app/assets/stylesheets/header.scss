@@ -118,12 +118,12 @@
   margin: -40px 1140px;
   color: white;
   padding: 20px;
-  font-size: 19px;
+  font-size: 16px;
 }
 
 .ike-signup-home-button {
-  width: 136px;
-  height: 40px;
+  width: 111px;
+  height: 35px;
   border: 2px solid white;
   display: flex;
   justify-content: center;
@@ -131,7 +131,7 @@
   border-radius: 5px;
   position: absolute;
   top: 60px;
-  right: -145px;
+  right: 45px;
 }
 
 .ike-signup-home-button:hover {
@@ -140,16 +140,17 @@
 }
 
 .ike-login-home-button {
-  width: 100px;
+  width: 65px;
   height: 30px;
   padding-top: 50px;
   position: absolute;
   top: 20px;
-  right: -20px;
+  right: 180px;
+  text-align: center;
 }
 
 .ike-login-home-button:hover {
-  text-decoration: underline;
+  border-bottom: 2px solid white;
 }
 
 .ike-search-button-home {
@@ -176,4 +177,20 @@
   justify-content: center;
   color: white;
   border-radius: 0 5px 5px 0;
+}
+
+#ike-home-write-review {
+  width: 120px;
+  height: 30px;
+  position: absolute;
+  top: 28px;
+  left: 500px;
+  text-align: center;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#ike-home-write-review:hover {
+  border-bottom: 2px solid white;
 }

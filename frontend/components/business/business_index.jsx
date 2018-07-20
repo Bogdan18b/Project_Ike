@@ -8,8 +8,9 @@ import SearchContainer from '../search/search_business_page_container';
 
 class BusinessIndex extends React.Component {
   componentDidMount() {
-    this.props.requestAllBusinesses();
-    this.props.requestAllBusinessTypes();
+    this.props.requestAllBusinesses().then(() => {
+      return this.props.requestAllBusinessTypes();
+    });
   }
 
   componentWillReceiveProps(newProps) {
@@ -19,12 +20,13 @@ class BusinessIndex extends React.Component {
   }
 
   render() {
-    if (this.props.businesses === undefined) {
+    if (Object.values(this.props.businesses).length === 0) {
       return <p></p>;
     }
     let businesses;
-    if (this.props.businessType === undefined) {
-      businesses = this.props.businesses.map(business =>
+
+    if (Object.values(this.props.businessType).length === 0) {
+      businesses = Object.values(this.props.businesses).map(business =>
         <BusinessIndexItem key={business.id} business={business} />)
     } else {
       let businessesOfType = this.props.businessType.businessIds.map(id => this.props.businesses[id]);

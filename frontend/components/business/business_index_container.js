@@ -4,8 +4,9 @@ import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/bus
 
 const mapStateToProps = ({ entities }) => {
   return {
-    businesses: Object.values(entities.businesses),
-    types: Object.values(entities.businessTypes)
+    businesses: entities.businesses,
+    types: Object.values(entities.businessTypes),
+    businessType: {}
   };
 };
 

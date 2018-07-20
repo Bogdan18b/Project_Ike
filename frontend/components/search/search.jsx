@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect, withRouter } from 'react-router';
 
 class Search extends React.Component {
   constructor(props) {
@@ -23,16 +24,16 @@ class Search extends React.Component {
   }
 
   handleClick(item) {
-      return () => {
+    return () => {
       if (item.address === undefined) {
         this.props.receiveTypeFromSearch(item);
         this.props.history.push('/businesses/search');
       } else {
         this.props.history.push(`/businesses/${item.id}`);
-        this.props.clearSearchResults()
       }
+      this.props.clearSearchResults()
     }
-    }
+  }
 
   render() {
     return (
@@ -63,4 +64,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);

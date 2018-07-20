@@ -26,7 +26,7 @@ export const fetchAllBusinessTypes = (types) => {
 
 export const requestAllBusinesses = () => {
   return dispatch => {
-    BusinessApiUtil.fetchAllBusinesses().then(businesses => {
+    return BusinessApiUtil.fetchAllBusinesses().then(businesses => {
       return dispatch(fetchAllBusinesses(businesses));
     });
   };
@@ -34,7 +34,7 @@ export const requestAllBusinesses = () => {
 
 export const requestBusiness = (id) => {
   return dispatch => {
-    BusinessApiUtil.fetchBusiness(id).then((payload) => {
+    return BusinessApiUtil.fetchBusiness(id).then((payload) => {
       return dispatch(fetchBusiness(payload));
     });
   };
@@ -42,7 +42,7 @@ export const requestBusiness = (id) => {
 
 export const requestAllBusinessTypes = () => {
   return dispatch => {
-    BusinessApiUtil.fetchAllBusinessTypes().then(types => {
+    return BusinessApiUtil.fetchAllBusinessTypes().then(types => {
       return dispatch(fetchAllBusinessTypes(types));
     });
   };

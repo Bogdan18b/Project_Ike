@@ -4,11 +4,11 @@ export const FETCH_SEARCH_RESULTS = 'FETCH_SEARCH_RESULTS';
 export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
 export const RECEIVE_BUSINESS_TYPE = 'RECEIVE_BUSINESS_TYPE';
 
-export const fetchSearchResults = ({ businesses, types }) => {
+export const fetchSearchResults = ({ businesses, businessTypes}) => {
   return {
     type: FETCH_SEARCH_RESULTS,
     businesses,
-    types
+    businessTypes
   };
 };
 

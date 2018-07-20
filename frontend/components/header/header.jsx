@@ -6,6 +6,7 @@ import SearchContainer from '../search/search_home_page_container';
 const Header = () => {
   return (
     <div>
+        <Link id="ike-home-write-review" to="/businesses">Write a Review</Link>
       <GreetingContainer />
       <div className="ike-homepage-header">
         <Link to="/"><img id="logo-pic" src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/></Link>
