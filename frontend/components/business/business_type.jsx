@@ -15,7 +15,7 @@ class BusinessType extends React.Component {
         receiveTypeFromSearch={this.props.receiveTypeFromSearch}
         type={type}/>);
     return (
-      <ul className="ike-business-header-nav">
+      <ul className={this.props.className}>
         {types}
       </ul>
     )

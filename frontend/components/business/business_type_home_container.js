@@ -6,7 +6,7 @@ import BusinessType from './business_type';
 const mapStateToProps = ({ entities }) => {
   return {
     types: Object.values(entities.businessTypes),
-    className: "ike-business-header-nav"
+    className: "ike-business-header-nav-home"
   };
 };
 

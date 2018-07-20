@@ -11,7 +11,7 @@
 
 .ike-search-div-home {
   background-color: white;
-  width: 800px;
+  width: 850px;
   height: 45px;
   border-radius: 5px 5px 5px 0;
   margin-top: 30px;
@@ -197,4 +197,24 @@
 
 #ike-home-write-review:hover {
   border-bottom: 2px solid white;
+}
+
+.ike-business-header-nav-home {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.ike-business-header-nav-home > li {
+  margin: 0 25px;
+  cursor: pointer;
+  width: fit-content;
+  text-align: center;
+  padding: 1px;
+}
+
+.ike-business-header-nav-home > li:hover {
+  text-decoration: underline;
 }
