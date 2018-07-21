@@ -6,6 +6,7 @@ import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/bus
 import { withRouter } from 'react-router';
 
 const mapStateToProps = ({ searchResults, entities }) => {
+  debugger
   return {
     businesses: entities.businesses,
     businessTypes: entities.businessTypes,

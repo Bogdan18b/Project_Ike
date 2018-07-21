@@ -4,6 +4,7 @@ import { receiveTypeFromSearch } from '../../actions/search_actions';
 import BusinessType from './business_type';
 
 const mapStateToProps = ({ entities }) => {
+  debugger
   return {
     types: Object.values(entities.businessTypes),
     className: "ike-business-header-nav"
@@ -12,7 +13,6 @@ const mapStateToProps = ({ entities }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    requestAllBusinessTypes: () => dispatch(requestAllBusinessTypes()),
     receiveTypeFromSearch: (type) => dispatch(receiveTypeFromSearch(type))
   };
 };

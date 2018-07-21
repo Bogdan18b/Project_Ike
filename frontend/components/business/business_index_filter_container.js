@@ -15,9 +15,6 @@ const mapDispatchToProps = dispatch => {
   return {
     requestAllBusinesses: () => {
       return dispatch(requestAllBusinesses());
-    },
-    requestAllBusinessTypes: () => {
-      return dispatch(requestAllBusinessTypes());
     }
   };
 };

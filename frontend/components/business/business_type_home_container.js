@@ -12,7 +12,6 @@ const mapStateToProps = ({ entities }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    requestAllBusinessTypes: () => dispatch(requestAllBusinessTypes()),
     receiveTypeFromSearch: (type) => dispatch(receiveTypeFromSearch(type))
   };
 };

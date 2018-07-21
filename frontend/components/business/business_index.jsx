@@ -8,9 +8,7 @@ import SearchContainer from '../search/search_business_page_container';
 
 class BusinessIndex extends React.Component {
   componentDidMount() {
-    this.props.requestAllBusinesses().then(() => {
-      return this.props.requestAllBusinessTypes();
-    });
+    this.props.requestAllBusinesses();
   }
 
   componentWillReceiveProps(newProps) {
