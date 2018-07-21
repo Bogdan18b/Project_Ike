@@ -3,10 +3,8 @@ import BusinessIndex from './business_index';
 import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/business_actions';
 
 const mapStateToProps = ({ entities }) => {
-  let businesses = entities.businesses;
-  // businesses.forEach(bus => bus.businessType = businessType[bus.businessTypeId].name);
   return {
-    businesses,
+    businesses: entities.businesses,
     types: Object.values(entities.businessTypes),
     businessType: {}
   };

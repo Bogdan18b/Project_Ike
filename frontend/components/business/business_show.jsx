@@ -33,6 +33,9 @@ class BusinessShow extends React.Component {
         return review;
       }
     });
+
+    let count = business.reviewIds.length;
+
     return (
       <div className="ike-business-show-main">
 
@@ -59,7 +62,7 @@ class BusinessShow extends React.Component {
             <h1>{business.name}</h1>
             <div>
               <StarRating rating={business.rating} />
-              <p>{business.reviewIds.length} reviews</p>
+              <p>{ count === 1 ? "1 review" : `${count} reviews`}</p>
             </div>
             <h3>{business.businessType}</h3>
 
