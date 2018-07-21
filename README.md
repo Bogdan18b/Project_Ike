@@ -1,4 +1,4 @@
-# IKE!
+[logo](https://github.com/Bogdan18b/Project_Zebra/blob/master/pics/logo.png)
 
 # IKE!, a Yelp clone, is a social media application which allows users to submit reviews about local businesses
 
