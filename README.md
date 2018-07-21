@@ -31,6 +31,7 @@ One cool feature that I implemented here is to change the class name of each of 
               className={this.state[3]}
               src={business.photos[2]} alt="coming soon"
             />
+<<<<<<< HEAD
 
 Another page available to you is the business page, which you can see below:
 
@@ -39,6 +40,16 @@ Another page available to you is the business page, which you can see below:
 The search bar on top of the page is similar with the home page search bar, and the logo redirects to te home page.
 A logged in user will have an option to submit a review for a business, as well as rate it:
 
+=======
+            
+Another page available to you is the business page, which you can see below: 
+
+![](https://github.com/Bogdan18b/Project_Zebra/blob/master/pics/business_index.png)
+
+The search bar on top of the page is similar with the home page search bar, and the logo redirects to te home page. 
+A logged in user will have an option to submit a review for a business, as well as rate it:
+
+>>>>>>> 59e3ad1b5a985a7ed5048ea35825988447a957df
 ![](https://github.com/Bogdan18b/Project_Zebra/blob/master/pics/review_form.png)
 
 Future updates include a user profile page, where the user will have the option to edit or delete his reviews.
