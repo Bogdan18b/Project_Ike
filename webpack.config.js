@@ -1,10 +1,10 @@
 const path = require("path");
 const webpack = require("webpack");
 
-const plugins = []; // if using any plugins for both dev and production
-const devPlugins = []; // if using any plugins for development
+let plugins = []; // if using any plugins for both dev and production
+let devPlugins = []; // if using any plugins for development
 
-const prodPlugins = [
+let prodPlugins = [
   new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')
@@ -24,26 +24,27 @@ plugins = plugins.concat(
 // include plugins config
 module.exports = {
   context: __dirname,
-  entry: "./frontend/ike.jsx",
+  entry: './frontend/ike.jsx',
   output: {
-    path: path.resolve(__dirname, "app", "assets", "javascripts"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, 'app','assets', 'javascripts'),
+    filename: 'bundle.js'
   },
-  plugins: plugins,
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'env']
-        }
+        test: [/\.jsx?$/],
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          query: {
+            presets: ['env', 'react']
+          }
+        },
       }
     ]
   },
   devtool: 'source-map',
   resolve: {
-    extensions: [".js", ".jsx", "*"]
+    extensions: ['.js', '.jsx', '*']
   }
 };
