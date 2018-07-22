@@ -36,7 +36,6 @@ class Search extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className={this.props.classNameMain}>
         <span id="find">Find</span>

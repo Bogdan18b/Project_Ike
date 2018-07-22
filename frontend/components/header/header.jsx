@@ -5,7 +5,6 @@ import SearchContainer from '../search/search_home_page_container';
 import BusinessTypeContainer from '../business/business_type_home_container';
 
 const Header = () => {
-  debugger
   return (
     <div>
         <Link id="ike-home-write-review" to="/businesses">Write a Review</Link>
