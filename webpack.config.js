@@ -19,7 +19,7 @@ let prodPlugins = [
 
 plugins = plugins.concat(
   process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
-)
+);
 
 // include plugins config
 module.exports = {
