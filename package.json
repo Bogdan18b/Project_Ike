@@ -24,12 +24,7 @@
     "test": "test"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "redux-logger": "^3.0.6",
-    "serviceworker-webpack-plugin": "^1.0.0-alpha02"
-=======
     "redux-logger": "^3.0.6"
->>>>>>> 866ee407c26fa355820519566745850da1427376
   },
   "engines": {
     "node": "8.9.0",
