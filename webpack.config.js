@@ -41,9 +41,6 @@ module.exports = {
       }
     ]
   },
-  optimization: {
-    minimize: false
-  },
   devtool: 'source-map',
   resolve: {
     extensions: [".js", ".jsx", "*"]
