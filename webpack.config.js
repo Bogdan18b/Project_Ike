@@ -1,10 +1,10 @@
-var path = require("path");
-var webpack = require("webpack");
+const path = require("path");
+const webpack = require("webpack");
 
-var plugins = [];
-var devPlugins = [];
+const plugins = []; // if using any plugins for both dev and production
+const devPlugins = []; // if using any plugins for development
 
-var prodPlugins = [
+const prodPlugins = [
   new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')
@@ -19,8 +19,9 @@ var prodPlugins = [
 
 plugins = plugins.concat(
   process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
-);
+)
 
+// include plugins config
 module.exports = {
   context: __dirname,
   entry: "./frontend/ike.jsx",
