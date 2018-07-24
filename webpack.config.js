@@ -1,18 +1,13 @@
-const path = require("path");
-const webpack = require("webpack");
+var path = require("path");
+var webpack = require("webpack");
 
-let plugins = [];
-let devPlugins = [];
+var plugins = [];
+var devPlugins = [];
 
-let prodPlugins = [
+var prodPlugins = [
   new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')
-    }
-  }),
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: true
     }
   })
 ];
@@ -21,30 +16,31 @@ plugins = plugins.concat(
   process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
 );
 
-// include plugins config
 module.exports = {
   context: __dirname,
-  entry: './frontend/ike.jsx',
+  entry: "./frontend/ike.jsx",
   output: {
-    path: path.resolve(__dirname, 'app','assets', 'javascripts'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "app", "assets", "javascripts"),
+    filename: "bundle.js"
   },
+  plugins: plugins,
   module: {
     rules: [
       {
-        test: [/\.jsx?$/],
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          query: {
-            presets: ['env', 'react']
-          }
-        },
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'env']
+        }
       }
     ]
   },
+  optimization: {
+    minimize: false
+  },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: [".js", ".jsx", "*"]
   }
 };

@@ -95,6 +95,13 @@
   width: fit-content;
   text-align: center;
   padding: 1px;
+  padding-left: 25px;
+  background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/icon.png");
+  background-size: 25px 294px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  background-position-x: -2px;
 }
 
 .ike-business-header-nav > li:hover {
@@ -182,6 +189,7 @@
   width: 86px;
   border-radius: 5px;
   top: 17px;
+  right: 49px;
   position: absolute;
 }
 
@@ -197,6 +205,7 @@
   justify-content: center;
   align-items: center;
   top: 67px;
+  right: 55px;
   position: absolute;
 }
 

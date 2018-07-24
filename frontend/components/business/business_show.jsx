@@ -55,8 +55,10 @@ class BusinessShow extends React.Component {
         </div>
 
         { !!this.props.currentUserId ? (<Link id="div-write-review"
-          to={`/businesses/${business.id}/reviews/new`}>Write a review
-        </Link>) : ""}
+            to={`/businesses/${business.id}/reviews/new`}
+            >Write a review
+          </Link>) : ""
+        }
 
         <div className="ike-business-show-title">
             <h1>{business.name}</h1>
