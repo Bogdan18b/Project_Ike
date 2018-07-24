@@ -8,8 +8,8 @@ class SignupForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
       zip_code: "",
       day: "",
       month: "",
@@ -52,14 +52,14 @@ class SignupForm extends React.Component {
             <h1>Sign Up with IKE!</h1>
             <form className="ike-login-form" onSubmit={this.handleSubmit}>
               <input type="text" id="first_name"
-                value={this.state.firstName}
-                onChange={this.update("firstName")}
+                value={this.state.first_name}
+                onChange={this.update("first_name")}
                 placeholder="First Name"
                 />
 
               <input type="text" id="last_name"
-                value={this.state.lastName}
-                onChange={this.update("lastName")}
+                value={this.state.last_name}
+                onChange={this.update("last_name")}
                 placeholder="Last Name"
                 />
 
