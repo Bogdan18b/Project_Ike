@@ -13,6 +13,11 @@
   margin: 10px;
 }
 
+.ike-review-main-list > li {
+  display: flex;
+  justify-content: space-between;
+}
+
 .ike-review-main-list > li:first-child {
   font-weight: bold;
   font-size: 19px;

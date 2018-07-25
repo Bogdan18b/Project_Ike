@@ -28,6 +28,16 @@ class CreateReviewForm extends React.Component {
     }
   }
 
+  renderErrors() {
+    return (
+      <ul className="ike-review-errors">
+        {this.props.errors.map((error, idx) => (
+          <li key={`error-${idx}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
+
   render () {
     return (
       <div>
@@ -37,7 +47,6 @@ class CreateReviewForm extends React.Component {
           </Link>
           <h3>Write a Review</h3>
         </div>
-
         <form className="ike-review-form"
           onSubmit={this.handleSubmit}>
 
@@ -46,7 +55,7 @@ class CreateReviewForm extends React.Component {
             <div className="ike-review-stars">
 
               <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={ (this.state.rating > 0 && this.state.rating !== "") ? "fa fa-star red-star" : "fa fa-star grey-star"}
+                className={ (this.state.rating > 0) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.setState({ rating: 1 })}
               ></span>
 
@@ -69,6 +78,7 @@ class CreateReviewForm extends React.Component {
                 className={ (this.state.rating > 4) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.setState({ rating: 5 })}
               ></span>
+            
             </div>
 
             <textarea className="ike-review-form-body"
@@ -78,6 +88,8 @@ class CreateReviewForm extends React.Component {
                 placeholder="Your review helps others learn about great local businesses.
                 Please do not review this business if you received a freebie for writing this review, or if you are connected in any way to the owner or employees."
             />
+
+            {this.renderErrors()}
 
           </div>
 

@@ -2,7 +2,8 @@ json.reviews do
     @reviews.each do |review|
     json.set! review.id do
       json.extract! review, :body, :rating, :id
-      json.userName review.user.first_name
+      json.createdAt review.created_at
+      json.userId review.user_id
       json.businessId review.business_id
     end
   end
