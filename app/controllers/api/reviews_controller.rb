@@ -18,11 +18,18 @@ class Api::ReviewsController < ApplicationController
       render json: @review.errors.full_messages, status: 422
     end
 
+    def edit
+    end
+
+    def update
+    end
+
   end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
+    render json: "www"
   end
 
   private

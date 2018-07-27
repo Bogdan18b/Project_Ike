@@ -21,7 +21,7 @@ class User < ApplicationRecord
   validates :email, :first_name, :last_name, :password_digest, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
-  validates :zip_code, numericality: true
+  validates :zip_code, numericality: true, allow_blank: true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
   attr_reader :password

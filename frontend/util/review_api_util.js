@@ -12,3 +12,18 @@ export const createReview = (review) => {
     data: { review }
   });
 };
+
+export const updateReview = (review) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/businesses/${review.businessId}/reviews`,
+    data: { review }
+  });
+};
+
+export const deleteReview = (id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/reviews/${id}`
+  });
+};

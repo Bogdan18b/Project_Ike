@@ -17,7 +17,7 @@ class CreateReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state).then(() => {
+    this.props.action(this.state).then(() => {
       return this.props.history.push(`/businesses/${this.props.match.params.businessId}`)
     });
   }
@@ -78,7 +78,7 @@ class CreateReviewForm extends React.Component {
                 className={ (this.state.rating > 4) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.setState({ rating: 5 })}
               ></span>
-            
+
             </div>
 
             <textarea className="ike-review-form-body"
@@ -94,7 +94,7 @@ class CreateReviewForm extends React.Component {
           </div>
 
             <input className="ike-review-form-button"
-              type="submit" value="Post Review" />
+              type="submit" value={this.props.formType} />
         </form>
 
       </div>

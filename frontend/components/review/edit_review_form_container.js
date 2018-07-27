@@ -1,19 +1,19 @@
 import { connect } from 'react-redux';
 import CreateReviewForm from './create_review_form';
-import { createReview } from '../../actions/review_actions';
+import { updateReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const businessId = ownProps.match.params.businessId;
-  const className = "fa fa-star grey-star";
-  const review = { rating: '', body: '', businessId, className};
+  const defaultReview = { title: '', body: '' };
+  const review = state.entities.reviews[ownProps.match.params.reviewId] || defaultReview;
+  review.className = "fa fa-star grey-star";
   const errors = state.errors.review;
-  const formType = "Create Review";
+  const formType = "Update Review";
   return { review, errors, formType };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    action: review => dispatch(createReview(review)),
+    action: review => dispatch(updateReview(review)),
   };
 };
 

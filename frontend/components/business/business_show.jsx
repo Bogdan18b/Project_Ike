@@ -98,7 +98,8 @@ class BusinessShow extends React.Component {
           <div className="ike-business-show-rev">
 
             <div className="ike-business-show-reviews">
-              <Reviews reviews={reviews} />
+              <Reviews reviews={reviews} currentUserId={this.props.currentUserId}
+                deleteReview={this.props.deleteReview}/>
             </div>
             <div className="ike-business-show-details">
 

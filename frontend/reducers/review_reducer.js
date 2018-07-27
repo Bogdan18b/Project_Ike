@@ -1,4 +1,4 @@
-import { FETCH_ALL_REVIEWS, RECEIVE_REVIEW } from '../actions/review_actions';
+import { FETCH_ALL_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
 import { FETCH_BUSINESS } from '../actions/business_actions';
 import { merge } from 'lodash';
 
@@ -11,6 +11,12 @@ const reviewReducer = (state = {}, action) => {
         return merge({}, state, action.payload.reviews);
       case RECEIVE_REVIEW:
         return merge({}, state, {[action.review.id]: action.review});
+      case REMOVE_REVIEW:
+        let newState = merge({}, state);
+        if (newState.entities.reviews[action.reviewId]) {
+          delete newState.entities.reviews[action.reviewId];
+        }
+        return newState;
     default:
       return state;
   }
