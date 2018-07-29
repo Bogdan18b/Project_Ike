@@ -2,7 +2,7 @@ import React from 'react';
 import BusinessTypeContainer from './business_type_container';
 import { Link, withRouter } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_business_container';
-import { Reviews } from './business_show_reviews';
+import Reviews from './business_show_reviews';
 import StarRating from '../star_rating';
 import BusinessMap from '../map/business_show_map';
 import SearchContainer from '../search/search_business_page_container'
@@ -99,7 +99,8 @@ class BusinessShow extends React.Component {
 
             <div className="ike-business-show-reviews">
               <Reviews reviews={reviews} currentUserId={this.props.currentUserId}
-                deleteReview={this.props.deleteReview}/>
+                deleteReview={this.props.deleteReview}
+                businessId={business.id}/>
             </div>
             <div className="ike-business-show-details">
 
