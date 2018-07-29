@@ -56,6 +56,15 @@
   margin: 0 auto;
 }
 
+.ike-business-show-reviews > ul {
+  border-bottom: 1px solid lightgrey;
+  padding: 8px;
+}
+
+.ike-business-show-reviews > ul > li {
+  padding: 5px;
+}
+
 .ike-business-show-pics {
   display: flex;
   flex-wrap: wrap;

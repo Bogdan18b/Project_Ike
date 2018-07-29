@@ -11,7 +11,7 @@ json.reviews do
       json.extract! review, :body, :rating, :id
       json.userName review.user.first_name
       json.businessId review.business_id
-      json.userId = review.user_id
+      json.userId review.user_id
     end
   end
 end

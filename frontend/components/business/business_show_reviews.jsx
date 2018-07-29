@@ -1,8 +1,8 @@
 import React from 'react';
 import StarRating from '../star_rating';
+import { Redirect } from "react-router";
 
 export const Reviews = ({ reviews, deleteReview, currentUserId }) => {
-  debugger
   const rev = reviews.map(review => (
     <ul key={review.id}>
       <li>{review.userName}</li>

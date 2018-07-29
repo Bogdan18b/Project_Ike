@@ -3,7 +3,7 @@ import StarRating from '../star_rating';
 import { Link } from 'react-router-dom';
 
 export const ReviewIndexItem = ({ review }) => {
-  let date = review.createdAt.slice(0, 10).split("-").join("/");
+  let date = review.createdAt.slice(0, 10).split("-").join("/") || "";
   return (
     <ul className="ike-review-main-list">
       <li>{review.userName}</li>

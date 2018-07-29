@@ -43,5 +43,4 @@ class Business < ApplicationRecord
     self.name.downcase.include?(input.downcase)
     end
 
-
 end
