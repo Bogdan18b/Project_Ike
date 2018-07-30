@@ -11,8 +11,6 @@ const businessReducer = (state = {}, action) => {
       return merge({}, state, {[business.id]: business});
     case FETCH_ALL_BUSINESSES:
       return merge({}, state, action.businesses);
-    case FETCH_ALL_REVIEWS:
-      return merge({}, state, action.businesses);
     default:
       return state;
   }

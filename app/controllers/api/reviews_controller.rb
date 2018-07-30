@@ -1,7 +1,7 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all.includes(:user).includes(:business).limit(12).order(created_at: :desc)
+    @reviews = Review.all.limit(12).order(created_at: :desc)
   end
 
   def show

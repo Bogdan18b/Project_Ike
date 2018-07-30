@@ -24,4 +24,12 @@ class Review < ApplicationRecord
   foreign_key: :user_id,
   class_name: :User
 
+  def self.get_business_ids
+    business_ids = []
+    Review.all.limit(12).order(created_at: :desc).each do |rev|
+      business_ids << rev.business_id
+    end
+    business_ids.uniq
+  end
+
 end

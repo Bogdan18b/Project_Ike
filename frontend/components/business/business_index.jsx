@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 import BusinessIndexItem from './business_index_item';
 import BusinessTypeContainer from './business_type_container';
 import GreetingContainer from '../greeting/greeting_business_container';
@@ -8,10 +8,13 @@ import SearchContainer from '../search/search_business_page_container';
 
 class BusinessIndex extends React.Component {
   componentDidMount() {
+    debugger
     this.props.requestAllBusinesses();
+    debugger
   }
 
   componentWillReceiveProps(newProps) {
+    debugger
     if (this.props.match.params.businesses !== newProps.match.params.businesses) {
       this.props.requestAllBusinesses();
     }
@@ -59,4 +62,4 @@ class BusinessIndex extends React.Component {
   }
 }
 
-export default BusinessIndex;
+export default withRouter(BusinessIndex);

@@ -12,7 +12,7 @@ const Header = () => {
       <div className="ike-homepage-header">
         <Link to="/"><img id="logo-pic" src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/></Link>
         <SearchContainer />
-        <BusinessTypeContainer />
+        <BusinessTypeContainer/>
       </div>
       <div className="ike-homepage-login-button">
       </div>

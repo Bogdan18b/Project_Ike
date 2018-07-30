@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Search from './search';
 import { receiveSearchResults, clearSearchResults, receiveTypeFromSearch } from '../../actions/search_actions';
-import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/business_actions';
+import { requestAllBusinesses, requestAllBusinessTypes, requestBusiness } from '../../actions/business_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = ({ searchResults, entities }) => {
@@ -22,6 +22,7 @@ const mapDispatchToProps = dispatch => {
     clearSearchResults: () => dispatch(clearSearchResults()),
     receiveTypeFromSearch: (type) => dispatch(receiveTypeFromSearch(type)),
     requestAllBusinesses: () => dispatch(requestAllBusinesses()),
+    requestBusiness: (id) => dispatch(requestBusiness(id)),
     requestAllBusinessTypes: () => dispatch(requestAllBusinessTypes())
   };
 };
@@ -32,10 +33,20 @@ class SearchResults extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllBusinesses().then(() => {
-      return this.props.requestAllBusinessTypes();
+    this.props.requestAllBusinessTypes().then(() => {
+      return this.props.requestAllBusinesses();
     });
   }
+
+  // componentDidMount() {
+  //   this.props.requestAllBusinessTypes().then(() => {
+  //     if (this.props.searchResults.businessIds.length !== 0) {
+  //       return this.props.searchResults.businessIds.map(id => {
+  //         this.props.requestBusiness(id);
+  //       });
+  //     }
+  //   });
+  // }
 
   render() {
     if (Object.keys(this.props.businesses).length === 0 || Object.keys(this.props.businessTypes).length === 0) {

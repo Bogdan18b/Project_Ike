@@ -1,10 +1,16 @@
 import React from 'react';
 import { ReviewIndexItem } from './review_index_item';
+import { withRouter } from 'react-router-dom';
 
-class ReviewIndex extends React.Component {
-  componentDidMount() {
-    this.props.requestAllReviews();
-  }
+class Reviews extends React.Component {
+  // componentDidMount() {
+  //   this.props.requestAllReviews();
+  // }
+  // componentWillReceiveProps(newProps) {
+  //   if (this.props.match.params.reviews !== newProps.match.params.reviews) {
+  //     this.props.requestAllReviews();
+  //   }
+  // }
 
   render() {
     if(this.props.reviews.length === 0) {
@@ -19,4 +25,4 @@ class ReviewIndex extends React.Component {
   }
 }
 
-export default ReviewIndex;
+export default withRouter(Reviews);

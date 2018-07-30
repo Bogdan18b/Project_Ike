@@ -6,7 +6,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import GreetingContainer from './greeting/greeting_home_container';
 import { Footer } from './footer/footer';
 import BusinessIndexContainer from './business/business_index_container';
-import BusinessIndexFilterContainer from './business/business_index_filter_container';
 import BusinessShowContainer from './business/business_show_container';
 import BusinessTypeContainer from './business/business_type_container';
 import ReviewIndexContainer from './review/review_index_container';
@@ -18,7 +17,7 @@ const App = () => (
     <Route exact path="/" component={Header} />
     <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
     <Route exact path="/businesses" component={BusinessIndexContainer} />
-    <Route exact path="/businesses/search" component={BusinessIndexFilterContainer} />
+    <Route exact path="/businesses/search" component={BusinessIndexContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <ProtectedRoute exact path="/businesses/:businessId/reviews/new" component={CreateReviewFormContainer} />

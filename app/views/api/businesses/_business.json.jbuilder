@@ -12,6 +12,8 @@ json.reviews do
       json.userName review.user.first_name
       json.businessId review.business_id
       json.userId review.user_id
+      json.createdAt review.created_at
+
     end
   end
 end
