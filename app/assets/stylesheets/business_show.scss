@@ -226,3 +226,23 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.ike-business-remove-review {
+  color: white;
+  position: absolute;
+  margin: -30px 52px;
+  width: 125px;
+  padding: 3px;
+  text-align: center;
+  background-color: #676161;
+  border-radius: 6px;
+}
+
+.fa-trash-alt {
+  position: relative;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}

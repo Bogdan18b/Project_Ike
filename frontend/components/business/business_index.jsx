@@ -8,13 +8,10 @@ import SearchContainer from '../search/search_business_page_container';
 
 class BusinessIndex extends React.Component {
   componentDidMount() {
-    debugger
     this.props.requestAllBusinesses();
-    debugger
   }
 
   componentWillReceiveProps(newProps) {
-    debugger
     if (this.props.match.params.businesses !== newProps.match.params.businesses) {
       this.props.requestAllBusinesses();
     }
