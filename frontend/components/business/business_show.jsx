@@ -13,11 +13,14 @@ class BusinessShow extends React.Component {
     this.state = {1: '', 2: 'hovered', 3: ''};
   }
   componentDidMount() {
-    this.props.requestBusiness(this.props.match.params.businessId);
+    if (this.props.match.params.businessId !== "search") {
+      this.props.requestBusiness(this.props.match.params.businessId);
+    }
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.match.params.businessId !== newProps.match.params.businessId) {
+    if (this.props.match.params.businessId !== newProps.match.params.businessId &&
+      newProps.match.params.businessId !== "search") {
       this.props.requestBusiness(newProps.match.params.businessId);
 
     }

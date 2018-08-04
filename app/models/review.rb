@@ -13,7 +13,6 @@
 
 class Review < ApplicationRecord
   validates :body, :rating, presence: true
-  validates :rating, inclusion: { in: [1, 2, 3, 4, 5]}
   validates_uniqueness_of :user_id, scope: :business_id, message: "already reviewed the business"
 
   belongs_to :business,

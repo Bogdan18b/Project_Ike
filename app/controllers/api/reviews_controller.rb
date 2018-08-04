@@ -29,7 +29,7 @@ class Api::ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    render json: "www"
+    render :destroy
   end
 
   private
