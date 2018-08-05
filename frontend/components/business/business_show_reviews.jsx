@@ -14,6 +14,7 @@ import { withRouter } from "react-router";
       this.handleHoverOut = this.handleHoverOut.bind(this);
     }
 
+
     handleRemove(id) {
       this.props.deleteReview(id);
       let copy = this.props.reviews.filter(review => review.id !== id);
@@ -29,18 +30,21 @@ import { withRouter } from "react-router";
     }
 
     render() {
-      const rev = this.state.reviews.map(review => (
-        <ul key={review.id}>
-          <li>{review.userName}</li>
-          <li><StarRating rating={review.rating}/></li>
-          <li>{review.body}</li>
-          {this.props.currentUserId === review.userId ? <li id="ike-remove-review"onClick={() => this.handleRemove(review.id)}><i className="fas fa-trash-alt"
-          onMouseOver={this.handleHover.bind()}
-          onMouseOut={this.handleHoverOut.bind()}></i>
-        <p className={`ike-business-remove-review ${this.state.className}`}>Remove Review</p></li> : ""}
+      const rev = this.state.reviews.map(review => {
+        return (
+          <ul key={review.id}>
+            <li>{this.props.users[review.userId].firstName}</li>
+            <li><StarRating rating={review.rating}/>
+              {review.createdAt.slice(0, 10).split("-").join("/") || ""}</li>
+            <li>{review.body}</li>
+            {this.props.currentUserId === review.userId ? <li id="ike-remove-review"onClick={() => this.handleRemove(review.id)}><i className="fas fa-trash-alt"
+            onMouseOver={this.handleHover.bind()}
+            onMouseOut={this.handleHoverOut.bind()}></i>
+          <p className={`ike-business-remove-review ${this.state.className}`}>Remove Review</p></li> : ""}
 
-        </ul>
-      ));
+          </ul>
+        )}
+      );
       return (
         rev
       );

@@ -4,12 +4,14 @@ import { requestBusiness } from '../../actions/business_actions';
 import { deleteReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const reviews = Object.values(state.entities.reviews);
+  let reviews = Object.values(state.entities.reviews);
   const currentUserId = state.session.id;
   return {
     business: state.entities.businesses[ownProps.match.params.businessId],
     reviews,
-    currentUserId
+    currentUserId,
+    types: state.entities.businessTypes,
+    users: state.entities.users
   };
 };
 

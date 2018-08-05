@@ -38,7 +38,7 @@ class BusinessShow extends React.Component {
     });
 
     let count = business.reviewIds.length;
-
+    let type = this.props.types[business.businessTypeId] || "";
     return (
       <div className="ike-business-show-main">
 
@@ -69,7 +69,7 @@ class BusinessShow extends React.Component {
               <StarRating rating={business.rating} />
               <p>{ count === 1 ? "1 review" : `${count} reviews`}</p>
             </div>
-            <h3>{business.businessType}</h3>
+            <h3>{type !== "" ? type.name : ""}</h3>
 
         </div>
 
@@ -103,7 +103,8 @@ class BusinessShow extends React.Component {
             <div className="ike-business-show-reviews">
               <Reviews reviews={reviews} currentUserId={this.props.currentUserId}
                 deleteReview={this.props.deleteReview}
-                businessId={business.id}/>
+                businessId={business.id}
+                users={this.props.users}/>
             </div>
             <div className="ike-business-show-details">
 
