@@ -6,7 +6,7 @@ const BusinessIndexItem = ({ business }) => {
   let count = business.reviewIds.length;
   return (
     <div className="ike-business-index-item">
-      <img src={business.photoURL} alt="photo"/>
+      <Link to={`/businesses/${business.id}`}><img src={business.photoURL} alt="photo"/></Link>
       <div>
       <h1>{business.id}. <Link to={`/businesses/${business.id}`}>{business.name}</Link></h1>
 
