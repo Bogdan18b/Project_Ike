@@ -57,13 +57,8 @@ class BusinessShow extends React.Component {
 
         </div>
 
-        { !!this.props.currentUserId ? (<Link id="div-write-review"
-            to={`/businesses/${business.id}/reviews/new`}
-            >Write a review
-          </Link>) : ""
-        }
-
         <div className="ike-business-show-title">
+
             <h1>{business.name}</h1>
             <div>
               <StarRating rating={business.rating} />
@@ -71,6 +66,11 @@ class BusinessShow extends React.Component {
             </div>
             <h3>{type !== "" ? type.name : ""}</h3>
 
+            { !!this.props.currentUserId ? (<Link id="div-write-review"
+              to={`/businesses/${business.id}/reviews/new`}
+              >Write a review
+            </Link>) : ""
+          }
         </div>
 
           <div className="ike-business-show-pics">

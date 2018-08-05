@@ -4,7 +4,7 @@
 
 
 .ike-business-show-main {
-  background-color: #f5f5f5;
+
 }
 
 .ike-business-show-header {
@@ -21,17 +21,42 @@
 .ike-active {
   transform: scale(2);
 }
+
 .ike-business-show-title {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
   height: 200px;
-  width: 300px;
-  margin: 0 530px;
-  display: block;
-  padding: 10px;
 }
 
 .ike-business-show-title > h1 {
   font-size: 50px;
   font-weight: 900;
+  position: absolute;
+  left: 307px;
+  top: 10px;
+}
+
+.ike-business-show-title > h3 {
+  display: flex;
+  position: absolute;
+  top: 118px;
+  left: 320px;
+}
+
+.ike-business-show-title > div {
+  position: absolute;
+  left: 307px;
+  top: 90px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ike-business-show-title > div > p {
+  margin-left: 25px;
+  font-size: 20px;
 }
 
 .ike-business-show-hours {
@@ -72,7 +97,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
+  background-color: #f5f5f5;
+  border-bottom: 1px solid lightgray;
 }
 
 .ike-business-show-pics > img {

@@ -54,23 +54,28 @@
 
 #div-write-review {
   background-color: #d32323;
-  width: 125px;
-  height: 19px;
+  width: 150px;
+  height: 15px;
   border: 1px solid lightgrey;
-  border-radius: 3px;
+  border-radius: 5px;
   color: white;
   font-weight: bold;
-  margin: 20px 888px;
-  display: inline-block;
-  text-align: right;
-  padding: 5px;
-  padding-right: 12px;
+  margin: 20px 555px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/icon.png");
   background-size: 30px 300px;
   background-repeat: no-repeat;
   vertical-align: bottom;
   overflow: hidden;
-  background-position-x: 4px;
+  background-position-x: 20px;
+  font-size: 18px;
+  padding: 10px;
+  padding-right: 28px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
 }
 
 #div-write-review:hover {
