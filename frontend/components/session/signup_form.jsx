@@ -39,6 +39,13 @@ class SignupForm extends React.Component {
     );
   }
 
+  guestLogin() {
+    return (e) => {
+      e.preventDefault();
+      this.props.login({email:'guest@yahoo.com', password:'123456'});
+    };
+  }
+
   render() {
     return (
       <div>
@@ -54,29 +61,34 @@ class SignupForm extends React.Component {
               <input type="text" id="first_name"
                 value={this.state.first_name}
                 onChange={this.update("first_name")}
+                autoComplete="given-name"
                 placeholder="First Name"
                 />
 
               <input type="text" id="last_name"
                 value={this.state.last_name}
                 onChange={this.update("last_name")}
+                autoComplete="family-name"
                 placeholder="Last Name"
                 />
 
               <input type="text"
                   value={this.state.email}
                   onChange={this.update("email")}
+                  autoComplete="email"
                   placeholder="Email"
                 />
 
               <input type="password"
                   value={this.state.password}
                   onChange={this.update("password")}
+                  autoComplete="current-password"
                   placeholder="Password"
                 />
 
               <input type="text" value={this.state.zip_code}
                   onChange={this.update("zip_code")}
+                  autoComplete="postal-code"
                   placeholder="ZIP Code"
                 />
 
@@ -98,6 +110,10 @@ class SignupForm extends React.Component {
               <input type="submit" value="Sign Up" />
             </form>
             <Link to="/login">Already on Ike!? Log in</Link>
+
+            <button className="ike-guest-login"
+              onClick={this.guestLogin()}>Guest Login
+            </button>
           </div>
 
         </div>
