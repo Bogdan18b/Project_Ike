@@ -98,6 +98,7 @@
   left: 0;
   border-top: 1px solid lightgray;
   border-radius: 0 0 5px 5px;
+  z-index: 2;
 }
 
 .ike-search-list-home > li{
@@ -138,7 +139,7 @@
 .ike-signup-home-button:hover {
   background-color: white;
   color: grey;
-  text-shadow: 2px 2px 8px grey; 
+  text-shadow: 2px 2px 8px grey;
 }
 
 .ike-login-home-button {

@@ -1,7 +1,7 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all.limit(12).order(created_at: :desc)
+    @reviews = Review.all.last(12)
   end
 
   def show
