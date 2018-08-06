@@ -75,7 +75,7 @@
   padding-right: 28px;
   position: absolute;
   top: 100px;
-  left: 300px;
+  left: 26%;
 }
 
 #div-write-review:hover {
@@ -88,4 +88,9 @@
   flex-direction: column;
   margin: 60px 30px;
   font-size: 18px;
+}
+
+#rating-message {
+  display: inline;
+  margin-left: 15px;
 }

@@ -6,7 +6,6 @@ class CreateReviewForm extends React.Component {
     super(props);
     this.state = this.props.review;
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.changeClass = this.changeClass.bind(this);
   }
 
   updateBody() {
@@ -22,12 +21,6 @@ class CreateReviewForm extends React.Component {
     });
   }
 
-  changeClass() {
-    if (this.state.rating === "") {
-      this.setState({className: (this.state.className === "fa fa-star red-star") ? "fa fa-star grey-star" : "fa fa-star red-star"});
-    }
-  }
-
   renderErrors() {
     return (
       <ul className="ike-review-errors">
@@ -38,7 +31,25 @@ class CreateReviewForm extends React.Component {
     );
   }
 
+  ratingMessage() {
+    switch (this.state.rating) {
+      case 1:
+        return <p id="rating-message">Eek! Me thinks not.</p>
+      case 2:
+        return <p id="rating-message">Meh! I've experienced better.</p>
+      case 3:
+        return <p id="rating-message">A-Okay!</p>
+      case 4:
+        return <p id="rating-message">Yay! I'm a fan!</p>
+      case 5:
+        return <p id="rating-message">Woohoo! As good as it gets!</p>
+      default:
+        return <p id="rating-message">Select your rating</p>
+    }
+  }
+
   render () {
+    debugger
     return (
       <div>
         <div className="ike-review-form-header">
@@ -54,30 +65,27 @@ class CreateReviewForm extends React.Component {
 
             <div className="ike-review-stars">
 
-              <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={ (this.state.rating > 0) ? "fa fa-star red-star" : "fa fa-star grey-star"}
+              <span className={ (this.state.rating > 0) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.setState({ rating: 1 })}
               ></span>
 
-              <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={ (this.state.rating > 1) ? "fa fa-star red-star" : "fa fa-star grey-star"}
+            <span className={ (this.state.rating > 1) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.setState({ rating: 2 })}
               ></span>
 
-              <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={ (this.state.rating > 2) ? "fa fa-star red-star" : "fa fa-star grey-star"}
+            <span className={ (this.state.rating > 2) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.setState({ rating: 3 })}
               ></span>
 
-              <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={ (this.state.rating > 3) ? "fa fa-star red-star" : "fa fa-star grey-star"}
+            <span className={ (this.state.rating > 3) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.setState({ rating: 4 })}
               ></span>
 
-              <span onMouseOver={this.changeClass} onMouseOut={this.changeClass}
-                className={ (this.state.rating > 4) ? "fa fa-star red-star" : "fa fa-star grey-star"}
+            <span className={ (this.state.rating > 4) ? "fa fa-star red-star" : "fa fa-star grey-star"}
                 onClick={() => this.setState({ rating: 5 })}
               ></span>
+
+            {this.ratingMessage()}
 
             </div>
 
