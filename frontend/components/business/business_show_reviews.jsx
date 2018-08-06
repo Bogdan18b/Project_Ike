@@ -19,6 +19,7 @@ import { withRouter } from "react-router";
       this.props.deleteReview(id);
       let copy = this.props.reviews.filter(review => review.id !== id);
       this.setState({reviews: copy});
+      document.location.reload();
     }
 
     handleHover() {

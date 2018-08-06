@@ -45,8 +45,6 @@ class Search extends React.Component {
           type="text" value={this.state.name}
         />
 
-      <span id="near">Near</span>
-      <input id="search-map" type="text" placeholder="Manhattan, NY" />
 
         {this.props.businesses.length === 0 ? <h1></h1> : <ul className={this.props.classNameList}>{this.props.businesses.map(bus => {
           return (
@@ -56,7 +54,7 @@ class Search extends React.Component {
         }
 
         <button className={this.props.classNameButton}
-            onClick={() => this.props.history.push('/businesses')}><i className="fas fa-search"></i>
+            onClick={() => this.props.history.push(`/businesses/search`)}><i className="fas fa-search"></i>
         </button>
 
       </div>
@@ -65,3 +63,6 @@ class Search extends React.Component {
 }
 
 export default withRouter(Search);
+
+// <span id="near">Near</span>
+// <input id="search-map" type="text" placeholder="Manhattan, NY" />

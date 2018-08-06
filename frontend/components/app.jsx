@@ -6,6 +6,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import GreetingContainer from './greeting/greeting_home_container';
 import { Footer } from './footer/footer';
 import BusinessIndexContainer from './business/business_index_container';
+// import BusinessSearchIndexContainer from './business/business_search_index_container';
 import BusinessShowContainer from './business/business_show_container';
 import BusinessTypeContainer from './business/business_type_container';
 import ReviewIndexContainer from './review/review_index_container';
