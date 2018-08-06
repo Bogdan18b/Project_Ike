@@ -31,6 +31,8 @@ class BusinessShow extends React.Component {
     if (business === undefined || !business.photos) {
       return <p></p>
     }
+    let myReview = this.props.reviews.filter(rev => rev.userId === this.props.currentUserId && rev.businessId === business.id);
+    let myReviewId = myReview.length > 0 ? myReview[0].id : "not reviewed";
     let reviews = this.props.reviews.filter(review => {
       if (review.businessId === parseInt(this.props.match.params.businessId)) {
         return review;
@@ -66,10 +68,13 @@ class BusinessShow extends React.Component {
             </div>
             <h3>{type !== "" ? type.name : ""}</h3>
 
-            { !!this.props.currentUserId ? (<Link id="div-write-review"
+            { myReviewId === "not reviewed" ? (<Link id="div-write-review"
               to={`/businesses/${business.id}/reviews/new`}
               >Write a review
-            </Link>) : ""
+            </Link>) : (<Link id="div-write-review"
+              to={`/businesses/${business.id}/reviews/${myReviewId}/edit`}
+              >Edit my review
+            </Link>)
           }
         </div>
 

@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.searchBusinesses = SearchApiUtil.searchBusinesses;
   window.deleteReview = ReviewApiUtil.deleteReview;
+  window.updateReview = ReviewApiUtil.updateReview;
   window.removeme = deleteReview;
   window.receiveSearchResults = receiveSearchResults;
   window.getState = store.getState;

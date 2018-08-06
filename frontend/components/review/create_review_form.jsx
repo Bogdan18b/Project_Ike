@@ -45,7 +45,7 @@ class CreateReviewForm extends React.Component {
           <Link to="/"><img id="ike-review-logo"
             src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/>
           </Link>
-          <h3>Write a Review</h3>
+          <h3>{this.props.formType}</h3>
         </div>
         <form className="ike-review-form"
           onSubmit={this.handleSubmit}>

@@ -56,18 +56,18 @@ export const createReview = (review) => {
   };
 };
 
-// export const updateReview = (review) => {
-//   return dispatch => {
-//     return ReviewApiUtil.updateReview(review).then(
-//       review => {
-//         return dispatch(receiveReview(review));
-//       },
-//       errors => {
-//         return dispatch(receiveReviewErrors(errors.responseJSON));
-//       }
-//     );
-//   };
-// };
+export const updateReview = (review) => {
+  return dispatch => {
+    return ReviewApiUtil.updateReview(review).then(
+      review => {
+        return dispatch(receiveReview(review));
+      },
+      errors => {
+        return dispatch(receiveReviewErrors(errors.responseJSON));
+      }
+    );
+  };
+};
 
 export const deleteReview = (id) => {
   return dispatch => {
