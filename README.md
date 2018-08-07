@@ -37,8 +37,8 @@ Another page available to you is the business page, which you can see below:
 ![](https://github.com/Bogdan18b/Project_Zebra/blob/master/pics/business_index.png)
 
 The search bar on top of the page is similar with the home page search bar, and the logo redirects to the home page.
-A logged in user will have an option to submit a review for a business, as well as rate it:
+A logged in user will have an option to write, edit or delete his review for a business.
 
 ![](https://github.com/Bogdan18b/Project_Zebra/blob/master/pics/review_form.png)
 
-Future updates include a user profile page, where the user will have the option to edit or delete his reviews.
+Future updates include a user profile page, and the option to filter businesses by location.
