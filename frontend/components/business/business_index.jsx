@@ -46,7 +46,7 @@ import { Link, Redirect, withRouter } from 'react-router-dom';
 import BusinessIndexItem from './business_index_item';
 import BusinessTypeContainer from './business_type_container';
 import GreetingContainer from '../greeting/greeting_business_container';
-import BusinessMap from '../map/map'
+import BusinessMap from '../map/map';
 import SearchContainer from '../search/search_business_page_container';
 
 class BusinessIndex extends React.Component {
