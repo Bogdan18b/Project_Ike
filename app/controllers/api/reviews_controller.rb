@@ -24,7 +24,7 @@ class Api::ReviewsController < ApplicationController
     if @review.update(review_params)
       render :show
     else
-      render json: @post.errors.full_messages, status: 422
+      render json: ["Body can't be blank"], status: 422
     end
   end
 
