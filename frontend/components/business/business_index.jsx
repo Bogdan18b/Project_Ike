@@ -8,7 +8,6 @@
 //
 // class BusinessIndex extends React.Component {
 //   render() {
-//     debugger
 //     if (Object.values(this.props.businesses).length === 0) {
 //       return <p></p>;
 //     }

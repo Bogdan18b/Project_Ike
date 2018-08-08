@@ -63,7 +63,6 @@ export const updateReview = (review) => {
         return dispatch(receiveReview(review));
       },
       errors => {
-        debugger
         return dispatch(receiveReviewErrors(errors.responseJSON));
       }
     );

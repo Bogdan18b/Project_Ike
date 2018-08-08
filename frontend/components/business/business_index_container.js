@@ -7,7 +7,6 @@ import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/bus
 // // !!!!!! take care of map start with markers -order by number not id
 //
 // const mapStateToProps = ({ entities, type = {} }) => {
-//   debugger
 //   return {
 //     businesses: entities.businesses,
 //     types: Object.values(entities.businessTypes),
@@ -35,7 +34,6 @@ import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/bus
 //   }
 //
 //   render() {
-//     debugger
 //       let businesses = Object.values(this.props.businesses);
 //       return <BusinessIndex businesses={businesses}/>;
 //   }
