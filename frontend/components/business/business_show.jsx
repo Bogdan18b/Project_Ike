@@ -5,7 +5,7 @@ import GreetingContainer from '../greeting/greeting_business_container';
 import Reviews from './business_show_reviews';
 import StarRating from '../star_rating';
 import BusinessMap from '../map/business_show_map';
-import SearchContainer from '../search/search_business_page_container'
+import SearchContainer from '../search/search_business_page_container';
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -84,7 +84,8 @@ class BusinessShow extends React.Component {
               <BusinessMap business={business} />
               <p>{business.address}</p>
               <p>{business.phone}</p>
-              <p><a href={business.website}>{business.website}</a></p>
+              <p>{business.website !== "not available" ?
+                <a href={business.website}>{business.website}</a> : "no website"}</p>
             </div>
 
             <img onMouseOver={() => this.setState({1: 'hovered', 2: '', 3: ''})}
