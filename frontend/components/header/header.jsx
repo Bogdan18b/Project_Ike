@@ -6,11 +6,9 @@ import BusinessTypeContainer from '../business/business_type_home_container';
 
 class Header extends React.Component {
   randomImage() {
-    let numbers = [1, 2, 3];
-    let names = ['avra', 'amelie', 'buenos', 'blue', 'brats', 'data', 'nonsolo', 'nerai', 'bb', 'ludlow', 'gard', 'havana', 'pierre', 'ocean', 'numpang'];
-    names = names[Math.floor(Math.random()*names.length)];
+    let numbers = Array.from(new Array(21),(val,index)=>index + 1);
     numbers = numbers[Math.floor(Math.random()*numbers.length)];
-    let picture = `https://s3.amazonaws.com/project-ike-seeding-dev/${names}${numbers}.jpg`;
+    let picture = `https://s3.amazonaws.com/project-ike-seeding-dev/food${numbers}.jpg`;
     return picture;
   };
 
