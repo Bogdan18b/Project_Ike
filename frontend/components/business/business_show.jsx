@@ -5,6 +5,7 @@ import GreetingContainer from '../greeting/greeting_business_container';
 import Reviews from './business_show_reviews';
 import StarRating from '../star_rating';
 import BusinessMap from '../map/business_show_map';
+import BusinessHeader from '../header/business_header';
 import SearchContainer from '../search/search_business_page_container';
 
 class BusinessShow extends React.Component {
@@ -44,21 +45,7 @@ class BusinessShow extends React.Component {
     return (
       <div className="ike-business-show-main">
 
-        <div className="ike-business-show-header">
-          <Link to="/">
-            <img id="logo-pic-business"
-              src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/>
-          </Link>
-
-          <SearchContainer />
-          <GreetingContainer />
-        </div>
-
-        <div className="ike-business-show-header-nav">
-          <BusinessTypeContainer />
-
-        </div>
-
+        <BusinessHeader />
         <div className="ike-business-show-title">
 
             <h1>{business.name}</h1>

@@ -38,16 +38,6 @@ class SearchResults extends React.Component {
     });
   }
 
-  // componentDidMount() {
-  //   this.props.requestAllBusinessTypes().then(() => {
-  //     if (this.props.searchResults.businessIds.length !== 0) {
-  //       return this.props.searchResults.businessIds.map(id => {
-  //         this.props.requestBusiness(id);
-  //       });
-  //     }
-  //   });
-  // }
-
   render() {
     if (Object.keys(this.props.businesses).length === 0 || Object.keys(this.props.businessTypes).length === 0) {
       return <p></p>;

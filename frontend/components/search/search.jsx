@@ -9,6 +9,7 @@ class Search extends React.Component {
     };
     this.displayResults = this.displayResults.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.searchButton = this.searchButton.bind(this);
   }
 
   displayResults() {
@@ -17,13 +18,14 @@ class Search extends React.Component {
         if (this.state.name.length > 0) {
           return this.props.receiveSearchResults(this.state.name);
         } else {
-          return this.props.clearSearchResults();
+            return this.props.clearSearchResults();
         }
       });
     };
   }
 
   handleClick(item) {
+    // debugger
     return () => {
       if (item.address === undefined) {
         this.props.receiveTypeFromSearch(item);
@@ -31,8 +33,13 @@ class Search extends React.Component {
       } else {
         this.props.history.push(`/businesses/${item.id}`);
       }
-      this.props.clearSearchResults()
-    }
+      this.props.clearSearchResults();
+    };
+  }
+
+  searchButton() {
+    this.props.history.push(`/businesses/search?query=${this.state.name}`);
+    this.props.clearSearchResults();
   }
 
   render() {
@@ -40,13 +47,13 @@ class Search extends React.Component {
       <div className={this.props.classNameMain}>
         <span id="find">Find</span>
         <input onChange={this.displayResults()}
-          placeholder="tacos, burgers, grooming..."
+          placeholder="avra, pet stores..."
           className="ike-search-input"
           type="text" value={this.state.name}
         />
 
 
-        {this.props.businesses.length === 0 ? <h1></h1> : <ul className={this.props.classNameList}>{this.props.businesses.map(bus => {
+      {this.props.businesses.length === 0 ? <h1></h1> : <ul className={this.props.classNameList}>{this.props.businesses.map(bus => {
           return (
             <li key={`list-${bus.id}`} onClick={this.handleClick(bus)}>{bus.name}</li>
           )
@@ -54,7 +61,7 @@ class Search extends React.Component {
         }
 
         <button className={this.props.classNameButton}
-            onClick={() => this.props.history.push(`/businesses/search`)}><i className="fas fa-search"></i>
+            onClick={() => this.searchButton()}><i className="fas fa-search"></i>
         </button>
 
       </div>
