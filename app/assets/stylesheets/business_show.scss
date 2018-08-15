@@ -104,11 +104,13 @@
 .ike-business-show-pics > img {
   width: 240px;
   height: 240px;
+  object-fit: fill;
 }
 
 .hovered {
   transform: scale(1.1);
   box-shadow: 2px 2px 2px 2px #888888;
+  transition: 0.5s;
 }
 
 .ike-business-show-rev {
@@ -124,6 +126,7 @@
   background-color: #bd1f1f;
   color: white;
   justify-content: center;
+  padding: 4px;
 }
 
 .ike-business-header-nav > li {
@@ -131,14 +134,15 @@
   cursor: pointer;
   width: fit-content;
   text-align: center;
-  padding: 1px;
-  padding-left: 25px;
+  height: 25px;
+  padding-right: 15px;
+  padding-left: 35px;
   background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/icon.png");
   background-size: 25px 294px;
   background-repeat: no-repeat;
   vertical-align: bottom;
   overflow: hidden;
-  background-position-x: -2px;
+  background-position-x: 10px;
 }
 
 .ike-business-header-nav > li:hover {
@@ -226,7 +230,7 @@
   width: 86px;
   border-radius: 5px;
   top: 17px;
-  right: 49px;
+  right: 25px;
   position: absolute;
 }
 
@@ -241,8 +245,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 67px;
-  right: 55px;
+  top: 71px;
+  right: 30px;
   position: absolute;
 }
 
