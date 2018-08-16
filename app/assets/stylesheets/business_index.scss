@@ -21,15 +21,20 @@
 }
 
 .ike-business-index-item img {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   margin-right: 15px;
+  object-fit: fill;
 }
 
-.ike-business-index-item a {
+.ike-business-list-name {
   color: #0073bb;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
+}
+
+.ike-business-list-name:hover {
+  text-decoration: underline;
 }
 
 .ike-business-main-div {
@@ -51,4 +56,24 @@
   padding: 20px;
   width: 300px;
   height: 300px;
+}
+
+.ike-business-review-and-stars {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.ike-business-review-and-stars > p {
+  margin-left: 10px;
+}
+
+.ike-business-tags > a {
+  margin-left: 10px;
+  color: #0073bb;
+  font-size: 16px;
+}
+
+.ike-business-tags > a:hover {
+  text-decoration: underline;
 }

@@ -53,7 +53,11 @@ class BusinessShow extends React.Component {
               <StarRating rating={business.rating} />
               <p>{ count === 1 ? "1 review" : `${count} reviews`}</p>
             </div>
-            <h3>{type !== "" ? type.name : ""}</h3>
+            <div className="ike-business-show-tags">
+              <Link to="#">{business.tags[0]}</Link>,
+              <Link to="#">{business.tags[1]}</Link>,
+              <Link to="#">{business.tags[2]}</Link>
+            </div>
 
             { myReviewId === "not reviewed" ? (<Link id="div-write-review"
               to={`/businesses/${business.id}/reviews/new`}

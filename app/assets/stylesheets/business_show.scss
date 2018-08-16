@@ -278,3 +278,17 @@
 .hide {
   display: none;
 }
+
+.ike-business-show-tags > a {
+  margin-left: 10px;
+  color: #0073bb;
+}
+
+.ike-business-show-tags > a:hover {
+  text-decoration: underline;
+}
+
+.ike-business-show-tags {
+  font-size: 20px;
+  margin: 50px 0;
+}
