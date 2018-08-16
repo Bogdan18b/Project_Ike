@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_130747) do
+ActiveRecord::Schema.define(version: 2018_08_16_013946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2018_07_16_130747) do
     t.datetime "updated_at", null: false
     t.string "hours", default: [], array: true
     t.integer "rating"
+    t.string "tags", default: [], array: true
     t.index ["business_type_id"], name: "index_businesses_on_business_type_id"
   end
 
