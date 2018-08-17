@@ -4,7 +4,6 @@ import BusinessIndex from './business_index';
 import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/business_actions';
 
 const mapStateToProps = ({ entities }) => {
-  debugger
   return {
     businesses: entities.businesses
   };
@@ -30,7 +29,14 @@ class BusinessAllIndex extends React.Component {
   }
 
   render() {
-    let businesses = Object.values(this.props.businesses);
+    debugger
+    let businesses;
+    if (this.props.location.search === "") {
+      businesses = Object.values(this.props.businesses);
+    } else {
+      businesses = Object.values(this.props.businesses).filter(business => business.tags.includes(this.props.location.search.slice(6)));
+    }
+
     if (businesses.length === 0) {
       return <p></p>;
     }
@@ -42,25 +48,3 @@ class BusinessAllIndex extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BusinessAllIndex);
-// import React from 'react';
-// import { connect } from 'react-redux';
-// import BusinessIndex from './business_index';
-// import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/business_actions';
-// const mapStateToProps = ({ entities, type = {} }) => {
-//   debugger
-//   return {
-//     businesses: entities.businesses,
-//     types: Object.values(entities.businessTypes),
-//     businessType: type
-//   };
-// };
-//
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     requestAllBusinesses: () => {
-//       return dispatch(requestAllBusinesses());
-//     }
-//   };
-// };
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(BusinessIndex);

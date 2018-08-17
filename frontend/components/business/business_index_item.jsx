@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import StarRating from '../star_rating';
 
 const BusinessIndexItem = ({ business }) => {
-  debugger
   let count = business.reviewIds.length;
   return (
     <div className="ike-business-index-item">
@@ -16,9 +15,9 @@ const BusinessIndexItem = ({ business }) => {
         <p>{ count === 1 ? "1 review" : `${count} reviews`}</p>
       </h1>
       <div className="ike-business-tags">
-        <Link to="#">{business.tags[0]}</Link>,
-        <Link to="#">{business.tags[1]}</Link>,
-        <Link to="#">{business.tags[2]}</Link>
+        <Link to={`/businesses?tags=${business.tags[0]}`}>{business.tags[0]}</Link>,
+        <Link to={`/businesses?tags=${business.tags[1]}`}>{business.tags[1]}</Link>,
+        <Link to={`/businesses?tags=${business.tags[2]}`}>{business.tags[2]}</Link>
       </div>
     </div>
 

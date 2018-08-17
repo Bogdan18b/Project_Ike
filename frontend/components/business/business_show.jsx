@@ -54,9 +54,9 @@ class BusinessShow extends React.Component {
               <p>{ count === 1 ? "1 review" : `${count} reviews`}</p>
             </div>
             <div className="ike-business-show-tags">
-              <Link to="#">{business.tags[0]}</Link>,
-              <Link to="#">{business.tags[1]}</Link>,
-              <Link to="#">{business.tags[2]}</Link>
+              <Link to={`/businesses?tags=${business.tags[0]}`}>{business.tags[0]}</Link>,
+              <Link to={`/businesses?tags=${business.tags[1]}`}>{business.tags[1]}</Link>,
+              <Link to={`/businesses?tags=${business.tags[2]}`}>{business.tags[2]}</Link>
             </div>
 
             { myReviewId === "not reviewed" ? (<Link id="div-write-review"
