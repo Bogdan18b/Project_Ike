@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment} from 'react';
 import { ReviewIndexItem } from './review_index_item';
 import { withRouter } from 'react-router-dom';
 
@@ -18,9 +18,12 @@ class Reviews extends React.Component {
     }
     const reviews = this.props.reviews.map(review => <ReviewIndexItem key={review.id} review={review} />)
     return (
-      <div className="ike-div-review-main-list">
-        {reviews}
-      </div>
+      <Fragment>
+        <h1 id="ike-recent-reviews">Recent reviews</h1>
+        <div className="ike-div-review-main-list">
+          {reviews}
+        </div>
+      </Fragment>
     )
   }
 }
