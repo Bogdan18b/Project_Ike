@@ -19,7 +19,7 @@ class Reviews extends React.Component {
     const reviews = this.props.reviews.map(review => <ReviewIndexItem key={review.id} review={review} />)
     return (
       <Fragment>
-        <h1 id="ike-recent-reviews">Recent reviews</h1>
+        <h1 id="ike-recent-reviews">Recent activity</h1>
         <div className="ike-div-review-main-list">
           {reviews}
         </div>
