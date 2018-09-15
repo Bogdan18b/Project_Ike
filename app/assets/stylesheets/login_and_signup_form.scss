@@ -17,16 +17,16 @@
   display: flex;
   flex-wrap: wrap;
   width: 350px;
-  margin-top: 85px;
+  margin-top: 10px;
   font-size: 20px;
 }
 
 .ike-div-login-main {
   background-image: url('https://s3.amazonaws.com/project-ike-seeding-dev/login.jpg');
   background-repeat: no-repeat;
-  background-position-x: 900px;
+  background-position-x: 800px;
   background-position-y: center;
-  background-size: 36%;
+  background-size: 40%;
 }
 
 .ike-div-login-form {
@@ -126,4 +126,9 @@
   padding: 5px;
   border-radius: 5px;
   font-size: 20px;
+}
+
+.ike-privacy {
+  width: 200px;
+  text-align: center;
 }

@@ -57,6 +57,7 @@ class SignupForm extends React.Component {
           <div className="ike-div-login-form">
 
             <h1>Sign Up with IKE!</h1>
+            <p className="ike-privacy">By signing up, you agree to YKE’s Terms of Service and Privacy Policy.</p>
             <form className="ike-login-form" onSubmit={this.handleSubmit}>
               <input type="text" id="first_name"
                 value={this.state.first_name}

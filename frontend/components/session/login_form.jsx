@@ -53,6 +53,7 @@ class LoginForm extends React.Component {
           <div className="ike-div-login-form">
 
             <h1>Log In with IKE!</h1>
+            <p className="ike-privacy">By logging in, you agree to YKE’s Terms of Service and Privacy Policy.</p>
             <form className="ike-login-form" onSubmit={this.handleSubmit}>
 
                 <input type="text" value={this.state.email}
