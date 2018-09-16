@@ -8,7 +8,7 @@ const mapStateToProps = ({ entities, searchResults }) => {
   let reviews = Object.values(entities.reviews).sort((revA, revB) =>
     (revA.id < revB.id) ? 1 : ((revB.id < revA.id) ? -1 : 0));
   reviews.forEach(review => {
-    review.userName = (entities.users[review.userId] && entities.users[review.userId].first_name) || "";
+    review.userName = (entities.users[review.userId] && entities.users[review.userId].firstName) || "";
     review.businessName = (entities.businesses[review.businessId] && entities.businesses[review.businessId].name) || "";
   });
   return {

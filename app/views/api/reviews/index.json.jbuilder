@@ -12,7 +12,9 @@ end
 json.users do
   @reviews.each do |review|
     json.set! review.user.id do
-      json.extract! review.user, :first_name, :last_name, :email, :id
+      json.extract! review.user, :email, :id
+      json.firstName review.user.first_name
+      json.lastName review.user.last_name
     end
   end
 end

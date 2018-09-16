@@ -4,8 +4,9 @@ import { requestAllReviews } from '../../actions/review_actions';
 
 const mapStateToProps = ({ entities, session }) => {
   debugger
+  let user = Object.values(entities.users).filter(user => user.id === session.id)[0];
   return {
-    user: Object.values(entities.users)[0],
+    user: user,
     reviews: entities.reviews
   };
 };
