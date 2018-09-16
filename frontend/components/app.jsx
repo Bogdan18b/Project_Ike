@@ -12,6 +12,7 @@ import BusinessTypeContainer from './business/business_type_container';
 import ReviewIndexContainer from './review/review_index_container';
 import CreateReviewFormContainer from './review/create_review_form_container';
 import EditReviewFormContainer from './review/edit_review_form_container';
+import UserProfileContainer from './session/user_profile_container';
 import Header from './header/header';
 
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <ProtectedRoute exact path="/businesses/:businessId/reviews/new" component={CreateReviewFormContainer} />
     <ProtectedRoute exact path="/businesses/:businessId/reviews/:reviewId/edit" component={EditReviewFormContainer} />
+    <ProtectedRoute exact path="/user_details" component={UserProfileContainer} />
     <Route exact path="/" component={ReviewIndexContainer} />
     <Footer />
   </div>
