@@ -132,3 +132,40 @@
   width: 200px;
   text-align: center;
 }
+
+#ike-username {
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  background-color: #d3d3d3;
+  text-align: center;
+  padding: 55px;
+}
+
+#ike-recent-activity {
+  color: #d32323;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+#ike-no-activity {
+  text-align: center;
+  padding: 10px;
+}
+
+.ike-user-page-review {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid lightgray;
+  width: 300px;
+  flex-direction: column;
+  margin-left: 650px;
+}
+
+.ike-user-page-review > li {
+  align-self: center;
+  display: flex;
+  margin: 5px;
+}
