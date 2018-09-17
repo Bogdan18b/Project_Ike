@@ -11,7 +11,6 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    debugger
     let reviews = Object.values(this.props.reviews).filter(review => review.userId === this.props.user.id)
     return (
       <div>
