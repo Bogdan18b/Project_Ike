@@ -42,7 +42,9 @@ class Search extends React.Component {
   }
 
   render() {
-    let classType = window.location.href.includes("businesses") ? "business" : "home";
+    let classType = (window.location.href.includes("businesses") ||
+      window.location.href.includes("user_details")) ?
+      "business" : "home";
     return (
       <div className={`ike-search-div-${classType}`}>
         <span id="find">Find</span>

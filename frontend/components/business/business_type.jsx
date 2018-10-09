@@ -3,9 +3,11 @@ import  BusinessTypeIndexItem from './business_type_index_item';
 
 class BusinessType extends React.Component {
   render() {
-    let classType = window.location.href.includes("businesses") ? "" : "-home";
+    let classType = (window.location.href.includes("businesses") ||
+      window.location.href.includes("user_details")) ? 
+      "" : "-home";
     if (this.props.types === undefined) {
-      return <p></p>
+      return null;
     }
     const types = this.props.types.map((type, idx) =>
       <BusinessTypeIndexItem key={type.id}
