@@ -11,7 +11,7 @@ export const Footer = () => {
       <div className="ike-footer-image"></div>
       <ul className="ike-footer-list">
         <li>About the Author</li>
-        <li><a href="http://bogdanbobletec.us">Personal site</a></li>
+        <li><a href="http://bogdanbobletec.us">Portfolio site</a></li>
         <li><a href="https://github.com/Bogdan18b">Github</a></li>
         <li><a href="https://www.linkedin.com/in/bogdanbobletec/">Linkedin</a></li>
       </ul>
