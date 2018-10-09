@@ -9,10 +9,7 @@ const mapStateToProps = ({ searchResults, entities }) => {
   return {
     businesses: entities.businesses,
     businessTypes: entities.businessTypes,
-    searchResults,
-    classNameMain: "ike-search-div-home",
-    classNameList: "ike-search-list-home",
-    classNameButton: "ike-search-button-home"
+    searchResults
   };
 };
 
@@ -40,7 +37,7 @@ class SearchResults extends React.Component {
 
   render() {
     if (Object.keys(this.props.businesses).length === 0 || Object.keys(this.props.businessTypes).length === 0) {
-      return <p></p>;
+      return null;
     }
     let items = [];
     if (Object.keys(this.props.searchResults).length !== 0) {

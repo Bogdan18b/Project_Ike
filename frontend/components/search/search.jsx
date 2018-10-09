@@ -42,8 +42,10 @@ class Search extends React.Component {
   }
 
   render() {
+    let classType = window.location.href.includes("businesses") ? "business" : "home";
+    debugger
     return (
-      <div className={this.props.classNameMain}>
+      <div className={`ike-search-div-${classType}`}>
         <span id="find">Find</span>
         <input onChange={this.displayResults()}
           placeholder="avra, pet stores..."
@@ -52,14 +54,14 @@ class Search extends React.Component {
         />
 
 
-      {this.props.businesses.length === 0 ? <h1></h1> : <ul className={this.props.classNameList}>{this.props.businesses.map(bus => {
+      {this.props.businesses.length === 0 ? <h1></h1> : <ul className={`ike-search-list-${classType}`}>{this.props.businesses.map(bus => {
           return (
             <li key={`list-${bus.id}`} onClick={this.handleClick(bus)}>{bus.name}</li>
           )
         })}</ul>
         }
 
-        <button className={this.props.classNameButton}
+        <button className={`ike-search-button-${classType}`}
             onClick={() => this.searchButton()}><i className="fas fa-search"></i>
         </button>
 
