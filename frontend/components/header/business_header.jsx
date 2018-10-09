@@ -1,7 +1,7 @@
 import React from 'react';
-import GreetingContainer from '../greeting/greeting_business_container';
+import GreetingContainer from '../greeting/greeting_container';
 import { Link } from 'react-router-dom';
-import SearchContainer from '../search/search_business_page_container';
+import SearchContainer from '../search/search_container';
 import BusinessTypeContainer from '../business/business_type_container';
 
 const BusinessHeader = () => {

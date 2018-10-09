@@ -1,8 +1,8 @@
 import React from 'react';
-import GreetingContainer from '../greeting/greeting_home_container';
+import GreetingContainer from '../greeting/greeting_container';
 import { Link } from 'react-router-dom';
-import SearchContainer from '../search/search_home_page_container';
-import BusinessTypeContainer from '../business/business_type_home_container';
+import SearchContainer from '../search/search_container';
+import BusinessTypeContainer from '../business/business_type_container';
 
 class Header extends React.Component {
   randomImage() {

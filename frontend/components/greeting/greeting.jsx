@@ -1,24 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Greeting = ({ currentUser, logout, formClass, loginClass, signupClass }) => {
+const Greeting = ({ currentUser, logout }) => {
   let name;
   name = currentUser ? currentUser.firstName : "";
-  const sessionLinks = () => (
+  const sessionLinks = () => {
+    let classType = window.location.href.includes("businesses") ? "business" : "home";
+    return (
+      <nav className={`ike-login-form-${classType}`}>
 
-    <nav className={formClass}>
+        <Link className={`ike-login-${classType}-button`}
+          to="/login">Log In
+        </Link>
 
-      <Link className={loginClass}
-        to="/login">Log In
-      </Link>
+        <Link className={`ike-signup-${classType}-button`}
+          to="/signup">Sign Up
+        </Link>
 
-      <Link className={signupClass}
-        to="/signup">Sign Up
-      </Link>
+      </nav>
+    );
+  };
 
-    </nav>
-  );
-  const personalGreeting = (name) => {
+  const personalGreeting = name => {
     return (
       <h1 className="ike-welcome-user"
         onClick={() =>{document.getElementsByClassName('ike-logout-list')[0].classList.toggle('hide')}}>

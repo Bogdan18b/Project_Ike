@@ -3,7 +3,7 @@ import { Link, Route } from 'react-router-dom';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import GreetingContainer from './greeting/greeting_home_container';
+import GreetingContainer from './greeting/greeting_container';
 import { Footer } from './footer/footer';
 import BusinessIndexContainer from './business/business_index_container';
 import BusinessSearchIndexContainer from './business/business_search_index_container';
