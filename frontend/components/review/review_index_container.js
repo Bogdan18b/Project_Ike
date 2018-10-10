@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { requestAllReviews } from '../../actions/review_actions';
 import { requestBusiness } from '../../actions/business_actions';
 import Reviews from './review_index';
+import PropTypes from 'prop-types';
 
 const mapStateToProps = ({ entities, searchResults }) => {
   let reviews = Object.values(entities.reviews).sort((revA, revB) =>
@@ -36,5 +37,12 @@ class ReviewsHomeIndex extends React.Component {
     return <Reviews reviews={this.props.reviews}/>
   }
 }
+
+ReviewsHomeIndex.propTypes = {
+  requestBusiness: PropTypes.func,
+  requestAllReviews: PropTypes.func,
+  reviews: PropTypes.arrayOf(PropTypes.object),
+  businesses: PropTypes.arrayOf(PropTypes.number)
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewsHomeIndex);

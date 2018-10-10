@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Greeting = ({ currentUser, logout }) => {
   let name;
@@ -38,5 +39,15 @@ const Greeting = ({ currentUser, logout }) => {
   return currentUser ? personalGreeting(name) : sessionLinks();
 };
 
+Greeting.propTypes = {
+  logout: PropTypes.func,
+  currentUser: PropTypes.shape({
+    id: PropTypes.number,
+    email: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    reviewIds: PropTypes.arrayOf(PropTypes.number),
+  })
+};
 
 export default Greeting;

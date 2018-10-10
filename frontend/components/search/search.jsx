@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect, withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 
 class Search extends React.Component {
   constructor(props) {
@@ -54,22 +55,30 @@ class Search extends React.Component {
           type="text" value={this.state.name}
         />
 
-
-      {this.props.businesses.length === 0 ? <h1></h1> : <ul className={`ike-search-list-${classType}`}>{this.props.businesses.map(bus => {
-          return (
-            <li key={`list-${bus.id}`} onClick={this.handleClick(bus)}>{bus.name}</li>
-          )
-        })}</ul>
-        }
-
+      { this.props.businesses.length === 0 ? null :
+        <ul className={`ike-search-list-${classType}`}>
+          { this.props.businesses.map(bus => {
+            return (
+              <li key={`list-${bus.id}`} onClick={this.handleClick(bus)}>{bus.name}</li>
+            )
+          }
+        )}
+        </ul>
+      }
         <button className={`ike-search-button-${classType}`}
             onClick={() => this.searchButton()}><i className="fas fa-search"></i>
         </button>
-
       </div>
     );
   }
 }
+
+Search.propTypes = {
+  businesses: PropTypes.arrayOf(PropTypes.object),
+  clearSearchResults: PropTypes.func,
+  receiveSearchResults: PropTypes.func,
+  receiveTypeFromSearch: PropTypes.func
+};
 
 export default withRouter(Search);
 

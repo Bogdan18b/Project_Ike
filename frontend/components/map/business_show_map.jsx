@@ -1,10 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class BusinessMap extends React.Component {
-    constructor(props) {
-    super(props);
 
-  }
   componentDidMount() {
     let lat = this.props.business.latitude;
     let lng = this.props.business.longitude;
@@ -18,7 +16,7 @@ class BusinessMap extends React.Component {
       position: myLatLong,
       title: this.props.business.name,
       label: {
-      text: "!",
+      text: "•",
       color: "white",
       fontSize: "26px",
       fontWeight: "bold",
@@ -31,7 +29,23 @@ class BusinessMap extends React.Component {
   render() {
     return <div id='business-map-container' ref={ map => this.mapNode = map }/>;
   }
-
 }
+
+BusinessMap.propTypes = {
+  business: PropTypes.shape({
+    id: PropTypes.number,
+    businessTypeId: PropTypes.number,
+    address: PropTypes.string,
+    name: PropTypes.string,
+    website: PropTypes.string,
+    hours: PropTypes.arrayOf(PropTypes.string),
+    tags: PropTypes.arrayOf(PropTypes.string),
+    reviewIds: PropTypes.arrayOf(PropTypes.number),
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+    photoURL: PropTypes.string,
+    rating: PropTypes.number,
+  })
+};
 
 export default BusinessMap;

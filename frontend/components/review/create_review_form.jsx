@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class CreateReviewForm extends Component {
   constructor(props) {
@@ -108,7 +109,13 @@ class CreateReviewForm extends Component {
     );
   }
 
-
 }
+
+CreateReviewForm.propTypes = {
+  action: PropTypes.func,
+  errors: PropTypes.arrayOf(PropTypes.string),
+  formType: PropTypes.string,
+  review: PropTypes.object,
+};
 
 export default withRouter(CreateReviewForm);

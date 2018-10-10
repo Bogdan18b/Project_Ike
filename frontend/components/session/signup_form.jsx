@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class SignupForm extends Component {
   constructor(props) {
@@ -122,6 +123,12 @@ class SignupForm extends Component {
       </Fragment>
     );
   }
+}
+
+SignupForm.propTypes = {
+  signup: PropTypes.func,
+  login: PropTypes.func,
+  errors: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default withRouter(SignupForm);

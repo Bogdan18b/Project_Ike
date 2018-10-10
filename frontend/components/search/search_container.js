@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Search from './search';
 import { receiveSearchResults, clearSearchResults, receiveTypeFromSearch } from '../../actions/search_actions';
 import { requestAllBusinesses, requestAllBusinessTypes, requestBusiness } from '../../actions/business_actions';
 import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 
 const mapStateToProps = ({ searchResults, entities }) => {
   return {
@@ -24,10 +25,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class SearchResults extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+class SearchResults extends Component {
 
   componentDidMount() {
     this.props.requestAllBusinessTypes().then(() => {
@@ -52,5 +50,21 @@ class SearchResults extends React.Component {
       />
   }
 }
+
+SearchResults.propTypes = {
+  businessTypes: PropTypes.object,
+  businesses: PropTypes.object,
+  clearSearchResults: PropTypes.func,
+  receiveSearchResults: PropTypes.func,
+  receiveTypeFromSearch: PropTypes.func,
+  requestAllBusinessTypes: PropTypes.func,
+  requestAllBusinesses: PropTypes.func,
+  requestBusiness: PropTypes.func,
+  searchResults: PropTypes.shape({
+    businessIds: PropTypes.arrayOf(PropTypes.number),
+    reviewBusinessIds: PropTypes.arrayOf(PropTypes.number),
+    typeIds: PropTypes.arrayOf(PropTypes.number)
+  })
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);

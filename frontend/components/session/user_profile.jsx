@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import BusinessHeader from '../header/business_header';
 import StarRating from '../star_rating';
+import PropTypes from 'prop-types';
 
 class UserProfile extends Component {
 
@@ -9,6 +10,7 @@ class UserProfile extends Component {
   }
 
   render() {
+    debugger
     let reviews = Object.values(this.props.reviews).filter(review => review.userId === this.props.user.id)
     return (
       <Fragment>
@@ -30,5 +32,17 @@ class UserProfile extends Component {
       );
   }
 }
+
+UserProfile.propTypes = {
+  requestAllReviews: PropTypes.func,
+  reviews: PropTypes.object,
+  user: PropTypes.shape({
+    email: PropTypes.string,
+    firstName: PropTypes.string,
+    id: PropTypes.number,
+    lastName: PropTypes.string,
+    reviewIds: PropTypes.arrayOf(PropTypes.number)
+  })
+};
 
 export default UserProfile;
