@@ -29,7 +29,6 @@ class BusinessAllIndex extends React.Component {
   }
 
   render() {
-    debugger
     let businesses;
     if (this.props.location.search === "") {
       businesses = Object.values(this.props.businesses);

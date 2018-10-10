@@ -7,14 +7,14 @@ class MarkerManager {
   }
 
   updateMarkers(businesses) {
-    businesses.forEach(business => {
+    businesses.forEach((business, idx) => {
       let myLatLong = new google.maps.LatLng(business.latitude, business.longitude);
       let marker = new google.maps.Marker({
         position: myLatLong,
         title: business.name,
       });
       this.markers[business.id] = marker;
-      marker.setLabel(`${business.id}`);
+      marker.setLabel(`${idx + 1}`);
       marker.setMap(this.map);
     });
 

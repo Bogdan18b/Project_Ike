@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from '../../star_rating';
 
-const BusinessIndexItem = ({ business }) => {
+const BusinessIndexItem = ({ business, idx }) => {
   let count = business.reviewIds.length;
   return (
     <div className="ike-business-index-item">
       <Link to={`/businesses/${business.id}`}><img src={business.photoURL} alt="photo"/></Link>
       <div>
-      <h1>{business.id}. <Link className="ike-business-list-name"
+      <h1>{idx + 1}. <Link className="ike-business-list-name"
         to={`/businesses/${business.id}`}>{business.name}</Link></h1>
 
       <h1 className="ike-business-review-and-stars"><StarRating rating={business.rating} />
