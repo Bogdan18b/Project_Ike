@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import BusinessIndex from './business_index';
 import { requestAllBusinesses, requestAllBusinessTypes } from '../../../actions/business_actions';
+import PropTypes from 'prop-types';
 
 const mapStateToProps = ({ entities }) => {
   return {
@@ -37,7 +38,7 @@ class BusinessAllIndex extends React.Component {
     }
 
     if (businesses.length === 0) {
-      return <p></p>;
+      return null;
     }
     return (
       <BusinessIndex businesses={businesses}/>
@@ -45,5 +46,9 @@ class BusinessAllIndex extends React.Component {
   }
 
 }
+
+BusinessAllIndex.propTypes = {
+  businesses: PropTypes.object
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(BusinessAllIndex);

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import BusinessIndex from './business_index';
 import { requestAllBusinesses, requestAllBusinessTypes } from '../../../actions/business_actions';
+import PropTypes from 'prop-types';
 
 const mapStateToProps = ({ entities, type = {}, searchResults }) => {
   return {
@@ -48,6 +49,17 @@ class BusinessSearchIndex extends React.Component {
     )
   }
 
+}
+
+BusinessSearchIndex.propTypes = {
+  requestAllBusinesses: PropTypes.func,
+  businesses: PropTypes.object,
+  businessType: PropTypes.object,
+  searchResults: PropTypes.shape({
+    businessIds: PropTypes.arrayOf(PropTypes.number),
+    ReviewBusinessIds: PropTypes.arrayOf(PropTypes.number),
+    typeIds: PropTypes.arrayOf(PropTypes.number)
+  })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BusinessSearchIndex);

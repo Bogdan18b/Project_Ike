@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from '../../star_rating';
+import PropTypes from 'prop-types';
 
 const BusinessIndexItem = ({ business, idx }) => {
   let count = business.reviewIds.length;
@@ -27,6 +28,24 @@ const BusinessIndexItem = ({ business, idx }) => {
     </div>
   </div>
   );
+};
+
+BusinessIndexItem.propTypes = {
+  business: PropTypes.shape({
+    id: PropTypes.number,
+    businessTypeId: PropTypes.number,
+    address: PropTypes.string,
+    name: PropTypes.string,
+    website: PropTypes.string,
+    hours: PropTypes.arrayOf(PropTypes.string),
+    tags: PropTypes.arrayOf(PropTypes.string),
+    reviewIds: PropTypes.arrayOf(PropTypes.number),
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+    photoURL: PropTypes.string,
+    rating: PropTypes.number,
+  }),
+  idx: PropTypes.number
 };
 
 export default BusinessIndexItem;

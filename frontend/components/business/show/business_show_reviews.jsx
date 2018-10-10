@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StarRating from '../../star_rating';
 import { withRouter } from "react-router";
+import PropTypes from 'prop-types';
 
   class Reviews extends Component {
     constructor(props) {
@@ -48,5 +49,13 @@ import { withRouter } from "react-router";
       );
     }
   }
+
+  Reviews.propTypes = {
+    businessId: PropTypes.number,
+    currentUserId: PropTypes.number,
+    deleteReview: PropTypes.func,
+    reviews: PropTypes.arrayOf(PropTypes.object),
+    users: PropTypes.object
+  };
 
   export default withRouter(Reviews);

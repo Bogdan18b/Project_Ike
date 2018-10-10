@@ -6,6 +6,7 @@ import StarRating from '../../star_rating';
 import BusinessMap from '../../map/business_show_map';
 import BusinessHeader from '../../header/business_header';
 import SearchContainer from '../../search/search_container';
+import PropTypes from 'prop-types';
 
 class BusinessShow extends Component {
   constructor(props) {
@@ -123,5 +124,14 @@ class BusinessShow extends Component {
   }
 
 }
+
+BusinessShow.propTypes = {
+  currentUserId: PropTypes.number,
+  deleteReview: PropTypes.func,
+  requestBusiness: PropTypes.func,
+  reviews: PropTypes.arrayOf(PropTypes.object),
+  users: PropTypes.object,
+  business: PropTypes.object
+};
 
 export default withRouter(BusinessShow);

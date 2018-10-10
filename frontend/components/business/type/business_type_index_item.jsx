@@ -1,20 +1,28 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 
-class BusinessTypeIndexItem extends React.Component {
-
-  render() {
-    let y = (this.props.y);
+const BusinessTypeIndexItem = props => {
+    let y = (props.y);
     let x = -28 + (-28 * y);
     return (
       <li onClick={() => {
-          this.props.receiveTypeFromSearch(this.props.type);
-          this.props.history.push(`/businesses/search?query=${this.props.type.name}`);
+          props.receiveTypeFromSearch(props.type);
+          props.history.push(`/businesses/search?query=${props.type.name}`);
         }}
         style={{backgroundPositionY: `${x}px`}}
-        key={`type-${this.props.type.id}`}>{this.props.type.name}</li>
+        key={`type-${props.type.id}`}>{props.type.name}</li>
     );
-  }
 }
+
+BusinessTypeIndexItem.propTypes = {
+  y: PropTypes.number,
+  receiveTypeFromSearch: PropTypes.func,
+  type: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    businessIds: PropTypes.arrayOf(PropTypes.number)
+  })
+};
 
 export default withRouter(BusinessTypeIndexItem);
