@@ -11,6 +11,7 @@ const mapStateToProps = ({ entities, searchResults }) => {
     review.userName = (entities.users[review.userId] && entities.users[review.userId].firstName) || "";
     review.businessName = (entities.businesses[review.businessId] && entities.businesses[review.businessId].name) || "";
   });
+
   return {
     reviews,
     businesses: searchResults.businessIds
@@ -25,15 +26,12 @@ const mapDispatchToProps = dispatch => {
 };
 
 class ReviewsHomeIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
-  this.props.requestAllReviews().then(this.props.businesses.forEach(id => {
-    this.props.requestBusiness(id);
-  }));
-
+    this.props.requestAllReviews().then(data => {
+      data.businesses.forEach(id => this.props.requestBusiness(id));
+    });
   }
+
   render() {
     return <Reviews reviews={this.props.reviews}/>
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BusinessIndex from './business_index';
-import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/business_actions';
+import { requestAllBusinesses, requestAllBusinessTypes } from '../../../actions/business_actions';
 
 const mapStateToProps = ({ entities }) => {
   return {

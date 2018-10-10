@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import BusinessShow from './business_show';
-import { requestBusiness } from '../../actions/business_actions';
-import { deleteReview } from '../../actions/review_actions';
+import { requestBusiness } from '../../../actions/business_actions';
+import { deleteReview } from '../../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let reviews = Object.values(state.entities.reviews);

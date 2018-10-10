@@ -46,9 +46,6 @@ class SearchResults extends React.Component {
     }
     return <Search
       businesses={items}
-      classNameMain={this.props.classNameMain}
-      classNameList={this.props.classNameList}
-      classNameButton={this.props.classNameButton}
       receiveSearchResults={this.props.receiveSearchResults}
       clearSearchResults={this.props.clearSearchResults}
       receiveTypeFromSearch={this.props.receiveTypeFromSearch}

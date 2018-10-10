@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import BusinessIndexItem from './business_index_item';
-import BusinessTypeContainer from './business_type_container';
-import GreetingContainer from '../greeting/greeting_container';
-import BusinessMap from '../map/map';
-import BusinessHeader from '../header/business_header';
-import SearchContainer from '../search/search_container';
+import GreetingContainer from '../../greeting/greeting_container';
+import BusinessMap from '../../map/map';
+import BusinessHeader from '../../header/business_header';
+import SearchContainer from '../../search/search_container';
 import PropTypes from 'prop-types';
 
 class BusinessIndex extends React.Component {

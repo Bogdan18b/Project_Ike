@@ -42,6 +42,7 @@ class Search extends React.Component {
   }
 
   render() {
+    debugger
     let classType = (window.location.href.includes("businesses") ||
       window.location.href.includes("user_details")) ?
       "business" : "home";

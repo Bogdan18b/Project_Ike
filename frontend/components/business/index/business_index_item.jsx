@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import StarRating from '../star_rating';
+import StarRating from '../../star_rating';
 
 const BusinessIndexItem = ({ business }) => {
   let count = business.reviewIds.length;

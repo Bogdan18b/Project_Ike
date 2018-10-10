@@ -1,12 +1,11 @@
 import React from 'react';
-import BusinessTypeContainer from './business_type_container';
 import { Link, withRouter } from 'react-router-dom';
-import GreetingContainer from '../greeting/greeting_container';
+import GreetingContainer from '../../greeting/greeting_container';
 import Reviews from './business_show_reviews';
-import StarRating from '../star_rating';
-import BusinessMap from '../map/business_show_map';
-import BusinessHeader from '../header/business_header';
-import SearchContainer from '../search/search_container';
+import StarRating from '../../star_rating';
+import BusinessMap from '../../map/business_show_map';
+import BusinessHeader from '../../header/business_header';
+import SearchContainer from '../../search/search_container';
 
 class BusinessShow extends React.Component {
   constructor(props) {
