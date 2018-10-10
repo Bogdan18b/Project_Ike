@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link, Route } from 'react-router-dom';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
@@ -16,7 +16,7 @@ import UserProfileContainer from './session/user_profile_container';
 import Header from './header/header';
 
 const App = () => (
-  <div>
+  <Fragment>
     <Route exact path="/" component={Header} />
     <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
     <Route exact path="/businesses" component={BusinessIndexContainer} />
@@ -28,7 +28,7 @@ const App = () => (
     <ProtectedRoute exact path="/user_details" component={UserProfileContainer} />
     <Route exact path="/" component={ReviewIndexContainer} />
     <Footer />
-  </div>
+  </Fragment>
 );
 
 export default App;

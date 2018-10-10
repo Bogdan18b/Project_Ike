@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-class SignupForm extends React.Component {
+class SignupForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,7 +48,7 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <header className="ike-div-login-header">
           <Link className="ike-header-logo-wrapper" to="/"><img className="ike-header-pic" src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/></Link>
         </header>
@@ -119,7 +119,7 @@ class SignupForm extends React.Component {
 
         </div>
 
-      </div>
+      </Fragment>
     );
   }
 }
