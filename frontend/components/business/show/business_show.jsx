@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import GreetingContainer from '../../greeting/greeting_container';
 import Reviews from './business_show_reviews';
@@ -7,7 +7,7 @@ import BusinessMap from '../../map/business_show_map';
 import BusinessHeader from '../../header/business_header';
 import SearchContainer from '../../search/search_container';
 
-class BusinessShow extends React.Component {
+class BusinessShow extends Component {
   constructor(props) {
     super(props)
     this.state = {1: '', 2: 'hovered', 3: ''};
@@ -29,7 +29,7 @@ class BusinessShow extends React.Component {
   render() {
     const business = this.props.business;
     if (business === undefined || !business.photos) {
-      return <p></p>
+      return null;
     }
     let myReview = this.props.reviews.filter(rev => rev.userId === this.props.currentUserId && rev.businessId === business.id);
     let myReviewId = myReview.length > 0 ? myReview[0].id : "not reviewed";

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import BusinessIndex from './index/business_index';
-import { requestAllBusinesses, requestAllBusinessTypes } from '../../actions/business_actions';
+import BusinessIndex from './business_index';
+import { requestAllBusinesses, requestAllBusinessTypes } from '../../../actions/business_actions';
 
 const mapStateToProps = ({ entities, type = {}, searchResults }) => {
   return {
@@ -33,7 +33,7 @@ class BusinessSearchIndex extends React.Component {
 
   render() {
     if (Object.values(this.props.businesses).length === 0) {
-      return <p></p>;
+      return null;
     }
     let businesses;
 

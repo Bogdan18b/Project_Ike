@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import StarRating from '../../star_rating';
 import { withRouter } from "react-router";
 
-
-  class Reviews extends React.Component {
+  class Reviews extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -13,7 +12,6 @@ import { withRouter } from "react-router";
       this.handleHover = this.handleHover.bind(this);
       this.handleHoverOut = this.handleHoverOut.bind(this);
     }
-
 
     handleRemove(id) {
       this.props.deleteReview(id);
@@ -41,8 +39,7 @@ import { withRouter } from "react-router";
             {this.props.currentUserId === review.userId ? <li id="ike-remove-review"onClick={() => this.handleRemove(review.id)}><i className="fas fa-trash-alt"
             onMouseOver={this.handleHover.bind()}
             onMouseOut={this.handleHoverOut.bind()}></i>
-          <p className={`ike-business-remove-review ${this.state.className}`}>Remove Review</p></li> : ""}
-
+            <p className={`ike-business-remove-review ${this.state.className}`}>Remove Review</p></li> : ""}
           </ul>
         )}
       );

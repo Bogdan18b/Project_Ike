@@ -14,7 +14,7 @@ class Reviews extends React.Component {
 
   render() {
     if(this.props.reviews.length === 0) {
-      return <p></p>
+      return null;
     }
     const reviews = this.props.reviews.map(review => <ReviewIndexItem key={review.id} review={review} />)
     return (

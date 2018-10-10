@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import GreetingContainer from '../greeting/greeting_container';
 import { Link } from 'react-router-dom';
 import SearchContainer from '../search/search_container';
@@ -13,7 +13,7 @@ const randomImage = () => {
 
 const Header = () => {
   return (
-    <div>
+    <Fragment>
         <Link id="ike-home-write-review" to="/businesses">Write a Review</Link>
       <GreetingContainer />
       <div className="ike-homepage-header" style ={ { backgroundImage: `url(${randomImage()}` }}>
@@ -23,7 +23,7 @@ const Header = () => {
       </div>
       <div className="ike-homepage-login-button">
       </div>
-    </div>
+    </Fragment>
   );
 };
 

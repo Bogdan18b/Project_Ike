@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 
-class CreateReviewForm extends React.Component {
+class CreateReviewForm extends Component {
   constructor(props) {
     super(props);
     this.state = this.props.review;
@@ -50,7 +50,7 @@ class CreateReviewForm extends React.Component {
 
   render () {
     return (
-      <div>
+      <Fragment>
         <div className="ike-review-form-header">
           <Link to="/"><img id="ike-review-logo"
             src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/>
@@ -104,7 +104,7 @@ class CreateReviewForm extends React.Component {
               type="submit" value={this.props.formType} />
         </form>
 
-      </div>
+      </Fragment>
     );
   }
 
