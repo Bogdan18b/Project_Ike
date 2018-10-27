@@ -1,7 +1,7 @@
 // Place all the styles related to the Businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import 'colors';
 
 .ike-business-index-item {
   display: flex;
@@ -9,11 +9,10 @@
   width: 730px;
   height: 220px;
   margin: 0 auto;
-  border-top: 1px solid lightgrey;
+  border-top: 1px solid $color-grey;
   margin-top: 20px;
   align-items: center;
   justify-content: center;
-
 }
 
 #last {
@@ -28,7 +27,7 @@
 }
 
 .ike-business-list-name {
-  color: #0073bb;
+  color: $color-blue;
   font-size: 20px;
   font-weight: bold;
 }
@@ -62,18 +61,16 @@
   display: flex;
   flex-wrap: wrap;
   margin: 10px 0;
-}
-
-.ike-business-review-and-stars > p {
-  margin-left: 10px;
+  p {
+    margin-left: 10px;
+  }
 }
 
 .ike-business-tags > a {
   margin-left: 10px;
-  color: #0073bb;
+  color: $color-blue;
   font-size: 16px;
-}
-
-.ike-business-tags > a:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }

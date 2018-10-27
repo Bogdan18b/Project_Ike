@@ -1,3 +1,5 @@
+@import 'colors';
+
 .ike-homepage-header {
   height: 700px;
   background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/food.jpg");
@@ -137,8 +139,8 @@
 
 .ike-signup-home-button:hover {
   background-color: white;
-  color: grey;
-  text-shadow: 2px 2px 8px grey;
+  color: $color-grey;
+  text-shadow: 2px 2px 8px $color-grey;
 }
 
 .ike-login-home-button {
@@ -162,7 +164,7 @@
   right: 0;
   width: 55px;
   height: 55px;
-  background-color: #d32323;
+  background-color: $color-red;
   display: flex;
   justify-content: center;
   color: white;

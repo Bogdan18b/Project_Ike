@@ -1,5 +1,7 @@
+@import 'colors';
+
 .ike-div-login-header {
-  background-color: #d32323;
+  background-color: $color-red;
   right: 0;
   top: 0;
   left: 0;
@@ -19,6 +21,31 @@
   width: 350px;
   margin-top: 10px;
   font-size: 20px;
+  input {
+    width: 310px;
+    height: 30px;
+    margin-top: 10px;
+    border: 1px solid $color-grey;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 5px;
+  }
+  input:last-child {
+    background-color: $color-red;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    height: 45px;
+  }
+  select {
+    width: 99px;
+    height: 30px;
+    margin-top: 10px;
+    border: 1px solid $color-grey;
+    border-radius: 5px;
+    margin-left: 10px;
+    color: grey;
+  }
 }
 
 .ike-div-login-main {
@@ -36,34 +63,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.ike-login-form > select {
-  width: 99px;
-  height: 30px;
-  margin-top: 10px;
-  border: 1px solid grey;
-  border-radius: 5px;
-  margin-left: 10px;
-  color: grey;
-}
-
-.ike-login-form > input:last-child {
-  background-color: #d32323;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  height: 45px;
-}
-
-.ike-login-form > input {
-  width: 310px;
-  height: 30px;
-  margin-top: 10px;
-  border: 1px solid grey;
-  border-radius: 5px;
-  margin-left: 10px;
-  padding: 5px;
+  a {
+    font-size: 10px;
+    margin-left: 200px;
+    color: $color-blue;
+  }
+  h1 {
+    font-size: 27px;
+    font-weight: 900;
+    color: $color-red;
+  }
 }
 
 #last_name {
@@ -72,18 +81,6 @@
 
 #first_name {
   width: 150px;
-}
-
-.ike-div-login-form > a {
-  font-size: 10px;
-  margin-left: 200px;
-  color: #0073bb;
-}
-
-.ike-div-login-form > h1 {
-  font-size: 27px;
-  font-weight: 900;
-  color: #d32323;
 }
 
 .ike-div-login-image {
@@ -103,7 +100,8 @@
 .ike-header-pic {
   width: 172px;
   margin: -26px auto;
-  height: 98px;
+  height: 100px;
+  object-fit: contain;
 }
 
 .ike-header-logo-wrapper {
@@ -118,7 +116,7 @@
   width: 310px;
   height: 45px;
   text-align: center;
-  background-color: #0073BA;
+  background-color: $color-blue;
   color: white;
   font-weight: bold;
   margin-top: 15px;
@@ -137,13 +135,13 @@
   display: block;
   font-size: 40px;
   font-weight: bold;
-  background-color: #d3d3d3;
+  background-color: $color-grey;
   text-align: center;
   padding: 55px;
 }
 
 #ike-recent-activity {
-  color: #d32323;
+  color: $color-red;
   font-size: 25px;
   font-weight: bold;
   text-align: center;
@@ -162,12 +160,11 @@
   width: 300px;
   flex-direction: column;
   margin: 0 auto;
-}
-
-.ike-user-page-review > li {
-  align-self: center;
-  display: flex;
-  margin: 5px;
+  li {
+    align-self: center;
+    display: flex;
+    margin: 5px;
+  }
 }
 
 .ike-welcome-user {
@@ -180,15 +177,14 @@
     padding: 3px;
     text-align: center;
     margin: 3px;
-}
-
-.ike-welcome-user:hover {
-  background-color: rgba(51,51,51,0.3);
-  cursor: pointer;
+    &:hover {
+      background-color: rgba(51,51,51,0.3);
+      cursor: pointer;
+    }
 }
 
 .ike-logout-list {
-  color: #0073bb;
+  color: $color-blue;
   text-shadow: none;
   background-color: white;
   border-radius: 5px;

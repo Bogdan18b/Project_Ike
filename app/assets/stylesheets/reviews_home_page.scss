@@ -1,3 +1,5 @@
+@import 'colors';
+
 .ike-div-review-main-list {
   width: 1090px;
   margin: 0 auto;
@@ -8,34 +10,31 @@
 .ike-review-main-list {
   width: 300px;
   height: 400px;
-  border: 1px solid lightgrey;
+  border: 1px solid $color-grey;
   padding: 20px;
   margin: 10px;
   overflow: scroll;
-}
-
-.ike-review-main-list > li {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 5px;
-}
-
-.ike-review-main-list > li:first-child {
-  font-weight: bold;
-  font-size: 19px;
-  color: #0073bb;
-}
-
-.ike-review-main-list > li:nth-child(2) {
-  font-weight: bold;
-  font-size: 19px;
-  color: #0073bb;
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    &:first-child {
+      font-weight: bold;
+      font-size: 19px;
+      color: $color-blue;
+    }
+    &:nth-child(2) {
+      font-weight: bold;
+      font-size: 19px;
+      color: $color-blue;
+    }
+  }
 }
 
 #ike-recent-reviews {
     text-align: center;
     font-size: 25px;
-    color: #d32323;
+    color: $color-red;
     font-weight: bold;
     margin: 15px;
 }
