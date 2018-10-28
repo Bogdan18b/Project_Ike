@@ -24,7 +24,7 @@ const Greeting = ({ currentUser, logout }) => {
 
   const personalGreeting = name => {
     return (
-      <h1 className="ike-welcome-user"
+      <h1 className="ike-welcome-user" style = { window.location.hash === "#/" ? { position: "absolute" } : {}}
         onClick={() =>{document.getElementsByClassName('ike-logout-list')[0].classList.toggle('hide')}}>
         Hello, {name.toUpperCase()}!
         <ul className="ike-logout-list hide">
