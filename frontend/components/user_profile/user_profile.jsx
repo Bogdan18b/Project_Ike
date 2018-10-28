@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import BusinessHeader from '../header/business_header';
-import UploadPhoto from './upload_photo_form';
 import StarRating from '../star_rating';
 import PropTypes from 'prop-types';
 
@@ -16,8 +15,6 @@ class UserProfile extends Component {
       <Fragment>
         <BusinessHeader />
         <h1 id="ike-username">{this.props.user.firstName + " " + this.props.user.lastName}</h1>
-        <UploadPhoto user={this.props.user}
-          updatePhoto={this.props.updatePhoto}/>
         <h2 id="ike-recent-activity">Recent activity</h2>
         {reviews.map(review =>{
           let date = review.createdAt.slice(0, 10).split("-").join("/") || "";
