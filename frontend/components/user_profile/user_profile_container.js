@@ -13,7 +13,6 @@ const mapStateToProps = ({ entities, session }) => {
 const mapDispatchToProps = dispatch => {
   return {
     requestAllReviews: () => dispatch(requestAllReviews()),
-    updatePhoto: data => dispatch(updatePhoto(data))
   };
 };
 
