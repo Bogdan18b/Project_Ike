@@ -20,7 +20,7 @@ class BusinessMap extends React.Component {
         }
         const mapOptions = {
             center,
-            zoom: 15
+            zoom: 13
           };
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
