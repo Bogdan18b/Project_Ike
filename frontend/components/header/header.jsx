@@ -14,9 +14,9 @@ const randomImage = () => {
 const Header = () => {
   return (
     <Fragment>
+      <div className="ike-homepage-header" style ={ { backgroundImage: `url(${randomImage()}` }}>
         <Link id="ike-home-write-review" to="/businesses">Write a Review</Link>
         <GreetingContainer />
-      <div className="ike-homepage-header" style ={ { backgroundImage: `url(${randomImage()}` }}>
         <Link to="/"><img id="logo-pic" src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/></Link>
         <SearchContainer />
         <BusinessTypeContainer/>
