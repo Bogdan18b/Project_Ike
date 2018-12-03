@@ -21,6 +21,9 @@
   justify-content: space-around;
   padding: 5px;
   position: relative;
+  @media (max-width: 800px) {
+    width: 450px;
+  }
 }
 
 .ike-search-div-business {
@@ -203,11 +206,14 @@
 }
 
 .ike-business-header-nav-home {
-  display: flex;
-  flex-wrap: wrap;
   color: white;
-  justify-content: center;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 20px 10%;
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px 2%;
+  }
   li {
     margin: 0 25px;
     cursor: pointer;
