@@ -22,7 +22,7 @@
   justify-content: space-around;
   padding: 5px;
   position: relative;
-  @media (max-width: 800px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     width: 450px;
   }
 }
@@ -128,7 +128,7 @@
   color: white;
   padding: 20px;
   font-size: 16px;
-  @media (max-width: 800px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     top: 100px;
   }
 }
@@ -202,7 +202,7 @@
   &:hover {
     border-bottom: 2px solid white;
   }
-  @media (max-width: 800px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     left: 40%;
   }
 }
@@ -212,7 +212,7 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   margin: 20px 10%;
-  @media (max-width: 800px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     grid-template-columns: repeat(3, 1fr);
     margin: 20px 2%;
   }

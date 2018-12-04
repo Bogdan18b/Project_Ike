@@ -17,6 +17,9 @@
   background-position-y: -25px;
   background-position-x: center;
   border-top: 1px solid $color-grey;
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    justify-content: space-between;
+  }
 }
 
 .ike-footer-list > li {
