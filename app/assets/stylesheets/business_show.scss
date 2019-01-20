@@ -218,30 +218,23 @@
 .ike-login-form-business {
   color: white;
   display: flex;
-  right: 0;
   font-weight: bold;
-  width: 200px;
-  justify-content: space-around;
-  position: absolute;
+  align-items: center;
 }
 
 .ike-signup-business-button {
-  padding: 6px;
+  padding: .5rem;
+  border-radius: .5rem;
   background-color: #bd1f1f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
   &:hover {
     background-color: rgba(51,51,51,0.3);
   }
 }
 
 .ike-login-business-button {
-  font-size: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-right: 2rem;
+  padding: .5rem;
+  border-radius: .5rem;
   &:hover {
     background-color: rgba(51,51,51,0.3);
   }
