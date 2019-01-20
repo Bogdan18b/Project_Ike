@@ -24,27 +24,15 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  position: relative;
-  height: 200px;
+  height: 150px;
+  align-content: space-around;
+  justify-content: space-around;
   h1 {
-    font-size: 50px;
+    font-size: 3.5rem;
     font-weight: 900;
-    position: absolute;
-    left: 30%;
-    top: 10px;
-  }
-  h3 {
-    display: flex;
-    position: absolute;
-    top: 118px;
-    left: 30%;
   }
   > div {
-    position: absolute;
-    left: 30%;
-    top: 90px;
     display: flex;
-    flex-wrap: wrap;
     p {
       margin-left: 25px;
       font-size: 20px;
@@ -267,7 +255,6 @@
 
 .ike-business-show-tags {
   font-size: 20px;
-  margin: 50px 0;
   a {
     margin-left: 10px;
     color: $color-blue;
