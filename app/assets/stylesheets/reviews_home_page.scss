@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  grid-auto-rows: 250px;
+  grid-auto-rows: 255px;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
     grid-template-columns: 1fr;
   }
@@ -28,7 +28,7 @@
     }
     &:last-child {
       overflow: hidden;
-      margin-top: 2rem;
+      margin-top: 1rem;
     }   
     &:nth-of-type(3) {
       display: flex;
