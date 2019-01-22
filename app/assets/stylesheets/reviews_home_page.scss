@@ -5,29 +5,34 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+  grid-auto-rows: 250px;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
     grid-template-columns: 1fr;
   }
 }
 
 .ike-review-main-list {
-  height: 200px;
   border: 1px solid $color-grey;
-  padding: 20px;
-  overflow: scroll;
-  li {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 5px;
-    &:first-child {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  > li {
+    padding: 5px;
+    &:first-child, &:nth-child(2) {
       font-weight: bold;
       font-size: 19px;
       color: $color-blue;
+      border-bottom: 1px solid $color-grey;
+      margin-bottom: 5px;
     }
-    &:nth-child(2) {
-      font-weight: bold;
-      font-size: 19px;
-      color: $color-blue;
+    &:last-child {
+      overflow: hidden;
+      margin-top: 2rem;
+    }   
+    &:nth-of-type(3) {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
@@ -39,4 +44,10 @@
     font-weight: bold;
     margin: 15px;
     padding: 10px;
+}
+
+#show-more {
+  font-weight: 900;
+  font-size: 2rem;
+  color: $color-blue;
 }
