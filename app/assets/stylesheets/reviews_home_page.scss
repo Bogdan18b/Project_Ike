@@ -4,7 +4,7 @@
   margin: 0 10%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 15px;
   grid-auto-rows: 255px;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
     grid-template-columns: 1fr;
@@ -50,4 +50,5 @@
   font-weight: 900;
   font-size: 2rem;
   color: $color-blue;
+  margin-right: 3px;
 }
