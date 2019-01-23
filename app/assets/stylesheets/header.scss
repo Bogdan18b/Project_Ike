@@ -214,7 +214,7 @@
   color: white;
   display: flex;
   font-size: 1.7rem;
-  width: 100vw;
+  width: 99vw;
   justify-content: center;
   margin: 20px 10%;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
@@ -239,7 +239,7 @@
       text-decoration: underline;
     }
     &:nth-of-type(1) {
-      margin-left: 10%;
+      margin-left: 9%;
     }
     &:nth-of-type(6) {
       margin-right: 10%;
@@ -249,9 +249,6 @@
       &:nth-of-type(6) {
         margin-right:0;
       } 
-      &:nth-of-type(1) {
-        margin-left:9%;
-      }
     }
   }
 }
