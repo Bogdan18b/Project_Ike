@@ -6,7 +6,7 @@
   display: flex;
   h3 {
     color: white;
-    font-size: 25px;
+    font-size: 2.5rem;
     margin: 18px -214px;
   }
 }
@@ -32,7 +32,7 @@
 }
 
 .ike-review-form-body {
-  font-size: 18px;
+  font-size: 1.8rem;
   padding: 30px;
 }
 
@@ -48,7 +48,7 @@
   border-radius: 5px;
   margin: -66px 204px;
   width: 200px;
-  font-size: 20px;
+  font-size: 2rem;
   text-align: center;
   padding: 8px;
 }
@@ -65,12 +65,12 @@
   align-items: center;
   justify-content: flex-end;
   background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/icon.png");
-  background-size: 30px 300px;
+  background-size: 3rem 300px;
   background-repeat: no-repeat;
   vertical-align: bottom;
   overflow: hidden;
   background-position-x: 20px;
-  font-size: 18px;
+  font-size: 1.8rem;
   padding: 10px;
   padding-right: 28px;
   &:hover {
@@ -87,6 +87,7 @@
 }
 
 #rating-message {
+  font-size: 1.6rem;
   display: inline;
-  margin-left: 15px;
+  margin-left: 1.5rem;
 }

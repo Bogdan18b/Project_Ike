@@ -28,14 +28,14 @@
   align-content: space-around;
   justify-content: space-around;
   h1 {
-    font-size: 3.5rem;
+    font-size: 5rem;
     font-weight: 900;
   }
   > div {
     display: flex;
     p {
       margin-left: 25px;
-      font-size: 20px;
+      font-size: 3rem;
     }
   }
 }
@@ -102,6 +102,7 @@
 .ike-business-show-rev {
   display: flex;
   flex-wrap: wrap;
+  font-size: 1.6rem;
   width: 1000px;
   margin: 0 auto;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
@@ -114,8 +115,9 @@
   justify-content: center;
   background-color: #bd1f1f;
   color: white;
-  padding: 0.5rem;
-  height: 1.5rem;
+  padding: 1rem;
+  height: 2rem;
+  font-size: 1.6rem;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
     flex-wrap: wrap;
     align-content: center;
@@ -128,13 +130,13 @@
     background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/icon.png");
     background-size: 25px 300px;
     background-repeat: no-repeat;
-    background-position-x: 15%;
+    background-position-x: 10%;
     text-align: center;
     &:nth-of-type(1) {
-      margin-left:10%;
+      margin-left:15%;
     }
     &:nth-of-type(6) {
-      margin-right:10%;
+      margin-right:15%;
     }
     &:hover {
       background-color: rgba(51,51,51,0.3);
@@ -172,6 +174,7 @@
 }
 
 .ike-business-show-map {
+  font-size: 1.6rem;
   width: 290px;
   height: 350px;
   border: 1px solid lightgray;
@@ -180,12 +183,12 @@
   justify-content: center;
   background-color: white;
   p {
-    margin-top: 10px;
-    margin-left: 30px;
+    margin-top: 1rem;
+    margin-left: 3rem;
     width: 118px;
     &:first-of-type {
       font-weight: bold;
-      font-size: 18px;
+      font-size: 1.8rem;
       a {
         color: #0073dd;
       }
@@ -208,6 +211,7 @@
   display: flex;
   font-weight: bold;
   align-items: center;
+  font-size: 1.6rem;
 }
 
 .ike-signup-business-button {
@@ -254,7 +258,7 @@
 }
 
 .ike-business-show-tags {
-  font-size: 20px;
+  font-size: 2rem;
   a {
     margin-left: 10px;
     color: $color-blue;

@@ -6,6 +6,7 @@
 .ike-business-index-item {
   display: flex;
   flex-wrap: wrap;
+  font-size: 1.6rem;
   width: 730px;
   height: 220px;
   margin: 0 auto;
@@ -31,7 +32,7 @@
 
 .ike-business-list-name {
   color: $color-blue;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -79,7 +80,7 @@
 .ike-business-tags > a {
   margin-left: 10px;
   color: $color-blue;
-  font-size: 16px;
+  font-size: 1.6rem;
   &:hover {
     text-decoration: underline;
   }
