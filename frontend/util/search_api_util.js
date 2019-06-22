@@ -1,6 +1,5 @@
-export const searchBusinesses = (inputValue) => {
-  return $.ajax({
+export const searchBusinesses = inputValue =>
+  $.ajax({
     method: "GET",
     url: `/api/searches?query=${inputValue}`
   });
-};

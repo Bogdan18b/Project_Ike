@@ -1,20 +1,17 @@
-export const fetchAllBusinesses = () => {
-  return $.ajax({
-    method: 'GET',
-    url: '/api/businesses'
+export const fetchAllBusinesses = () =>
+  $.ajax({
+    method: "GET",
+    url: "/api/businesses"
   });
-};
 
-export const fetchBusiness = (id) => {
-  return $.ajax({
-    method: 'GET',
+export const fetchBusiness = id =>
+  $.ajax({
+    method: "GET",
     url: `/api/businesses/${id}`
   });
-};
 
-export const fetchAllBusinessTypes = () => {
-  return $.ajax({
-    method: 'GET',
-    url: 'api/business_types'
+export const fetchAllBusinessTypes = () =>
+  $.ajax({
+    method: "GET",
+    url: "api/business_types"
   });
-};
