@@ -15,7 +15,6 @@ var prodPlugins = [
 plugins = plugins.concat(
   process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
 );
-
 module.exports = {
   context: __dirname,
   entry: "./frontend/ike.jsx",
