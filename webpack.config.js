@@ -6,14 +6,14 @@ var devPlugins = [];
 
 var prodPlugins = [
   new webpack.DefinePlugin({
-    'process.env': {
-      'NODE_ENV': JSON.stringify('production')
+    "process.env": {
+      NODE_ENV: JSON.stringify("production")
     }
   })
 ];
 
 plugins = plugins.concat(
-  process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
+  process.env.NODE_ENV === "production" ? prodPlugins : devPlugins
 );
 module.exports = {
   context: __dirname,
@@ -28,9 +28,9 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         query: {
-          presets: ['react', 'env']
+          presets: ["react", "env", "stage-3"]
         }
       }
     ]
@@ -38,7 +38,7 @@ module.exports = {
   optimization: {
     minimize: false
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   resolve: {
     extensions: [".js", ".jsx", "*"]
   }
