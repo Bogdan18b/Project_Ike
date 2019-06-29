@@ -1,121 +1,131 @@
-import React, { Component, Fragment } from 'react';
-import { withRouter, Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { Component, Fragment, useState, useEffect } from "react";
+import { withRouter, Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-class CreateReviewForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = this.props.review;
-    this.handleSubmit = this.handleSubmit.bind(this);
+const ratingMessage = rating => {
+  switch (rating) {
+    case 1:
+      return <p id="rating-message">Eek! Me thinks not.</p>;
+    case 2:
+      return <p id="rating-message">Meh! I've experienced better.</p>;
+    case 3:
+      return <p id="rating-message">A-Okay!</p>;
+    case 4:
+      return <p id="rating-message">Yay! I'm a fan!</p>;
+    case 5:
+      return <p id="rating-message">Woohoo! As good as it gets!</p>;
+    default:
+      return <p id="rating-message">Select your rating</p>;
   }
+};
 
-  updateBody() {
-    return (e) => {
-      this.setState({ body: e.target.value});
-    };
-  }
+const CreateReviewForm = props => {
+  const [review, setReview] = useState(props.review);
 
-  handleSubmit(e) {
+  const handleSubmit = e => {
     e.preventDefault();
-    this.props.action(this.state).then(() => {
-      return this.props.history.push(`/businesses/${this.props.match.params.businessId}`)
-    });
-  }
+    props
+      .action(review)
+      .then(() =>
+        props.history.push(`/businesses/${props.match.params.businessId}`)
+      );
+  };
 
-  renderErrors() {
-    return (
-      <ul className="ike-review-errors">
-        {this.props.errors.map((error, idx) => (
-          <li key={`error-${idx}`}>{error}</li>
-        ))}
-      </ul>
-    );
-  }
-
-  ratingMessage() {
-    switch (this.state.rating) {
-      case 1:
-        return <p id="rating-message">Eek! Me thinks not.</p>
-      case 2:
-        return <p id="rating-message">Meh! I've experienced better.</p>
-      case 3:
-        return <p id="rating-message">A-Okay!</p>
-      case 4:
-        return <p id="rating-message">Yay! I'm a fan!</p>
-      case 5:
-        return <p id="rating-message">Woohoo! As good as it gets!</p>
-      default:
-        return <p id="rating-message">Select your rating</p>
-    }
-  }
-
-  render () {
-    return (
-      <Fragment>
-        <div className="ike-review-form-header">
-          <Link to="/"><img id="ike-review-logo"
-            src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/>
-          </Link>
-          <h3>{this.props.formType}</h3>
-        </div>
-        <form className="ike-review-form"
-          onSubmit={this.handleSubmit}>
-
-          <div className="ike-review-form-wrapper">
-
-            <div className="ike-review-stars">
-
-              <span className={ (this.state.rating > 0) ? "fa fa-star red-star" : "fa fa-star grey-star"}
-                onClick={() => this.setState({ rating: 1 })}
-              ></span>
-
-            <span className={ (this.state.rating > 1) ? "fa fa-star red-star" : "fa fa-star grey-star"}
-                onClick={() => this.setState({ rating: 2 })}
-              ></span>
-
-            <span className={ (this.state.rating > 2) ? "fa fa-star red-star" : "fa fa-star grey-star"}
-                onClick={() => this.setState({ rating: 3 })}
-              ></span>
-
-            <span className={ (this.state.rating > 3) ? "fa fa-star red-star" : "fa fa-star grey-star"}
-                onClick={() => this.setState({ rating: 4 })}
-              ></span>
-
-            <span className={ (this.state.rating > 4) ? "fa fa-star red-star" : "fa fa-star grey-star"}
-                onClick={() => this.setState({ rating: 5 })}
-              ></span>
-
-            {this.ratingMessage()}
-
-            </div>
-
-            <textarea className="ike-review-form-body"
-                rows="60" cols="60"
-                value={this.state.body}
-                onChange={this.updateBody()}
-                placeholder="Your review helps others learn about great local businesses.
-                Please do not review this business if you received a freebie for writing this review, or if you are connected in any way to the owner or employees."
+  const updateBody = e => setReview({ ...review, body: e.target.value });
+  return (
+    <Fragment>
+      <div className="ike-review-form-header">
+        <Link to="/">
+          <img
+            id="ike-review-logo"
+            src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"
+          />
+        </Link>
+        <h3>{props.formType}</h3>
+      </div>
+      <form className="ike-review-form" onSubmit={handleSubmit}>
+        <div className="ike-review-form-wrapper">
+          <div className="ike-review-stars">
+            <span
+              className={
+                review.rating > 0
+                  ? "fa fa-star red-star"
+                  : "fa fa-star grey-star"
+              }
+              onClick={() => setReview({ ...review, rating: 1 })}
             />
 
-            {this.renderErrors()}
+            <span
+              className={
+                review.rating > 1
+                  ? "fa fa-star red-star"
+                  : "fa fa-star grey-star"
+              }
+              onClick={() => setReview({ ...review, rating: 2 })}
+            />
 
+            <span
+              className={
+                review.rating > 2
+                  ? "fa fa-star red-star"
+                  : "fa fa-star grey-star"
+              }
+              onClick={() => setReview({ ...review, rating: 3 })}
+            />
+
+            <span
+              className={
+                review.rating > 3
+                  ? "fa fa-star red-star"
+                  : "fa fa-star grey-star"
+              }
+              onClick={() => setReview({ ...review, rating: 4 })}
+            />
+
+            <span
+              className={
+                review.rating > 4
+                  ? "fa fa-star red-star"
+                  : "fa fa-star grey-star"
+              }
+              onClick={() => setReview({ ...review, rating: 5 })}
+            />
+
+            {ratingMessage(review.rating)}
           </div>
 
-            <input className="ike-review-form-button"
-              type="submit" value={this.props.formType} />
-        </form>
+          <textarea
+            className="ike-review-form-body"
+            rows="60"
+            cols="60"
+            value={review.body}
+            onChange={e => updateBody(e)}
+            placeholder="Your review helps others learn about great local businesses.
+            Please do not review this business if you received a freebie for writing this review, or if you are connected in any way to the owner or employees."
+          />
 
-      </Fragment>
-    );
-  }
+          <ul className="ike-review-errors">
+            {props.errors.map((error, idx) => (
+              <li key={`error-${idx}`}>{error}</li>
+            ))}
+          </ul>
+        </div>
 
-}
+        <input
+          className="ike-review-form-button"
+          type="submit"
+          value={props.formType}
+        />
+      </form>
+    </Fragment>
+  );
+};
 
 CreateReviewForm.propTypes = {
   action: PropTypes.func,
   errors: PropTypes.arrayOf(PropTypes.string),
   formType: PropTypes.string,
-  review: PropTypes.object,
+  review: PropTypes.object
 };
 
 export default withRouter(CreateReviewForm);
