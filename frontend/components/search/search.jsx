@@ -1,77 +1,66 @@
-import React from 'react';
-import { Redirect, withRouter } from 'react-router';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router";
+import PropTypes from "prop-types";
 
-class Search extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: ""
-    };
-    this.displayResults = this.displayResults.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.searchButton = this.searchButton.bind(this);
-  }
+const Search = props => {
+  const [searchTerm, setSearchTerm] = useState("");
 
-  displayResults() {
-    return (e) => {
-      this.setState({ name: e.target.value}, () => {
-        if (this.state.name.length > 0) {
-          return this.props.receiveSearchResults(this.state.name);
-        } else {
-            return this.props.clearSearchResults();
-        }
-      });
-    };
-  }
+  useEffect(() => {
+    searchTerm.length > 0
+      ? props.receiveSearchResults(searchTerm)
+      : props.clearSearchResults();
+  }, [searchTerm]);
 
-  handleClick(item) {
-    return () => {
-      if (item.address === undefined) {
-        this.props.receiveTypeFromSearch(item);
-        this.props.history.push(`/businesses/search?query=${item.name}`);
-      } else {
-        this.props.history.push(`/businesses/${item.id}`);
-      }
-      this.props.clearSearchResults();
-    };
-  }
+  const displayResults = e => setSearchTerm(e.target.value);
+  const handleClick = item => {
+    if (item.address === undefined) {
+      props.receiveTypeFromSearch(item);
+      props.history.push(`/businesses/search?query=${item.name}`);
+    } else {
+      props.history.push(`/businesses/${item.id}`);
+    }
+    props.clearSearchResults();
+  };
+  const searchButton = () => {
+    props.history.push(`/businesses/search?query=${searchTerm}`);
+    props.clearSearchResults();
+  };
+  let classType =
+    window.location.href.includes("businesses") ||
+    window.location.href.includes("user_details")
+      ? "business"
+      : "home";
+  return (
+    <div className={`ike-search-div-${classType}`}>
+      <span id="find">Find</span>
+      <input
+        onChange={displayResults}
+        placeholder="avra, pet stores..."
+        className="ike-search-input"
+        type="text"
+        value={searchTerm}
+      />
 
-  searchButton() {
-    this.props.history.push(`/businesses/search?query=${this.state.name}`);
-    this.props.clearSearchResults();
-  }
-
-  render() {
-    let classType = (window.location.href.includes("businesses") ||
-      window.location.href.includes("user_details")) ?
-      "business" : "home";
-    return (
-      <div className={`ike-search-div-${classType}`}>
-        <span id="find">Find</span>
-        <input onChange={this.displayResults()}
-          placeholder="avra, pet stores..."
-          className="ike-search-input"
-          type="text" value={this.state.name}
-        />
-
-      { this.props.businesses.length === 0 ? null :
+      {props.businesses.length === 0 ? null : (
         <ul className={`ike-search-list-${classType}`}>
-          { this.props.businesses.map(bus => {
+          {props.businesses.map(bus => {
             return (
-              <li key={`list-${bus.id}`} onClick={this.handleClick(bus)}>{bus.name}</li>
-            )
-          }
-        )}
+              <li key={`list-${bus.id}`} onClick={() => handleClick(bus)}>
+                {bus.name}
+              </li>
+            );
+          })}
         </ul>
-      }
-        <button className={`ike-search-button-${classType}`}
-            onClick={() => this.searchButton()}><i className="fas fa-search"></i>
-        </button>
-      </div>
-    );
-  }
-}
+      )}
+      <button
+        className={`ike-search-button-${classType}`}
+        onClick={() => searchButton()}
+      >
+        <i className="fas fa-search" />
+      </button>
+    </div>
+  );
+};
 
 Search.propTypes = {
   businesses: PropTypes.arrayOf(PropTypes.object),
@@ -81,6 +70,3 @@ Search.propTypes = {
 };
 
 export default withRouter(Search);
-
-// <span id="near">Near</span>
-// <input id="search-map" type="text" placeholder="Manhattan, NY" />

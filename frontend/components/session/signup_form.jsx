@@ -1,134 +1,155 @@
-import React, { Component, Fragment } from 'react';
-import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { useState, Fragment } from "react";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-class SignupForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-      first_name: "",
-      last_name: "",
-      zip_code: "",
-      day: "",
-      month: "",
-      year: ""
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+const INITIAL_STATE = {
+  email: "",
+  password: "",
+  first_name: "",
+  last_name: "",
+  zip_code: "",
+  day: "",
+  month: "",
+  year: ""
+};
+const GUEST_USER = { email: "guest@yahoo.com", password: "123456" };
 
-  handleSubmit(e) {
+const SignupForm = ({ signup, login, errors }) => {
+  const [user, setUser] = useState(INITIAL_STATE);
+
+  const handleSubmit = e => {
     e.preventDefault();
-    this.props.signup(this.state);
-  }
+    signup(user);
+  };
+  const update = field => e =>
+    setUser({ ...user, [field]: e.currentTarget.value });
+  const loginUser = (e, user) => {
+    e.preventDefault();
+    login(user);
+  };
+  return (
+    <Fragment>
+      <header className="ike-div-login-header">
+        <Link className="ike-header-logo-wrapper" to="/">
+          <img
+            className="ike-header-pic"
+            src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"
+          />
+        </Link>
+      </header>
+      <div className="ike-div-login-main">
+        <ul className="ike-login-errors">
+          {errors.map((error, idx) => (
+            <li key={`error-${idx}`}>{error}</li>
+          ))}
+        </ul>
+        <div className="ike-div-login-form">
+          <h1>Sign Up with IKE!</h1>
+          <p className="ike-privacy">
+            By signing up, you agree to YKE’s Terms of Service and Privacy
+            Policy.
+          </p>
+          <form className="ike-login-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              id="first_name"
+              value={user.first_name}
+              onChange={update("first_name")}
+              autoComplete="given-name"
+              placeholder="First Name"
+            />
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
+            <input
+              type="text"
+              id="last_name"
+              value={user.last_name}
+              onChange={update("last_name")}
+              autoComplete="family-name"
+              placeholder="Last Name"
+            />
 
-  renderErrors() {
-    return (
-      <ul className="ike-login-errors">
-        {this.props.errors.map((error, idx) => (
-          <li key={`error-${idx}`}>{error}</li>
-        ))}
-      </ul>
-    );
-  }
+            <input
+              type="email"
+              value={user.email}
+              onChange={update("email")}
+              autoComplete="email"
+              placeholder="Email"
+            />
 
-  guestLogin() {
-    return (e) => {
-      e.preventDefault();
-      this.props.login({email:'guest@yahoo.com', password:'123456'});
-    };
-  }
+            <input
+              type="password"
+              value={user.password}
+              onChange={update("password")}
+              autoComplete="current-password"
+              placeholder="Password"
+            />
 
-  render() {
-    return (
-      <Fragment>
-        <header className="ike-div-login-header">
-          <Link className="ike-header-logo-wrapper" to="/"><img className="ike-header-pic" src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"/></Link>
-        </header>
-        <div className="ike-div-login-main">
-          {this.renderErrors()}
-          <div className="ike-div-login-form">
+            <input
+              type="text"
+              value={user.zip_code}
+              onChange={update("zip_code")}
+              autoComplete="postal-code"
+              placeholder="ZIP Code"
+            />
 
-            <h1>Sign Up with IKE!</h1>
-            <p className="ike-privacy">By signing up, you agree to YKE’s Terms of Service and Privacy Policy.</p>
-            <form className="ike-login-form" onSubmit={this.handleSubmit}>
-              <input type="text" id="first_name"
-                value={this.state.first_name}
-                onChange={this.update("first_name")}
-                autoComplete="given-name"
-                placeholder="First Name"
-                />
+            <select onChange={update("month")}>
+              <option default>Month</option>
+              {[
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+              ].map(month => (
+                <option key={month}>{month}</option>
+              ))}
+            </select>
 
-              <input type="text" id="last_name"
-                value={this.state.last_name}
-                onChange={this.update("last_name")}
-                autoComplete="family-name"
-                placeholder="Last Name"
-                />
+            <select onChange={update("day")}>
+              <option default>Day</option>
+              {Array.from(new Array(31), (_, index) => index + 1).map(day => (
+                <option key={day}>{day}</option>
+              ))}
+            </select>
 
-              <input type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  autoComplete="email"
-                  placeholder="Email"
-                />
+            <select onChange={update("year")}>
+              <option default>Year</option>
+              {Array.from(
+                new Array(100),
+                (_, index) => new Date().getFullYear() - index
+              ).map(year => (
+                <option key={year}>{year}</option>
+              ))}
+            </select>
 
-              <input type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  autoComplete="current-password"
-                  placeholder="Password"
-                />
+            <input type="submit" value="Sign Up" />
+          </form>
+          <Link to="/login">Already on Ike!? Log in</Link>
 
-              <input type="text" value={this.state.zip_code}
-                  onChange={this.update("zip_code")}
-                  autoComplete="postal-code"
-                  placeholder="ZIP Code"
-                />
-
-              <select onChange={this.update("month")}>
-                  <option default>Month</option>
-                  {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(el => <option key={el}>{el}</option>)}
-              </select>
-
-              <select onChange={this.update("day")}>
-                  <option default>Day</option>
-                  {Array.from(new Array(31),(val,index)=>index + 1).map(el => <option key={el}>{el}</option>)}
-              </select>
-
-              <select onChange={this.update("year")}>
-                  <option default>Year</option>
-                  {Array.from(new Array(100),(val,index)=> 2018 - index).map(el => <option key={el}>{el}</option>)}
-              </select>
-
-              <input type="submit" value="Sign Up" />
-            </form>
-            <Link to="/login">Already on Ike!? Log in</Link>
-
-            <button className="ike-guest-login"
-              onClick={this.guestLogin()}>Guest Login
-            </button>
-          </div>
-
+          <button
+            className="ike-guest-login"
+            onClick={e => loginUser(e, GUEST_USER)}
+          >
+            Guest Login
+          </button>
         </div>
-
-      </Fragment>
-    );
-  }
-}
+      </div>
+    </Fragment>
+  );
+};
 
 SignupForm.propTypes = {
   signup: PropTypes.func,
   login: PropTypes.func,
   errors: PropTypes.arrayOf(PropTypes.string)
-}
+};
 
 export default withRouter(SignupForm);
