@@ -1,18 +1,16 @@
-import { connect } from 'react-redux';
-import { requestAllBusinessTypes } from '../../../actions/business_actions';
-import { receiveTypeFromSearch } from '../../../actions/search_actions';
-import BusinessType from './business_type';
+import { connect } from "react-redux";
+import { receiveTypeFromSearch } from "../../../actions/search_actions";
+import BusinessType from "./business_type";
 
-const mapStateToProps = ({ entities }) => {
-  return {
-    types: Object.values(entities.businessTypes)
-  };
-};
+const mapStateToProps = ({ entities }) => ({
+  types: Object.values(entities.businessTypes)
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    receiveTypeFromSearch: (type) => dispatch(receiveTypeFromSearch(type))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  receiveTypeFromSearch: type => dispatch(receiveTypeFromSearch(type))
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(BusinessType);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BusinessType);

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import StarRating from "../../star_rating";
 import PropTypes from "prop-types";
 

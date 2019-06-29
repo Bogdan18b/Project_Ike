@@ -2,19 +2,20 @@ import React from "react";
 import { withRouter } from "react-router";
 import PropTypes from "prop-types";
 
-const BusinessTypeIndexItem = props => (
+const BusinessTypeIndexItem = ({ type, receiveTypeFromSearch, history }) => (
   <li
     onClick={() => {
-      props.receiveTypeFromSearch(props.type);
-      props.history.push(`/businesses/search?query=${props.type.name}`);
+      receiveTypeFromSearch(type);
+      history.push(`/businesses/search?query=${type.name}`);
     }}
   >
-    {props.type.name}
+    {type.name}
   </li>
 );
 
 BusinessTypeIndexItem.propTypes = {
   receiveTypeFromSearch: PropTypes.func,
+  history: PropTypes.obj,
   type: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
