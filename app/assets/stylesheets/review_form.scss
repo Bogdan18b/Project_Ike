@@ -1,4 +1,4 @@
-@import 'colors';
+@import "colors";
 
 .ike-review-form-header {
   height: 80px;
@@ -64,17 +64,20 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/icon.png");
-  background-size: 3rem 300px;
-  background-repeat: no-repeat;
   vertical-align: bottom;
   overflow: hidden;
-  background-position-x: 20px;
   font-size: 1.8rem;
   padding: 10px;
   padding-right: 28px;
   &:hover {
     background-color: #ab1e1e;
+  }
+  &:before {
+    content: "";
+    background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/icon.png");
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
   }
 }
 
