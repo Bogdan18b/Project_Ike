@@ -2,7 +2,6 @@
 @import "variables";
 
 $starWidth: 1.6rem;
-$moveBy20: 20px;
 
 @mixin star {
   color: $color-white;
@@ -28,5 +27,5 @@ $moveBy20: 20px;
 
 .ike-review-stars {
   display: inline-block;
-  transform: translate($moveBy20, $moveBy20);
+  transform: $translate-20;
 }
