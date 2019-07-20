@@ -1,28 +1,32 @@
 @import "colors";
 @import "variables";
 
-.red-star {
+$starWidth: 1.6rem;
+$moveBy20: 20px;
+
+@mixin star {
   color: $color-white;
-  margin-left: 5px;
+  margin-left: $spacing-1;
+  border-radius: $border-radius;
   background-color: $color-red;
-  border-radius: 3px;
+}
+.red-star {
+  @include star;
 }
 
 .grey-star {
-  color: $color-white;
-  margin-left: 5px;
+  @include star;
   background-color: $color-grey;
-  border-radius: 3px;
 }
 
 .fa {
-  width: 18px;
-  height: 17px;
-  padding: 5px;
+  width: $starWidth;
+  height: $starWidth;
+  padding: $spacing-2;
   font-size: $font-size-normal;
 }
 
 .ike-review-stars {
   display: inline-block;
-  margin: 28px 39px;
+  transform: translate($moveBy20, $moveBy20);
 }
