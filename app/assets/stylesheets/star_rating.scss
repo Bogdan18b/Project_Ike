@@ -1,14 +1,14 @@
 @import "colors";
 
 .red-star {
-  color: white;
+  color: $color-white;
   margin-left: 5px;
   background-color: $color-red;
   border-radius: 3px;
 }
 
 .grey-star {
-  color: white;
+  color: $color-white;
   margin-left: 5px;
   background-color: $color-grey;
   border-radius: 3px;

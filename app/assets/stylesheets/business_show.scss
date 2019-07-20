@@ -21,7 +21,7 @@
 }
 
 .ike-business-show-title {
-  background-color: #f5f5f5;
+  background-color: $color-greyBackground;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -79,8 +79,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
-  border-bottom: 1px solid lightgray;
+  background-color: $color-greyBackground;
+  border-bottom: 1px solid $color-lightgrey;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
     (max-width: 800px) {
     flex-wrap: nowrap;
@@ -99,7 +99,7 @@
 
 .hovered {
   transform: scale(1.1);
-  box-shadow: 2px 2px 2px 2px #888888;
+  box-shadow: 2px 2px 2px 2px $color-lightgrey;
   transition: 0.5s ease-in-out;
 }
 
@@ -118,8 +118,8 @@
 .ike-business-header-nav {
   display: flex;
   justify-content: center;
-  background-color: #bd1f1f;
-  color: white;
+  background-color: $color-darkRed;
+  color: $color-white;
   padding: 1rem;
   height: 2rem;
   font-size: 1.6rem;
@@ -142,7 +142,7 @@
       margin-right: 15%;
     }
     &:hover {
-      background-color: rgba(51, 51, 51, 0.3);
+      background-color: $color-redHover;
     }
     &:before {
       content: "";
@@ -185,7 +185,7 @@
 }
 
 .ike-business-div-search {
-  background-color: white;
+  background-color: $color-white;
   width: 623px;
   height: 35px;
   margin: 5px 20px;
@@ -208,11 +208,11 @@
   font-size: 1.6rem;
   width: 290px;
   height: 350px;
-  border: 1px solid lightgray;
+  border: 1px solid $color-lightgrey;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
+  background-color: $color-white;
   p {
     margin-top: 1rem;
     margin-left: 3rem;
@@ -221,7 +221,7 @@
       font-weight: bold;
       font-size: 1.8rem;
       a {
-        color: #0073dd;
+        color: $color-blue;
       }
     }
   }
@@ -231,14 +231,14 @@
   padding: 20px;
   width: 280px;
   height: 135px;
-  border: 1px solid lightgray;
+  border: 1px solid $color-lightgrey;
   align-self: center;
   margin-top: -65px;
   box-sizing: border-box;
 }
 
 .ike-login-form-business {
-  color: white;
+  color: $color-white;
   display: flex;
   font-weight: bold;
   align-items: center;
@@ -248,9 +248,9 @@
 .ike-signup-business-button {
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #bd1f1f;
+  background-color: $color-darkRed;
   &:hover {
-    background-color: rgba(51, 51, 51, 0.3);
+    background-color: $color-redHover;
   }
 }
 
@@ -259,7 +259,7 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   &:hover {
-    background-color: rgba(51, 51, 51, 0.3);
+    background-color: $color-redHover;
   }
 }
 
@@ -269,17 +269,18 @@
 }
 
 .ike-business-remove-review {
-  color: white;
+  color: $color-white;
   position: absolute;
   margin: -30px 52px;
   width: 125px;
   padding: 3px;
   text-align: center;
-  background-color: #676161;
+  background-color: $color-darkRed;
   border-radius: 6px;
 }
 
 .fa-trash-alt {
+  color: $color-darkRed;
   position: relative;
   cursor: pointer;
 }

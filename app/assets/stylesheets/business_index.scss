@@ -1,7 +1,7 @@
 // Place all the styles related to the Businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'colors';
+@import "colors";
 
 .ike-business-index-item {
   display: flex;
@@ -14,7 +14,8 @@
   margin-top: 20px;
   align-items: center;
   justify-content: center;
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
+    (max-width: 800px) {
     height: 250px;
   }
 }
@@ -44,22 +45,24 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
+    (max-width: 800px) {
     flex-direction: column-reverse;
     align-items: center;
   }
 }
 
 .ike-business-index-map {
-  border: 1px solid gray;
- display: inline-flex;
- height: fit-content;
- position: sticky;
- margin: 20px 20px;
- top: 0;
- @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
-   position: relative;
- }
+  border: 1px solid $color-lightgrey;
+  display: inline-flex;
+  height: fit-content;
+  position: sticky;
+  margin: 20px 20px;
+  top: 0;
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
+    (max-width: 800px) {
+    position: relative;
+  }
 }
 
 #map-container {
