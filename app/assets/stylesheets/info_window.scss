@@ -1,4 +1,5 @@
-@import 'colors';
+@import "colors";
+@import "variables";
 
 #content {
   width: 200px;
@@ -15,7 +16,7 @@
     }
     a {
       color: $color-blue;
-      font-size: 1.4rem;
+      font-size: $font-size-normal;
       font-weight: bold;
       &:hover {
         text-decoration: underline;

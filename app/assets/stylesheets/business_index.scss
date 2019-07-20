@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "colors";
+@import "variables";
 
 .ike-business-index-item {
   display: flex;
   flex-wrap: wrap;
-  font-size: 1.6rem;
+  font-size: $font-size-normal;
   width: 730px;
   height: 220px;
   margin: 0 auto;
@@ -33,7 +34,7 @@
 
 .ike-business-list-name {
   color: $color-blue;
-  font-size: 2rem;
+  font-size: $font-size-large;
   font-weight: bold;
 }
 
@@ -83,7 +84,7 @@
 .ike-business-tags > a {
   margin-left: 10px;
   color: $color-blue;
-  font-size: 1.6rem;
+  font-size: $font-size-normal;
   &:hover {
     text-decoration: underline;
   }

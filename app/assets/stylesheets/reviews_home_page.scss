@@ -1,4 +1,5 @@
-@import 'colors';
+@import "colors";
+@import "variables";
 
 .ike-div-review-main-list {
   margin: 0 10%;
@@ -6,7 +7,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
   grid-auto-rows: 255px;
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
+    (max-width: 800px) {
     grid-template-columns: 1fr;
   }
 }
@@ -14,15 +16,16 @@
 .ike-review-main-list {
   border: 1px solid $color-grey;
   padding: 10px;
-  font-size: 1.6rem;
+  font-size: $font-size-normal;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   > li {
     padding: 5px;
-    &:first-child, &:nth-child(2) {
+    &:first-child,
+    &:nth-child(2) {
       font-weight: bold;
-      font-size: 1.9rem;
+      font-size: $font-size-large;
       color: $color-blue;
       border-bottom: 1px solid $color-grey;
       margin-bottom: 5px;
@@ -30,7 +33,7 @@
     &:last-child {
       overflow: hidden;
       margin-top: 1rem;
-    }   
+    }
     &:nth-of-type(3) {
       display: flex;
       justify-content: space-between;
@@ -38,9 +41,10 @@
   }
 }
 
-#ike-recent-reviews, #ike-popular-businesses {
+#ike-recent-reviews,
+#ike-popular-businesses {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: $font-size-larger;
   color: $color-red;
   font-weight: bold;
   margin: 1.5rem;
@@ -49,7 +53,7 @@
 
 #show-more {
   font-weight: 900;
-  font-size: 2rem;
+  font-size: $font-size-large;
   color: $color-blue;
   margin-right: 3px;
 }

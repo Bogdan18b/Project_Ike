@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "colors";
+@import "variables";
 
 .ike-business-show-header {
   background-color: $color-red;
@@ -36,7 +37,7 @@
     display: flex;
     p {
       margin-left: 25px;
-      font-size: 3rem;
+      font-size: calc(2 * #{$font-size-normal});
     }
   }
 }
@@ -106,7 +107,7 @@
 .ike-business-show-rev {
   display: flex;
   flex-wrap: wrap;
-  font-size: 1.6rem;
+  font-size: $font-size-normal;
   width: 1000px;
   margin: 0 auto;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
@@ -122,7 +123,7 @@
   color: $color-white;
   padding: 1rem;
   height: 2rem;
-  font-size: 1.6rem;
+  font-size: $font-size-normal;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
     (max-width: 800px) {
     flex-wrap: wrap;
@@ -205,7 +206,7 @@
 }
 
 .ike-business-show-map {
-  font-size: 1.6rem;
+  font-size: $font-size-normal;
   width: 290px;
   height: 350px;
   border: 1px solid $color-lightgrey;
@@ -219,7 +220,7 @@
     width: 118px;
     &:first-of-type {
       font-weight: bold;
-      font-size: 1.8rem;
+      font-size: $font-size-large;
       a {
         color: $color-blue;
       }
@@ -242,7 +243,7 @@
   display: flex;
   font-weight: bold;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: $font-size-normal;
 }
 
 .ike-signup-business-button {
@@ -290,7 +291,7 @@
 }
 
 .ike-business-show-tags {
-  font-size: 2rem;
+  font-size: $font-size-large;
   a {
     margin-left: 10px;
     color: $color-blue;

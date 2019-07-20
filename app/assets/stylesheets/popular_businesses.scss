@@ -1,11 +1,13 @@
-@import 'colors';
+@import "colors";
+@import "variables";
 
 .ike-popular-businesses {
-  font-size: 1.6rem;
+  font-size: $font-size-normal;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
+    (max-width: 800px) {
     flex-direction: column;
     align-items: center;
   }
@@ -14,7 +16,8 @@
     height: 350px;
     border: 1px solid $color-grey;
     margin: 20px;
-    @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
+      (max-width: 800px) {
       width: 65%;
       display: flex;
       flex-direction: column;
@@ -23,7 +26,7 @@
     li {
       a {
         color: $color-blue;
-        font-size: 2rem;
+        font-size: $font-size-large;
         font-weight: bold;
         padding: 10px;
       }
@@ -33,7 +36,7 @@
       }
       p {
         padding: 10px;
-        font-size: 1.5rem;
+        font-size: $font-size-normal;
       }
       img {
         width: 300px;
@@ -41,7 +44,8 @@
         padding: 0;
         object-fit: cover;
         margin-bottom: 10px;
-        @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 800px) {
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
+          (max-width: 800px) {
           width: auto;
           padding: 10px;
           object-fit: contain;
