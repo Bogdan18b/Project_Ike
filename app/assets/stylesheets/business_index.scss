@@ -8,38 +8,7 @@ $imageSize: 130px;
 $mapSize: 300px;
 $mapSize-small: 250px;
 
-.ike-business-index-item {
-  @include Flex;
-  font-size: $font-size-normal;
-  width: 730px; // remove after changing class names
-  margin: 0 auto;
-  border-top: 1px solid $color-grey;
-  margin-top: $spacing-4;
-  padding: $spacing-5;
-}
-
-#last {
-  margin: auto;
-}
-
-.ike-business-index-item img {
-  width: $imageSize;
-  height: $imageSize;
-  margin-right: $spacing-4;
-  object-fit: fill;
-}
-
-.ike-business-list-name {
-  color: $color-blue;
-  font-size: $font-size-large;
-  font-weight: bold;
-}
-
-.ike-business-list-name:hover {
-  text-decoration: underline;
-}
-
-.ike-business-main-div {
+.BusinessIndex {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -47,52 +16,71 @@ $mapSize-small: 250px;
     flex-direction: column-reverse;
     align-items: center;
   }
-}
+  &-item {
+    @include Flex;
+    font-size: $font-size-normal;
+    margin: 0 auto;
+    border-top: 1px solid $color-grey;
+    margin-top: $spacing-4;
+    padding: $spacing-5;
+    & img {
+      width: $imageSize;
+      height: $imageSize;
+      margin-right: $spacing-4;
+      object-fit: fill;
+    }
+    &-name {
+      color: $color-blue;
+      font-size: $font-size-large;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-starsAndReviews {
+      display: flex;
+      flex-wrap: wrap;
+      margin: $spacing-2 0;
+      p {
+        margin-left: $spacing-3;
+      }
+    }
+    &-tags > a {
+      margin-left: $spacing-3;
+      color: $color-blue;
+      font-size: $font-size-normal;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-details {
+      margin: $spacing-5;
+    }
+  }
 
-.ike-business-index-map {
-  border: 1px solid $color-lightgrey;
-  position: sticky;
-  transform: $translate-20;
-  top: 0;
-  margin-bottom: $spacing-5;
-  @include Breakpoint($breakpoint-900) {
-    flex-direction: column-reverse;
-    align-items: center;
-    position: relative;
+  &-map {
+    border: 1px solid $color-lightgrey;
+    position: sticky;
+    transform: $translate-20;
+    top: 0;
+    margin-bottom: $spacing-5;
+    @include Breakpoint($breakpoint-900) {
+      flex-direction: column-reverse;
+      align-items: center;
+      position: relative;
+    }
+    &-container {
+      padding: $spacing-5;
+      width: $mapSize;
+      height: $mapSize;
+      @include Breakpoint($breakpoint-1268) {
+        width: $mapSize-small;
+        height: $mapSize-small;
+      }
+      @include Breakpoint($breakpoint-900) {
+        width: $mapSize;
+        height: $mapSize;
+      }
+    }
   }
-}
-
-#map-container {
-  padding: $spacing-5;
-  width: $mapSize;
-  height: $mapSize;
-  @include Breakpoint($breakpoint-1268) {
-    width: $mapSize-small;
-    height: $mapSize-small;
-  }
-  @include Breakpoint($breakpoint-900) {
-    width: $mapSize;
-    height: $mapSize;
-  }
-}
-
-.ike-business-review-and-stars {
-  display: flex;
-  flex-wrap: wrap;
-  margin: $spacing-2 0;
-  p {
-    margin-left: $spacing-3;
-  }
-}
-
-.ike-business-tags > a {
-  margin-left: $spacing-3;
-  color: $color-blue;
-  font-size: $font-size-normal;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-.hide {
-  display: none;
 }
