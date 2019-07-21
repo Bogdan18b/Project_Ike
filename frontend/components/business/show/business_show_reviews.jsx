@@ -12,38 +12,42 @@ const Reviews = props => {
     setReviews(remainingReviews);
   };
   const handleHover = () => setHideClass("");
-  const handleHoverOut = () => setHideClass("hide");
+  const handleHoverOut = () =>
+    setHideClass("BusinessShow-reviews-item-body-removeIconTooltip-is-hidden");
   return (
     <Fragment>
       {reviews.map(review => {
         const showRemoveButton = props.currentUserId === review.userId;
         return (
-          <ul key={review.id}>
-            <li>{props.users[review.userId].firstName}</li>
-            <li>
+          <div key={review.id} className="BusinessShow-reviews-item">
+            <div className="BusinessShow-reviews-item-details">
+              <h3>{props.users[review.userId].firstName}</h3>
               <StarRating rating={review.rating} />
-              {review.createdAt
-                .slice(0, 10)
-                .split("-")
-                .join("/")}
-            </li>
-            <li>{review.body}</li>
-            {showRemoveButton && (
-              <li
-                id="ike-remove-review"
-                onClick={() => handleRemove(review.id)}
-              >
-                <i
-                  className="fas fa-trash-alt"
-                  onMouseOver={handleHover}
-                  onMouseOut={handleHoverOut}
-                />
-                <p className={`ike-business-remove-review ${hideClass}`}>
-                  Remove Review
-                </p>
-              </li>
-            )}
-          </ul>
+              <p>
+                {review.createdAt
+                  .slice(0, 10)
+                  .split("-")
+                  .join("/")}
+              </p>
+            </div>
+            <div className="BusinessShow-reviews-item-body">
+              <p>{review.body}</p>
+              {showRemoveButton && (
+                <button onClick={() => handleRemove(review.id)}>
+                  <i
+                    className="fas fa-trash-alt BusinessShow-reviews-item-body-removeIcon"
+                    onMouseOver={handleHover}
+                    onMouseOut={handleHoverOut}
+                  />
+                  <p
+                    className={`BusinessShow-reviews-item-body-removeIconTooltip ${hideClass}`}
+                  >
+                    Remove Review
+                  </p>
+                </button>
+              )}
+            </div>
+          </div>
         );
       })}
     </Fragment>

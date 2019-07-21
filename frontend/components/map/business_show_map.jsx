@@ -6,7 +6,7 @@ class BusinessMap extends React.Component {
     let { latitude, longitude } = this.props.business;
     const mapOptions = {
       center: { lat: latitude, lng: longitude },
-      zoom: 15
+      zoom: 13
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     let myLatLng = new google.maps.LatLng(latitude, longitude);
@@ -25,7 +25,10 @@ class BusinessMap extends React.Component {
 
   render() {
     return (
-      <div id="business-map-container" ref={map => (this.mapNode = map)} />
+      <div
+        className="BusinessShow-map-container"
+        ref={map => (this.mapNode = map)}
+      />
     );
   }
 }
