@@ -88,9 +88,7 @@ const BusinessShow = props => {
 
         <div className="BusinessShow-middle">
           <img
-            className={`BusinessShow-middle-image BusinessShow-middle-image-${
-              hovered[1]
-            }`}
+            className={`BusinessShow-middle-image ${hovered[1]}`}
             onMouseOver={() => setHovered({ 1: "is-hovered", 2: "", 3: "" })} // review me
             onMouseOut={() => setHovered({ 1: "", 2: "is-hovered", 3: "" })}
             src={business.photos[0]}
@@ -98,17 +96,13 @@ const BusinessShow = props => {
           />
 
           <img
-            className={`BusinessShow-middle-image BusinessShow-middle-image-${
-              hovered[2]
-            }`}
+            className={`BusinessShow-middle-image ${hovered[2]}`}
             src={business.photos[1]}
             alt="coming soon"
           />
 
           <img
-            className={`BusinessShow-middle-image BusinessShow-middle-image-${
-              hovered[3]
-            }`}
+            className={`BusinessShow-middle-image ${hovered[3]}`}
             onMouseOver={() => setHovered({ 1: "", 2: "", 3: "is-hovered" })}
             onMouseOut={() => setHovered({ 1: "", 2: "is-hovered", 3: "" })}
             src={business.photos[2]}

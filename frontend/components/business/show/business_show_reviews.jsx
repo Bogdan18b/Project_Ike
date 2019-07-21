@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Reviews = props => {
   const [reviews, setReviews] = useState(props.reviews);
-  const [hideClass, setHideClass] = useState("hide");
+  const [hideClass, setHideClass] = useState("is-hidden");
 
   const handleRemove = id => {
     props.deleteReview(id);
@@ -12,8 +12,7 @@ const Reviews = props => {
     setReviews(remainingReviews);
   };
   const handleHover = () => setHideClass("");
-  const handleHoverOut = () =>
-    setHideClass("BusinessShow-reviews-item-body-removeIconTooltip-is-hidden");
+  const handleHoverOut = () => setHideClass("is-hidden");
   return (
     <Fragment>
       {reviews.map(review => {

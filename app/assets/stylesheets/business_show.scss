@@ -107,7 +107,6 @@ $imageSize-smaller: 180px;
     grid-area: images;
     @include Flex;
     justify-content: flex-start;
-    border-bottom: 1px solid $color-lightgrey;
     @include Breakpoint($breakpoint-768) {
       flex-wrap: nowrap;
     }
@@ -123,7 +122,7 @@ $imageSize-smaller: 180px;
         width: $imageSize-smaller;
         height: $imageSize-smaller;
       }
-      &-is-hovered {
+      &.is-hovered {
         transform: scale(1.1);
         box-shadow: 2px 2px 2px 2px $color-lightgrey;
         transition: 0.5s ease-in-out;
@@ -164,7 +163,7 @@ $imageSize-smaller: 180px;
           text-align: center;
           background-color: $color-darkRed;
           border-radius: $border-radius;
-          &-is-hidden {
+          &.is-hidden {
             display: none;
           }
         }
