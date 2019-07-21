@@ -1,21 +1,33 @@
-import React, { Component, Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import { withRouter, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const ratingMessage = rating => {
   switch (rating) {
     case 1:
-      return <p id="rating-message">Eek! Me thinks not.</p>;
+      return (
+        <p className="ReviewForm-main-stars-message">Eek! Me thinks not.</p>
+      );
     case 2:
-      return <p id="rating-message">Meh! I've experienced better.</p>;
+      return (
+        <p className="ReviewForm-main-stars-message">
+          Meh! I've experienced better.
+        </p>
+      );
     case 3:
-      return <p id="rating-message">A-Okay!</p>;
+      return <p className="ReviewForm-main-stars-message">A-Okay!</p>;
     case 4:
-      return <p id="rating-message">Yay! I'm a fan!</p>;
+      return <p className="ReviewForm-main-stars-message">Yay! I'm a fan!</p>;
     case 5:
-      return <p id="rating-message">Woohoo! As good as it gets!</p>;
+      return (
+        <p className="ReviewForm-main-stars-message">
+          Woohoo! As good as it gets!
+        </p>
+      );
     default:
-      return <p id="rating-message">Select your rating</p>;
+      return (
+        <p className="ReviewForm-main-stars-message">Select your rating</p>
+      );
   }
 };
 
@@ -34,85 +46,69 @@ const CreateReviewForm = props => {
   const updateBody = e => setReview({ ...review, body: e.target.value });
   return (
     <Fragment>
-      <div className="ike-review-form-header">
+      <div className="ReviewForm-header">
         <Link to="/">
-          <img
-            id="ike-review-logo"
-            src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"
-          />
+          <img src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png" />
         </Link>
-        <h3>{props.formType}</h3>
       </div>
-      <form className="ike-review-form" onSubmit={handleSubmit}>
-        <div className="ike-review-form-wrapper">
-          <div className="ike-review-stars">
-            <span
-              className={
-                review.rating > 0
-                  ? "fa fa-star red-star"
-                  : "fa fa-star grey-star"
-              }
-              onClick={() => setReview({ ...review, rating: 1 })}
-            />
-
-            <span
-              className={
-                review.rating > 1
-                  ? "fa fa-star red-star"
-                  : "fa fa-star grey-star"
-              }
-              onClick={() => setReview({ ...review, rating: 2 })}
-            />
-
-            <span
-              className={
-                review.rating > 2
-                  ? "fa fa-star red-star"
-                  : "fa fa-star grey-star"
-              }
-              onClick={() => setReview({ ...review, rating: 3 })}
-            />
-
-            <span
-              className={
-                review.rating > 3
-                  ? "fa fa-star red-star"
-                  : "fa fa-star grey-star"
-              }
-              onClick={() => setReview({ ...review, rating: 4 })}
-            />
-
-            <span
-              className={
-                review.rating > 4
-                  ? "fa fa-star red-star"
-                  : "fa fa-star grey-star"
-              }
-              onClick={() => setReview({ ...review, rating: 5 })}
-            />
-
-            {ratingMessage(review.rating)}
-          </div>
-
-          <textarea
-            className="ike-review-form-body"
-            rows="60"
-            cols="60"
-            value={review.body}
-            onChange={e => updateBody(e)}
-            placeholder="Your review helps others learn about great local businesses.
-            Please do not review this business if you received a freebie for writing this review, or if you are connected in any way to the owner or employees."
+      <form className="ReviewForm-main" onSubmit={handleSubmit}>
+        <h1 className="ReviewForm-main-title">{props.formType}</h1>
+        <div className="ReviewForm-main-stars">
+          <span
+            className={
+              review.rating > 0 ? "fa fa-star red-star" : "fa fa-star grey-star"
+            }
+            onClick={() => setReview({ ...review, rating: 1 })}
           />
 
-          <ul className="ike-review-errors">
-            {props.errors.map((error, idx) => (
-              <li key={`error-${idx}`}>{error}</li>
-            ))}
-          </ul>
+          <span
+            className={
+              review.rating > 1 ? "fa fa-star red-star" : "fa fa-star grey-star"
+            }
+            onClick={() => setReview({ ...review, rating: 2 })}
+          />
+
+          <span
+            className={
+              review.rating > 2 ? "fa fa-star red-star" : "fa fa-star grey-star"
+            }
+            onClick={() => setReview({ ...review, rating: 3 })}
+          />
+
+          <span
+            className={
+              review.rating > 3 ? "fa fa-star red-star" : "fa fa-star grey-star"
+            }
+            onClick={() => setReview({ ...review, rating: 4 })}
+          />
+
+          <span
+            className={
+              review.rating > 4 ? "fa fa-star red-star" : "fa fa-star grey-star"
+            }
+            onClick={() => setReview({ ...review, rating: 5 })}
+          />
+
+          {ratingMessage(review.rating)}
         </div>
 
+        <textarea
+          className="ike-review-form-body ReviewForm-main-body"
+          rows="60"
+          cols="60"
+          value={review.body}
+          onChange={e => updateBody(e)}
+          placeholder="Your review helps others learn about great local businesses.
+            Please do not review this business if you received a freebie for writing this review, or if you are connected in any way to the owner or employees."
+        />
+
+        <ul className="ReviewForm-main-errors">
+          {props.errors.map((error, idx) => (
+            <li key={`error-${idx}`}>{error}</li>
+          ))}
+        </ul>
         <input
-          className="ike-review-form-button"
+          className="ReviewForm-main-button"
           type="submit"
           value={props.formType}
         />
