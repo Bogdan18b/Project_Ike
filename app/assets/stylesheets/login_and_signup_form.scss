@@ -142,7 +142,7 @@
 
 #ike-username {
   display: block;
-  font-size: calc(2 * #{$font-size-large});
+  font-size: $font-size-extraLarge;
   font-weight: bold;
   background-color: $color-grey;
   text-align: center;

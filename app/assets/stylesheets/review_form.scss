@@ -54,34 +54,6 @@
   padding: 8px;
 }
 
-#div-write-review {
-  background-color: $color-red;
-  width: 150px;
-  height: 15px;
-  border: 1px solid $color-grey;
-  border-radius: 5px;
-  color: $color-white;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  vertical-align: bottom;
-  overflow: hidden;
-  font-size: $font-size-normal;
-  padding: 10px;
-  padding-right: 28px;
-  &:hover {
-    background-color: $color-redHover;
-  }
-  &:before {
-    content: "";
-    background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/icon.png");
-    width: 30px;
-    height: 30px;
-    background-size: 100%;
-  }
-}
-
 .ike-review-errors {
   color: $color-red;
   display: flex;

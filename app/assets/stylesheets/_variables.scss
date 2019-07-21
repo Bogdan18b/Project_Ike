@@ -1,4 +1,34 @@
 $font-size-normal: 1.6rem;
-$font-size-large: 2rem;
-$font-size-larger: 2.5rem;
-$font-size-small: 1rem;
+$font-size-large: calc(1.25 * #{$font-size-normal});
+$font-size-larger: calc(1.25 * #{$font-size-large});
+$font-size-extraLarge: calc(2 * #{$font-size-large});
+$font-size-small: calc(0.625 * #{$font-size-normal});
+
+$spacing-1: 4px;
+$spacing-2: calc(2 * #{$spacing-1});
+$spacing-3: calc(3 * #{$spacing-1});
+$spacing-4: calc(4 * #{$spacing-1});
+$spacing-5: calc(5 * #{$spacing-1});
+
+$border-radius: 4px;
+$translate-20: translate($spacing-5, $spacing-5);
+
+$breakpoint-576: 576px;
+$breakpoint-768: 768px;
+$breakpoint-900: 900px;
+$breakpoint-1024: 1024px;
+$breakpoint-1268: 1268px;
+$breakpoint-1440: 1440px;
+
+@mixin Breakpoint($bp: null) {
+  @media screen and (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin Flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
