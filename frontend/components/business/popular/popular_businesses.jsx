@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 
 const PopularBusinesses = ({ businesses }) => (
   <Fragment>
-    <h1 id="ike-popular-businesses">Hot and New Businesses</h1>
-    <div className="ike-popular-businesses">
+    <h1 className="PopularBusinesses-title">Hot and New Businesses</h1>
+    <div className="PopularBusinesses-wrapper">
       {businesses.map(bus => (
         <PopularBusiness key={bus.id} business={bus} />
       ))}
