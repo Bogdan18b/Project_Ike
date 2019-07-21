@@ -1,212 +1,84 @@
 @import "colors";
 @import "variables";
 
-.ike-div-login-header {
-  background-color: $color-red;
-  right: 0;
-  top: 0;
-  left: 0;
-  padding: 1rem;
-  height: 40px;
-  margin-bottom: 30px;
-}
-
-#ike-home-button {
-  position: absolute;
-  background-position: center;
-}
-
-.ike-login-form {
-  display: flex;
-  flex-wrap: wrap;
-  width: 350px;
-  margin-top: 1rem;
-  font-size: $font-size-large;
-  input {
-    width: 310px;
-    height: 30px;
-    margin-top: 1rem;
-    border: 1px solid $color-grey;
-    border-radius: 0.5rem;
-    margin-left: 1rem;
-    padding: 0.5rem;
-  }
-  input:last-child {
+.JoinIke {
+  &-header {
     background-color: $color-red;
-    text-align: center;
-    color: $color-white;
-    font-weight: bold;
-    height: 45px;
+    padding: $spacing-1;
+    &-logo {
+      height: 100px;
+      object-fit: contain;
+    }
   }
-  select {
-    width: 99px;
-    height: 30px;
-    margin-top: 10px;
-    border: 1px solid $color-grey;
-    border-radius: 5px;
-    margin-left: 10px;
-    color: $color-grey;
+  &-main {
+    background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/login.jpg");
+    background-repeat: no-repeat;
+    background-position-x: 800px;
+    background-position-y: center;
+    background-size: 40%;
+    @include Breakpoint($breakpoint-768) {
+      background-image: none;
+    }
+    &-errors {
+      background: $color-pink;
+      margin: 0 auto;
+      text-align: center;
+      font-size: $font-size-normal;
+    }
+    &-form {
+      @include Flex;
+      width: 50vw;
+      height: 75vh;
+      flex-direction: column;
+      @include Breakpoint($breakpoint-768) {
+        width: auto;
+      }
+      a {
+        font-size: $font-size-small;
+        margin-left: 200px;
+        color: $color-red;
+      }
+      h1 {
+        font-size: $font-size-larger;
+        color: $color-red;
+      }
+      &-privacy {
+        width: 200px;
+        text-align: center;
+      }
+      &-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 350px;
+        margin-top: $spacing-3;
+        font-size: $font-size-large;
+        input {
+          width: 100%;
+          margin-top: $spacing-3;
+          border: 1px solid $color-grey;
+          border-radius: $border-radius;
+          margin-left: $spacing-3;
+          padding: $spacing-3;
+        }
+        input:nth-last-child(2) {
+          background-color: $color-red;
+          text-align: center;
+          color: $color-white;
+          font-weight: bold;
+        }
+        input:last-child {
+          background-color: $color-blue;
+          text-align: center;
+          color: $color-white;
+        }
+        select {
+          width: calc(33% - #{$spacing-5});
+          margin: $spacing-2;
+          border: 1px solid $color-grey;
+          border-radius: $border-radius;
+          color: $color-grey;
+        }
+      }
+    }
   }
-}
-
-.ike-div-login-main {
-  background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/login.jpg");
-  background-repeat: no-repeat;
-  background-position-x: 800px;
-  background-position-y: center;
-  background-size: 40%;
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
-    (max-width: 800px) {
-    background-image: none;
-  }
-}
-
-.ike-div-login-form {
-  width: 800px;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
-    (max-width: 800px) {
-    width: auto;
-  }
-  a {
-    font-size: $font-size-small;
-    margin-left: 200px;
-    color: $color-blue;
-  }
-  h1 {
-    font-size: $font-size-larger;
-    font-weight: 900;
-    color: $color-red;
-  }
-}
-
-#last_name {
-  width: 138px;
-}
-
-#first_name {
-  width: 150px;
-}
-
-.ike-div-login-image {
-  height: 700px;
-  width: 700px;
-  background-color: $color-blue;
-  border: 5px $color-black;
-}
-
-.ike-login-errors {
-  background: $color-pink;
-  margin: 0 auto;
-  text-align: center;
-  width: 700px;
-}
-
-.ike-header-pic {
-  width: 172px;
-  margin: -26px auto;
-  height: 100px;
-  object-fit: contain;
-}
-
-.ike-header-logo-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 172px;
-  margin: 0 auto;
-}
-
-.ike-guest-login {
-  border: 1px solid $color-grey;
-  width: 310px;
-  height: 45px;
-  text-align: center;
-  background-color: $color-blue;
-  color: $color-white;
-  font-weight: bold;
-  margin-top: 15px;
-  margin-right: 7px;
-  padding: 5px;
-  border-radius: 5px;
-  font-size: $font-size-large;
-}
-
-.ike-privacy {
-  width: 200px;
-  text-align: center;
-}
-
-#ike-username {
-  display: block;
-  font-size: $font-size-extraLarge;
-  font-weight: bold;
-  background-color: $color-grey;
-  text-align: center;
-  padding: 55px;
-}
-
-#ike-recent-activity {
-  color: $color-red;
-  font-size: $font-size-larger;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-}
-
-#ike-no-activity {
-  text-align: center;
-  padding: 10px;
-}
-
-.ike-user-page-review {
-  font-size: $font-size-normal;
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid $color-lightgrey;
-  width: 300px;
-  flex-direction: column;
-  margin: 0 auto;
-  li {
-    align-self: center;
-    display: flex;
-    margin: 5px;
-  }
-}
-
-.ike-welcome-user {
-  color: $color-white;
-  top: 40px;
-  right: 25%;
-  font-size: $font-size-normal;
-  font-weight: bold;
-  text-shadow: 2px 2px 8px $color-black;
-  padding: 3px;
-  text-align: center;
-  margin: 3px;
-  &:hover {
-    background-color: $color-redHover;
-    cursor: pointer;
-  }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
-    (max-width: 800px) {
-    right: 5%;
-  }
-}
-
-.ike-logout-list {
-  color: $color-blue;
-  text-shadow: none;
-  background-color: $color-white;
-  border-radius: 5px;
-  font-size: $font-size-large;
-  font-weight: 400;
-  z-index: 5;
-  padding: 5px;
-  position: absolute;
-  border: 1px solid $color-lightgrey;
-  top: 50px;
 }

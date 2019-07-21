@@ -30,30 +30,30 @@ const SignupForm = ({ signup, login, errors }) => {
   };
   return (
     <Fragment>
-      <header className="ike-div-login-header">
-        <Link className="ike-header-logo-wrapper" to="/">
+      <header className="JoinIke-header">
+        <Link to="/">
           <img
-            className="ike-header-pic"
+            className="JoinIke-header-logo"
             src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"
+            alt="ike logo"
           />
         </Link>
       </header>
-      <div className="ike-div-login-main">
-        <ul className="ike-login-errors">
+      <div className="JoinIke-main">
+        <ul className="JoinIke-main-errors">
           {errors.map((error, idx) => (
             <li key={`error-${idx}`}>{error}</li>
           ))}
         </ul>
-        <div className="ike-div-login-form">
+        <div className="JoinIke-main-form">
           <h1>Sign Up with IKE!</h1>
-          <p className="ike-privacy">
+          <p className="JoinIke-main-form-privacy">
             By signing up, you agree to YKE’s Terms of Service and Privacy
             Policy.
           </p>
-          <form className="ike-login-form" onSubmit={handleSubmit}>
+          <form className="JoinIke-main-form-wrapper" onSubmit={handleSubmit}>
             <input
               type="text"
-              id="first_name"
               value={user.first_name}
               onChange={update("first_name")}
               autoComplete="given-name"
@@ -62,7 +62,6 @@ const SignupForm = ({ signup, login, errors }) => {
 
             <input
               type="text"
-              id="last_name"
               value={user.last_name}
               onChange={update("last_name")}
               autoComplete="family-name"
@@ -131,15 +130,13 @@ const SignupForm = ({ signup, login, errors }) => {
             </select>
 
             <input type="submit" value="Sign Up" />
+            <input
+              type="button"
+              onClick={e => loginUser(e, GUEST_USER)}
+              value="Guest Login"
+            />
           </form>
           <Link to="/login">Already on Ike!? Log in</Link>
-
-          <button
-            className="ike-guest-login"
-            onClick={e => loginUser(e, GUEST_USER)}
-          >
-            Guest Login
-          </button>
         </div>
       </div>
     </Fragment>

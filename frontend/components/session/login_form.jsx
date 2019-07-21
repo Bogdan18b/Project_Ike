@@ -15,27 +15,31 @@ const LoginForm = ({ login, errors }) => {
     setUser({ ...user, [field]: e.currentTarget.value });
   return (
     <Fragment>
-      <header className="ike-div-login-header">
-        <Link className="ike-header-logo-wrapper" to="/">
+      <header className="JoinIke-header">
+        <Link to="/">
           <img
-            className="ike-header-pic"
+            className="JoinIke-header-logo"
             src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"
+            alt="ike logo"
           />
         </Link>
       </header>
-      <div className="ike-div-login-main">
-        <ul className="ike-login-errors">
+      <div className="JoinIke-main">
+        <ul className="JoinIke-main-errors">
           {errors.map((error, idx) => (
             <li key={`error-${idx}`}>{error}</li>
           ))}
         </ul>
-        <div className="ike-div-login-form">
+        <div className="JoinIke-main-form">
           <h1>Log In with IKE!</h1>
-          <p className="ike-privacy">
+          <p className="JoinIke-main-form-privacy">
             By logging in, you agree to YKE’s Terms of Service and Privacy
             Policy.
           </p>
-          <form className="ike-login-form" onSubmit={e => loginUser(e, user)}>
+          <form
+            className="JoinIke-main-form-wrapper"
+            onSubmit={e => loginUser(e, user)}
+          >
             <input
               type="email"
               value={user.email}
@@ -53,16 +57,14 @@ const LoginForm = ({ login, errors }) => {
             />
 
             <input type="submit" value="Log In" />
+            <input
+              type="button"
+              onClick={e => loginUser(e, GUEST_USER)}
+              value="Guest Login"
+            />
           </form>
 
           <Link to="/signup">New to Ike!? Sign up</Link>
-
-          <button
-            className="ike-guest-login"
-            onClick={e => loginUser(e, GUEST_USER)}
-          >
-            Guest Login
-          </button>
         </div>
       </div>
     </Fragment>
