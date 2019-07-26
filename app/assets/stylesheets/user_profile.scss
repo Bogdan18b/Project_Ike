@@ -1,0 +1,40 @@
+@import "colors";
+@import "variables";
+
+.UserProfile {
+  &-name {
+    display: block;
+    font-size: $font-size-extraLarge;
+    font-weight: bold;
+    background-color: $color-greyBackground;
+    text-align: center;
+    padding: $spacing-5;
+  }
+  &-recentActivity {
+    margin: $spacing-5;
+    color: $color-red;
+    font-size: $font-size-larger;
+    font-weight: bold;
+    text-align: center;
+    padding: $spacing-2;
+  }
+  &-reviews {
+    @include Flex;
+    padding: $spacing-5;
+    flex-direction: column;
+    font-size: $font-size-normal;
+    &-item {
+      @include Flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin: $spacing-2;
+      min-height: 120px;
+      border-bottom: 1px solid $color-lightgrey;
+    }
+    &-noActivity {
+      text-align: center;
+      padding: $spacing-2;
+      font-size: $font-size-large;
+    }
+  }
+}

@@ -13,36 +13,40 @@ const UserProfile = props => {
   return (
     <Fragment>
       <BusinessHeader />
-      <h1 id="ike-username">
+      <h1 className="UserProfile-name">
         {props.user.firstName + " " + props.user.lastName}
       </h1>
-      <h2 id="ike-recent-activity">Recent activity</h2>
-      {reviews.map(review => {
-        let date =
-          review.createdAt
-            .slice(0, 10)
-            .split("-")
-            .join("/") || "";
-        return (
-          <ul key={review.id} className="ike-user-page-review">
-            <li>You wrote a review</li>
-            <li>
-              <StarRating rating={review.rating} /> {date}
-            </li>
-            <li>{review.body}</li>
-          </ul>
-        );
-      })}
-      <p id="ike-no-activity">
-        We don't have any recent activity for you right now.
-      </p>
+      <h2 className="UserProfile-recentActivity">Recent activity</h2>
+      <div className="UserProfile-reviews">
+        {reviews.map(review => {
+          let date =
+            review.createdAt
+              .slice(0, 10)
+              .split("-")
+              .join("/") || "";
+          return (
+            <ul key={review.id} className="UserProfile-reviews-item">
+              <li>You wrote this review on {date}</li>
+              <li>
+                <StarRating rating={review.rating} />
+              </li>
+              <li>{review.body}</li>
+            </ul>
+          );
+        })}
+        {reviews.length === 0 && (
+          <p className="UserProfile-reviews-noActivity">
+            We don't have any recent activity for you right now.
+          </p>
+        )}
+      </div>
     </Fragment>
   );
 };
 
 UserProfile.propTypes = {
   requestAllReviews: PropTypes.func,
-  reviews: PropTypes.object,
+  reviews: PropTypes.array,
   user: PropTypes.shape({
     email: PropTypes.string,
     firstName: PropTypes.string,
