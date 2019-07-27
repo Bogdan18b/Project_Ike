@@ -50,9 +50,9 @@ $border-white: 2px solid $color-white;
         padding: $spacing-2;
         left: 0;
         text-align: center;
-        &-is-hidden {
-          display: none;
-        }
+      }
+      .is-hidden {
+        display: none;
       }
     }
     &-actionButtons {

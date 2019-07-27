@@ -112,11 +112,11 @@ $imageSize-smaller: 180px;
         width: $imageSize-smaller;
         height: $imageSize-smaller;
       }
-      &.is-hovered {
-        transform: scale(1.1);
-        box-shadow: $box-shadow;
-        transition: 0.5s ease-in-out;
-      }
+    }
+    .is-hovered {
+      transform: scale(1.1);
+      box-shadow: $box-shadow;
+      transition: 0.5s ease-in-out;
     }
   }
   &-hours {
@@ -153,9 +153,9 @@ $imageSize-smaller: 180px;
           text-align: center;
           background-color: $color-darkRed;
           border-radius: $border-radius;
-          &.is-hidden {
-            display: none;
-          }
+        }
+        .is-hidden {
+          display: none;
         }
       }
     }

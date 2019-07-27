@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const toggleClass = () =>
   document
     .querySelector(".Header-top-userGreeting-options")
-    .classList.toggle("Header-top-userGreeting-options-is-hidden");
+    .classList.toggle("is-hidden");
 
 const Greeting = ({ currentUser, logout }) => {
   const name = currentUser ? currentUser.firstName : "";
@@ -34,7 +34,7 @@ const Greeting = ({ currentUser, logout }) => {
         onMouseOut={toggleClass}
       >
         <h1>Hello, {name.toUpperCase()}!</h1>
-        <ul className="Header-top-userGreeting-options Header-top-userGreeting-options-is-hidden">
+        <ul className="Header-top-userGreeting-options is-hidden">
           <li>
             <Link to="/user_details">My Profile</Link>
           </li>
