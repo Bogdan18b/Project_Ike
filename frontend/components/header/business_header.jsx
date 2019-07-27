@@ -6,19 +6,17 @@ import BusinessTypeContainer from "../business/type/business_type_container";
 
 const BusinessHeader = () => (
   <Fragment>
-    <div className="ike-business-show-header">
+    <div className="Header--business">
       <Link to="/">
         <img
-          id="logo-pic-business-index"
+          className="Header--business-logo"
           src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"
         />
       </Link>
       <SearchContainer />
       <GreetingContainer />
     </div>
-    <div className="ike-business-show-header-nav">
-      <BusinessTypeContainer />
-    </div>
+    <BusinessTypeContainer />
   </Fragment>
 );
 

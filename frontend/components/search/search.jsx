@@ -25,24 +25,19 @@ const Search = props => {
     props.history.push(`/businesses/search?query=${searchTerm}`);
     props.clearSearchResults();
   };
-  let classType =
-    window.location.href.includes("businesses") ||
-    window.location.href.includes("user_details")
-      ? "business"
-      : "home";
   return (
-    <div className={`ike-search-div-${classType}`}>
-      <span id="find">Find</span>
+    <div className="Header-search">
+      <span className="Header-search-findSpan">Find</span>
       <input
         onChange={displayResults}
         placeholder="avra, pet stores..."
-        className="ike-search-input"
+        className="Header-search-input"
         type="text"
         value={searchTerm}
       />
 
       {props.businesses.length === 0 ? null : (
-        <ul className={`ike-search-list-${classType}`}>
+        <ul className="Header-search-list">
           {props.businesses.map(bus => {
             return (
               <li key={`list-${bus.id}`} onClick={() => handleClick(bus)}>
@@ -52,10 +47,7 @@ const Search = props => {
           })}
         </ul>
       )}
-      <button
-        className={`ike-search-button-${classType}`}
-        onClick={() => searchButton()}
-      >
+      <button className={`Header-search-button`} onClick={() => searchButton()}>
         <i className="fas fa-search" />
       </button>
     </div>
