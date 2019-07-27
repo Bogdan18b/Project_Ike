@@ -7,6 +7,7 @@
 $imageSize: 130px;
 $mapSize: 300px;
 $mapSize-small: 250px;
+$mapInfoBoxSize: 100px;
 
 .BusinessIndex {
   display: flex;
@@ -83,8 +84,8 @@ $mapSize-small: 250px;
       }
     }
     &-content {
-      width: 100px;
-      height: 100px;
+      width: $mapInfoBoxSize;
+      height: $mapInfoBoxSize;
       display: flex;
       flex-direction: column;
       align-items: center;

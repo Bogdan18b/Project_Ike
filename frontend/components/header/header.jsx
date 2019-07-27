@@ -12,10 +12,12 @@ const randomImage = () => {
 
 const Header = () => (
   <div className="Header" style={{ backgroundImage: `url(${randomImage()})` }}>
-    <Link className="Header-writeReviewButton" to="/businesses">
-      Write a Review
-    </Link>
-    <GreetingContainer />
+    <div className="Header-top">
+      <Link className="Header-top-writeReviewButton" to="/businesses">
+        Write a Review
+      </Link>
+      <GreetingContainer />
+    </div>
     <Link to="/">
       <img
         className="Header-logo"

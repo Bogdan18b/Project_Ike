@@ -3,22 +3,19 @@ import BusinessTypeIndexItem from "./business_type_index_item";
 import PropTypes from "prop-types";
 
 const BusinessType = ({ types, receiveTypeFromSearch }) => {
-  let classType =
-    window.location.href.includes("businesses") ||
-    window.location.href.includes("user_details")
-      ? ""
-      : "-home";
+  const classType = window.location.hash !== "#/" ? "business" : "";
   if (types === undefined) {
     return null;
   }
-  const typ = types.map((type, idx) => (
+  const typ = types.map(type => (
     <BusinessTypeIndexItem
       key={type.id}
       receiveTypeFromSearch={receiveTypeFromSearch}
       type={type}
+      classType={classType}
     />
   ));
-  return <ul className={`ike-business-header-nav${classType}`}>{typ}</ul>;
+  return <ul className={`Header-navbar Header-navbar--${classType}`}>{typ}</ul>;
 };
 
 BusinessType.propTypes = {

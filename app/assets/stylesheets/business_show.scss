@@ -9,16 +9,6 @@ $imageSize: 240px;
 $imageSize-small: 200px;
 $imageSize-smaller: 180px;
 
-.ike-business-show-header {
-  background-color: $color-red;
-  @include Flex;
-  padding: $spacing-4 0;
-  position: relative;
-}
-.ike-active {
-  transform: scale(2);
-}
-
 .BusinessShow {
   background-color: $color-white;
   display: grid;
@@ -124,7 +114,7 @@ $imageSize-smaller: 180px;
       }
       &.is-hovered {
         transform: scale(1.1);
-        box-shadow: 2px 2px 2px 2px $color-lightgrey;
+        box-shadow: $box-shadow;
         transition: 0.5s ease-in-out;
       }
     }

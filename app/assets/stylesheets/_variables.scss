@@ -1,3 +1,5 @@
+@import "colors";
+
 $font-size-normal: 1.6rem;
 $font-size-large: calc(1.25 * #{$font-size-normal});
 $font-size-larger: calc(1.25 * #{$font-size-large});
@@ -11,6 +13,8 @@ $spacing-4: calc(4 * #{$spacing-1});
 $spacing-5: calc(5 * #{$spacing-1});
 
 $border-radius: 4px;
+$box-shadow: 2px 2px 2px 2px $color-lightgrey;
+$text-shadow: 2px 2px 8px $color-black;
 $translate-20: translate($spacing-5, $spacing-5);
 
 $breakpoint-576: 576px;

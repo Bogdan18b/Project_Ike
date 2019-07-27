@@ -1,40 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
+const toggleClass = () =>
+  document
+    .querySelector(".Header-top-userGreeting-options")
+    .classList.toggle("Header-top-userGreeting-options-is-hidden");
 
 const Greeting = ({ currentUser, logout }) => {
-  let name;
-  name = currentUser ? currentUser.firstName : "";
+  const name = currentUser ? currentUser.firstName : "";
+  const classType = window.location.hash !== "#/" ? "business" : "";
   const sessionLinks = () => {
-    let classType = window.location.href.includes("businesses") ? "business" : "home";
     return (
-      <nav className={`ike-login-form-${classType}`}>
-
-        <Link className={`ike-login-${classType}-button`}
-          to="/login">Log In
+      <nav
+        className={`Header-top-actionButtons Header-top-actionButtons-${classType}`}
+      >
+        <Link className="Header-top-actionButtons-login" to="/login">
+          Log In
         </Link>
 
-        <Link className={`ike-signup-${classType}-button`}
-          to="/signup">Sign Up
+        <Link className="Header-top-actionButtons-signup" to="/signup">
+          Sign Up
         </Link>
-
       </nav>
     );
   };
 
   const personalGreeting = name => {
     return (
-      <h1 className="ike-welcome-user" style = { window.location.hash === "#/" ? { position: "absolute" } : {}}
-        onClick={() =>{document.getElementsByClassName('ike-logout-list')[0].classList.toggle('hide')}}>
-        Hello, {name.toUpperCase()}!
-        <ul className="ike-logout-list hide">
-          <li><Link to="/user_details">My Profile</Link></li>
-          <li onClick={logout}>Log Out
+      <div
+        className={`Header-top-userGreeting Header-top-userGreeting-${classType}`}
+        onMouseOver={toggleClass}
+        onMouseOut={toggleClass}
+      >
+        <h1>Hello, {name.toUpperCase()}!</h1>
+        <ul className="Header-top-userGreeting-options Header-top-userGreeting-options-is-hidden">
+          <li>
+            <Link to="/user_details">My Profile</Link>
           </li>
+          <li onClick={logout}>Log Out</li>
         </ul>
-      </h1>
+      </div>
     );
-  }
+  };
 
   return currentUser ? personalGreeting(name) : sessionLinks();
 };
@@ -46,7 +54,7 @@ Greeting.propTypes = {
     email: PropTypes.string,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
-    reviewIds: PropTypes.arrayOf(PropTypes.number),
+    reviewIds: PropTypes.arrayOf(PropTypes.number)
   })
 };
 
