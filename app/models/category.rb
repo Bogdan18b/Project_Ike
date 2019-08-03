@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: business_types
+# Table name: categories
 #
 #  id         :bigint(8)        not null, primary key
 #  name       :string           not null
@@ -8,10 +8,10 @@
 #  updated_at :datetime         not null
 #
 
-class BusinessType < ApplicationRecord
+class Category < ApplicationRecord
   validates :name, presence: true
 
   has_many :businesses,
-  foreign_key: :business_type_id,
+  foreign_key: :category_id,
   class_name: :Business
 end
