@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import GreetingContainer from "../greeting/greeting_container";
 import { Link } from "react-router-dom";
 import SearchContainer from "../search/search_container";
-import BusinessTypeContainer from "../business/type/business_type_container";
+import CategoryContainer from "../business/category/category_container";
 
 const BusinessHeader = () => (
   <Fragment>
@@ -16,7 +16,7 @@ const BusinessHeader = () => (
       <SearchContainer />
       <GreetingContainer />
     </div>
-    <BusinessTypeContainer />
+    <CategoryContainer />
   </Fragment>
 );
 

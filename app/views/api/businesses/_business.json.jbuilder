@@ -1,6 +1,6 @@
 json.business do
   json.extract! business, :id, :name, :address, :hours, :phone, :website, :latitude, :longitude, :rating, :tags
-  json.businessTypeId business.business_type_id
+  json.categoryId business.category_id
   json.photos business.photos.map { |photo| url_for(photo) }
   json.reviewIds business.reviews.ids
 end

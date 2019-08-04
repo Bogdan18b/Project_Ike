@@ -2,6 +2,6 @@ json.businesses do
   json.array! @businesses.pluck(:id)
 end
 
-json.businessTypes do
-  json.array! @business_types.pluck(:id)
+json.categories do
+  json.array! @categories.pluck(:id)
 end

@@ -15,7 +15,7 @@ import PropTypes from "prop-types";
 
 const mapStateToProps = ({ searchResults, entities }) => ({
   businesses: entities.businesses,
-  businessTypes: entities.businessTypes,
+  categories: entities.categories,
   searchResults
 });
 
@@ -35,7 +35,7 @@ const SearchResults = props => {
   }, []);
   if (
     Object.keys(props.businesses).length === 0 ||
-    Object.keys(props.businessTypes).length === 0
+    Object.keys(props.categories).length === 0
   ) {
     return null;
   }
@@ -44,9 +44,7 @@ const SearchResults = props => {
     props.searchResults.businessIds.forEach(id =>
       items.push(props.businesses[id])
     );
-    props.searchResults.typeIds.forEach(id =>
-      items.push(props.businessTypes[id])
-    );
+    props.searchResults.typeIds.forEach(id => items.push(props.categories[id]));
   }
   return (
     <Search
@@ -59,7 +57,7 @@ const SearchResults = props => {
 };
 
 SearchResults.propTypes = {
-  businessTypes: PropTypes.object,
+  categories: PropTypes.object,
   businesses: PropTypes.object,
   clearSearchResults: PropTypes.func,
   receiveSearchResults: PropTypes.func,

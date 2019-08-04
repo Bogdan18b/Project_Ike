@@ -51,7 +51,7 @@ const BusinessIndexItem = ({ business, idx }) => {
 BusinessIndexItem.propTypes = {
   business: PropTypes.shape({
     id: PropTypes.number,
-    businessTypeId: PropTypes.number,
+    categoryId: PropTypes.number,
     address: PropTypes.string,
     name: PropTypes.string,
     website: PropTypes.string,

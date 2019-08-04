@@ -2,7 +2,7 @@ import * as BusinessApiUtil from "../util/business_api_util";
 
 export const FETCH_ALL_BUSINESSES = "FETCH_ALL_BUSINESSES";
 export const FETCH_BUSINESS = "FETCH_BUSINESS";
-export const FETCH_ALL_BUSINESS_TYPES = "FETCH_ALL_BUSINESS_TYPES";
+export const FETCH_ALL_CATEGORIES = "FETCH_ALL_CATEGORIES";
 
 export const fetchAllBusinesses = businesses => ({
   type: FETCH_ALL_BUSINESSES,
@@ -14,7 +14,7 @@ export const fetchBusiness = payload => ({
 });
 
 export const fetchAllBusinessTypes = types => ({
-  type: FETCH_ALL_BUSINESS_TYPES,
+  type: FETCH_ALL_CATEGORIES,
   types
 });
 

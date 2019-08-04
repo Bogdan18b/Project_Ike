@@ -1,16 +1,16 @@
 import { connect } from "react-redux";
 import { receiveTypeFromSearch } from "../../../actions/search_actions";
-import BusinessType from "./business_type";
+import Category from "./category";
 
 const mapStateToProps = ({ entities }) => ({
-  types: Object.values(entities.businessTypes)
+  types: Object.values(entities.categories)
 });
 
 const mapDispatchToProps = dispatch => ({
-  receiveTypeFromSearch: type => dispatch(receiveTypeFromSearch(type))
+  receiveTypeFromSearch: category => dispatch(receiveTypeFromSearch(category))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BusinessType);
+)(Category);

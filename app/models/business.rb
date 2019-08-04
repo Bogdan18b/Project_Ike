@@ -20,7 +20,7 @@ class Business < ApplicationRecord
   validates :name, :address, :hours, :phone, :website, :latitude, :longitude, presence: true
   validates :name, uniqueness: true
 
-  has_many_attached :pictures
+  has_many_attached :photos
 
   belongs_to :category,
   foreign_key: :category_id,

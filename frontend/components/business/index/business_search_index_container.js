@@ -6,8 +6,8 @@ import PropTypes from "prop-types";
 
 const mapStateToProps = ({ entities, type = {}, searchResults }) => ({
   businesses: entities.businesses,
-  types: Object.values(entities.businessTypes),
-  businessType: type,
+  types: Object.values(entities.categories),
+  category: type,
   searchResults
 });
 
@@ -24,12 +24,12 @@ const BusinessSearchIndex = props => {
   }
   let businesses;
 
-  if (Object.values(props.businessType).length === 0) {
+  if (Object.values(props.category).length === 0) {
     businesses = props.searchResults.businessIds.map(
       id => (id = props.businesses[id])
     );
   } else {
-    let businessesOfType = props.businessType.businessIds.map(
+    let businessesOfType = props.category.businessIds.map(
       id => props.businesses[id]
     );
     businesses = businessesOfType;
@@ -56,12 +56,12 @@ class BxusinessSearchIndex extends React.Component {
     }
     let businesses;
 
-    if (Object.values(this.props.businessType).length === 0) {
+    if (Object.values(this.props.category).length === 0) {
       businesses = this.props.searchResults.businessIds.map(
         id => (id = this.props.businesses[id])
       );
     } else {
-      let businessesOfType = this.props.businessType.businessIds.map(
+      let businessesOfType = this.props.category.businessIds.map(
         id => this.props.businesses[id]
       );
       businesses = businessesOfType;
@@ -73,7 +73,7 @@ class BxusinessSearchIndex extends React.Component {
 BusinessSearchIndex.propTypes = {
   requestAllBusinesses: PropTypes.func,
   businesses: PropTypes.object,
-  businessType: PropTypes.object,
+  category: PropTypes.object,
   searchResults: PropTypes.shape({
     businessIds: PropTypes.arrayOf(PropTypes.number),
     ReviewBusinessIds: PropTypes.arrayOf(PropTypes.number),

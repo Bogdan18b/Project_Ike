@@ -13,5 +13,5 @@ export const fetchBusiness = id =>
 export const fetchAllBusinessTypes = () =>
   $.ajax({
     method: "GET",
-    url: "api/business_types"
+    url: "api/categories"
   });

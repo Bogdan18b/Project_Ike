@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_03_130005) do
+ActiveRecord::Schema.define(version: 2019_08_04_203050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,16 +39,16 @@ ActiveRecord::Schema.define(version: 2019_08_03_130005) do
   create_table "businesses", force: :cascade do |t|
     t.string "name", null: false
     t.string "address", null: false
-    t.string "hours", default: [], array: true
     t.string "phone", null: false
     t.string "website", null: false
     t.float "latitude", null: false
     t.float "longitude", null: false
-    t.integer "rating", null: false
     t.integer "category_id", null: false
-    t.string "tags", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "hours", default: [], array: true
+    t.integer "rating"
+    t.string "tags", default: [], array: true
     t.index ["category_id"], name: "index_businesses_on_category_id"
   end
 
@@ -85,4 +85,5 @@ ActiveRecord::Schema.define(version: 2019_08_03_130005) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end

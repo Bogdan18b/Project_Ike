@@ -20,13 +20,3 @@ json.users do
 end
 
 json.businesses Review.get_business_ids
-# json.businesses do
-#   @reviews.each do |review|
-#     json.set! review.business.id do
-#       json.extract! review.business, :id, :name, :phone, :website, :hours, :latitude, :longitude, :rating, :address
-#       json.businessType review.business.business_type.name
-#       json.photoURL url_for(review.business.photos.first)
-#       json.reviewIds review.business.reviews.ids
-#     end
-#   end
-# end

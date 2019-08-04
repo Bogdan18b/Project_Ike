@@ -1,10 +1,9 @@
-import { RECEIVE_BUSINESS_TYPE } from '../actions/search_actions';
-import { merge } from 'lodash';
+import { RECEIVE_CATEGORY } from "../actions/search_actions";
 
 const searchForTypeReducer = (state = {}, action) => {
   switch (action.type) {
-    case RECEIVE_BUSINESS_TYPE:
-      return action.businessType;
+    case RECEIVE_CATEGORY:
+      return action.category;
     default:
       return state;
   }

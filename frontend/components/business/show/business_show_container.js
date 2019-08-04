@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
-import BusinessShow from './business_show';
-import { requestBusiness } from '../../../actions/business_actions';
-import { deleteReview } from '../../../actions/review_actions';
+import { connect } from "react-redux";
+import BusinessShow from "./business_show";
+import { requestBusiness } from "../../../actions/business_actions";
+import { deleteReview } from "../../../actions/review_actions";
 
 const mapStateToProps = (state, ownProps) => {
   let reviews = Object.values(state.entities.reviews);
@@ -10,16 +10,19 @@ const mapStateToProps = (state, ownProps) => {
     business: state.entities.businesses[ownProps.match.params.businessId],
     reviews,
     currentUserId,
-    types: state.entities.businessTypes,
+    types: state.entities.categories,
     users: state.entities.users
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    requestBusiness: (id) => dispatch(requestBusiness(id)),
-    deleteReview: (id) => dispatch(deleteReview(id))
+    requestBusiness: id => dispatch(requestBusiness(id)),
+    deleteReview: id => dispatch(deleteReview(id))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BusinessShow);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BusinessShow);

@@ -2,12 +2,7 @@ import React from "react";
 import { withRouter } from "react-router";
 import PropTypes from "prop-types";
 
-const BusinessTypeIndexItem = ({
-  type,
-  receiveTypeFromSearch,
-  history,
-  classType
-}) => (
+const CategoryItem = ({ type, receiveTypeFromSearch, history, classType }) => (
   <li
     className={`Header-navbar-item Header-navbar--${classType}-item`}
     onClick={() => {
@@ -19,10 +14,10 @@ const BusinessTypeIndexItem = ({
   </li>
 );
 
-BusinessTypeIndexItem.propTypes = {
+CategoryItem.propTypes = {
   receiveTypeFromSearch: PropTypes.func,
   classType: PropTypes.string,
-  history: PropTypes.obj,
+  history: PropTypes.func,
   type: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
@@ -30,4 +25,4 @@ BusinessTypeIndexItem.propTypes = {
   })
 };
 
-export default withRouter(BusinessTypeIndexItem);
+export default withRouter(CategoryItem);

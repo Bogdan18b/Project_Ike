@@ -1,5 +1,5 @@
 import React from "react";
-import BusinessTypeIndexItem from "./business_type_index_item";
+import CategoryItem from "./category_item";
 import PropTypes from "prop-types";
 
 const BusinessType = ({ types, receiveTypeFromSearch }) => {
@@ -8,7 +8,7 @@ const BusinessType = ({ types, receiveTypeFromSearch }) => {
     return null;
   }
   const typ = types.map(type => (
-    <BusinessTypeIndexItem
+    <CategoryItem
       key={type.id}
       receiveTypeFromSearch={receiveTypeFromSearch}
       type={type}
