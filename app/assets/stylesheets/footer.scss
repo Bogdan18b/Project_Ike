@@ -19,6 +19,7 @@
   &-list-item {
     color: $color-blue;
     text-align: center;
+    position: relative;
     &:first-child {
       color: $color-red;
       font-weight: bold;
@@ -26,6 +27,16 @@
     }
     & a:hover {
       text-decoration: underline;
+    }
+    &-credits:hover:before {
+      position: absolute;
+      content: "Project was created using icons from thenounproject.com. Special thanks to the authors: Oksana Latysheva(dumbbells), Igé Maulana(tv), Lnhi (fork and knife, salon), Kristina Margaryan (tools), b farias (pets). ";
+      background-color: $color-blue;
+      color: $color-white;
+      top: -140px;
+      width: 300px;
+      left: -120px;
+      padding: $spacing-5;
     }
   }
 }

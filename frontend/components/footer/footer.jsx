@@ -12,6 +12,9 @@ export const Footer = () => (
           IKE origin
         </a>
       </li>
+      <li className="Footer-list-item">
+        <p className="Footer-list-item-credits">Credits</p>
+      </li>
     </ul>
     <div className="Footer-image" />
     <ul className="Footer-list">
