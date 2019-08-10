@@ -81,18 +81,17 @@ $border-white: 2px solid $color-white;
       }
     }
   }
-  &-logo {
-    width: 60%;
-    margin: 0 auto;
-  }
   &-search {
     @include Flex;
     font-size: $font-size-normal;
     background-color: $color-white;
-    width: 75vw;
-    height: $searchBarHeight;
+    min-width: 70vw;
+    max-height: $searchBarHeight;
     border-radius: $border-radius;
     position: relative;
+    @include Breakpoint($breakpoint-1024) {
+      min-width: 50vw;
+    }
     &-findSpan {
       font-weight: bolder;
       align-self: center;
@@ -108,8 +107,11 @@ $border-white: 2px solid $color-white;
       justify-content: center;
       color: $color-white;
       border-radius: 0 5px 5px 0;
-      height: 100%;
-      width: 6%;
+      height: $searchBarHeight;
+      width: 5%;
+      @include Breakpoint($breakpoint-1024) {
+        width: 10%;
+      }
       &:hover {
         background-color: $color-redHover;
       }
@@ -131,62 +133,38 @@ $border-white: 2px solid $color-white;
   }
   &-navbar {
     @include Flex;
-    justify-content: space-between;
+    justify-content: space-around;
     color: $color-white;
     font-size: $font-size-normal;
     padding: $spacing-2;
     margin: $spacing-5;
-    width: 80vw;
     &-item {
+      display: flex;
       position: relative;
       cursor: pointer;
       padding: $spacing-2;
-      padding-left: $spacing-5;
       text-shadow: $text-shadow;
       &:hover {
         border-bottom: $border-white;
       }
-      &:before {
-        content: "";
-        background-image: url("https://s3.amazonaws.com/project-ike-seeding-dev/icon.png");
-        position: absolute;
-        width: 30px; // TODO: update to SVGs
-        height: 30px;
-        left: -10px;
-        background-size: 100%;
-      }
-      &:nth-of-type(1):before {
-        background-position-y: 10%;
-      }
-      &:nth-of-type(2):before {
-        background-position-y: 20%;
-      }
-      &:nth-of-type(3):before {
-        background-position-y: 31%;
-      }
-      &:nth-of-type(4):before {
-        background-position-y: 42%;
-      }
-      &:nth-of-type(5):before {
-        background-position-y: 52%;
-      }
-      &:nth-of-type(6):before {
-        background-position-y: 62%;
-      }
     }
     &--business {
       background-color: $color-greyBackground;
-      width: 100vw;
       margin: 0;
       color: $color-blue;
-      justify-content: space-evenly;
       &-item {
         text-shadow: none;
         cursor: pointer;
         font-weight: bold;
         text-align: center;
         position: relative;
+        svg {
+          fill: $color-blue;
+        }
         &:hover {
+          svg {
+            fill: $color-white;
+          }
           background-color: $color-blue;
           color: $color-white;
           border-radius: $border-radius;
@@ -198,10 +176,6 @@ $border-white: 2px solid $color-white;
     background-color: $color-red;
     @include Flex;
     justify-content: space-around;
-    padding: $spacing-4 0;
     position: relative;
-    &-logo {
-      width: 100px;
-    }
   }
 }

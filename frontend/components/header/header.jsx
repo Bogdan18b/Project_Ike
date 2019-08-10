@@ -3,6 +3,7 @@ import GreetingContainer from "../greeting/greeting_container";
 import { Link } from "react-router-dom";
 import SearchContainer from "../search/search_container";
 import CategoryContainer from "../business/category/category_container";
+import Logo from "../icons/logo";
 
 const randomImage = () => {
   let numbers = Array.from(new Array(21), (_, index) => index + 1);
@@ -19,10 +20,7 @@ const Header = () => (
       <GreetingContainer />
     </div>
     <Link to="/">
-      <img
-        className="Header-logo"
-        src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"
-      />
+      <Logo viewBox="130 135 165 110" fill="#000000" />
     </Link>
     <SearchContainer />
     <CategoryContainer />

@@ -3,15 +3,13 @@ import GreetingContainer from "../greeting/greeting_container";
 import { Link } from "react-router-dom";
 import SearchContainer from "../search/search_container";
 import CategoryContainer from "../business/category/category_container";
+import Logo from "../icons/logo";
 
 const BusinessHeader = () => (
   <Fragment>
     <div className="Header--business">
       <Link to="/">
-        <img
-          className="Header--business-logo"
-          src="https://s3.amazonaws.com/project-ike-seeding-dev/logo.png"
-        />
+        <Logo viewBox="100 120 200 125" fill="#000000" />
       </Link>
       <SearchContainer />
       <GreetingContainer />
