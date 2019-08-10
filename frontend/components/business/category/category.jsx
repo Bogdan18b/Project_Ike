@@ -7,12 +7,13 @@ const BusinessType = ({ types, receiveTypeFromSearch }) => {
   if (types === undefined) {
     return null;
   }
-  const typ = types.map(type => (
+  const typ = types.map((type, index) => (
     <CategoryItem
       key={type.id}
       receiveTypeFromSearch={receiveTypeFromSearch}
       type={type}
       classType={classType}
+      index={index}
     />
   ));
   return <ul className={`Header-navbar Header-navbar--${classType}`}>{typ}</ul>;
